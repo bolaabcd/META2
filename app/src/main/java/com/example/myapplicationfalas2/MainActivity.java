@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.speech.tts.TextToSpeech;
+import android.view.KeyEvent;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -45,12 +46,20 @@ public class MainActivity extends AppCompatActivity{
                 falador.setLanguage(Locale.getDefault());
                 String oque = entrada.getText().toString();
                 falador.setSpeechRate(1f);
-                entrada.setText("Esta falando? "+String.valueOf(falador.getLanguage()));
+                if (String.valueOf(falador.getLanguage())==null) falador.speak("VAIP RESTAR ATENÇÃO NA AULA!",TextToSpeech.QUEUE_FLUSH,null);
                 falador.speak(oque,TextToSpeech.QUEUE_FLUSH,null);
 
 
             }
         });
+    }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if(keyCode == KeyEvent.KEYCODE_HEADSETHOOK){
+            entrada.setText("Botão de ouvir apertado!!!");
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
     @Override
     protected void onPause() {
