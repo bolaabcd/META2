@@ -46,7 +46,6 @@ public class MainActivity extends AppCompatActivity{
                 falador.setLanguage(Locale.getDefault());
                 String oque = entrada.getText().toString();
                 falador.setSpeechRate(1f);
-                if (String.valueOf(falador.getLanguage())==null) falador.speak("VAIP RESTAR ATENÇÃO NA AULA!",TextToSpeech.QUEUE_FLUSH,null);
                 falador.speak(oque,TextToSpeech.QUEUE_FLUSH,null);
 
 
@@ -57,6 +56,7 @@ public class MainActivity extends AppCompatActivity{
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if(keyCode == KeyEvent.KEYCODE_HEADSETHOOK){
             entrada.setText("Botão de ouvir apertado!!!");
+            falador.speak("Botao apertado!!",TextToSpeech.QUEUE_FLUSH,null);
             return true;
         }
         return super.onKeyDown(keyCode, event);
@@ -64,8 +64,9 @@ public class MainActivity extends AppCompatActivity{
     @Override
     protected void onPause() {
         if(falador!=null){
-            falador.stop();
-            falador.shutdown();
+            entrada.setText("VOCE SAIU DO APLICAtIVO NAO E MESMO???");
+            //falador.stop();
+            //falador.shutdown();
         }
         super.onPause();
     }
