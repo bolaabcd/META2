@@ -87,14 +87,12 @@ public class MainActivity extends AppCompatActivity{
                 somPerg.start();
                 String oque = entrada.getText().toString();
                 perguntas.add(oque);
-                System.out.println("gkmreskgmosr");
-
+                System.out.println("pullrequestando");
             }
         });
     }
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        //entrada.setText("O numero é: "+Integer.toString(keyCode));
         if(keyCode == KeyEvent.KEYCODE_HEADSETHOOK||keyCode == 126||keyCode == 127){
             falar();
             return true;
