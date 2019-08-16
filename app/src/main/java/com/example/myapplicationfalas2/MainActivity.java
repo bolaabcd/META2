@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity{
     }
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
+        entrada.setText("O numero é: "+Integer.toString(keyCode));
         if(keyCode == KeyEvent.KEYCODE_HEADSETHOOK){
             entrada.setText("Botão de ouvir apertado!!!");
             falador.speak("Botao apertado!!",TextToSpeech.QUEUE_FLUSH,null);
