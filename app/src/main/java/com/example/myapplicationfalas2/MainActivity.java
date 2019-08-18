@@ -22,7 +22,9 @@ import android.view.MenuItem;
 
 import org.w3c.dom.Text;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Locale;
 
@@ -35,6 +37,8 @@ public class MainActivity extends AppCompatActivity{
     ArrayList<String> perguntas = new ArrayList<>();
     TextToSpeech falador;
     TextView entrada;
+    int tempo;
+    MediaPlayer somSaiu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,8 +91,7 @@ public class MainActivity extends AppCompatActivity{
                 somPerg.start();
                 String oque = entrada.getText().toString();
                 perguntas.add(oque);
-                System.out.println("gkmreskgmosr");
-
+                System.out.println("Pulrequestandodenovo");
             }
         });
     }
@@ -99,6 +102,9 @@ public class MainActivity extends AppCompatActivity{
             return true;
         }
         return super.onKeyDown(keyCode, event);
+    }
+    public int getempo(){
+        return 3600000*Calendar.getInstance().get(Calendar.HOUR_OF_DAY)+60000*Calendar.getInstance().get(Calendar.MINUTE)+1000*Calendar.getInstance().get(Calendar.SECOND)+Calendar.getInstance().get(Calendar.MILLISECOND);
     }
     public void falar(){
         if (perguntas.size() > 0) {
@@ -116,12 +122,22 @@ public class MainActivity extends AppCompatActivity{
     @Override
     protected void onPause() {
         if(falador!=null){
-            final MediaPlayer somSaiu = MediaPlayer.create(this,R.raw.saiu_app);
+            tempo=getempo();
+            somSaiu=MediaPlayer.create(this,R.raw.saiu_app);
             somSaiu.start();
 //            entrada.setText("VOCE SAIU DO APLICAtIVO NAO E MESMO???");
             //falador.stop();
             //falador.shutdown();
         }
         super.onPause();
+    }
+    @Override
+    protected void onResume(){
+        if (getempo()-tempo<200){
+            somSaiu.stop();
+            falar();
+        }
+        tempo=0;
+        super.onResume();
     }
 }
