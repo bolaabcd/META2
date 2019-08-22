@@ -12,6 +12,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.UtteranceProgressListener;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.widget.Button;
 import android.widget.TextView;
@@ -19,6 +20,7 @@ import android.widget.TextView;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -71,7 +73,7 @@ public class MainActivity extends AppCompatActivity{
                         e.printStackTrace();
                     }
                     String strnPerg = new Integer(perguntas.size()).toString();
-                    String pRest = "Número de perguntas restantes" + strnPerg;
+                    String pRest = strnPerg + "perguntas";
                     falador.speak(pRest,TextToSpeech.QUEUE_FLUSH,null);
                 }
             }
@@ -90,8 +92,14 @@ public class MainActivity extends AppCompatActivity{
 
                 somPerg.start();
                 String oque = entrada.getText().toString();
-                perguntas.add(oque);
-                System.out.println("Pulrequestandodenovo");
+                if(!perguntas.contains(oque)){
+                    somPerg.start();
+                    perguntas.add(oque);
+                } else {
+                    Toast.makeText(getApplicationContext(),"Essa mensagem já foi enviada", Toast.LENGTH_SHORT).show();
+
+                }
+
             }
         });
     }
