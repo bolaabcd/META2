@@ -89,8 +89,6 @@ public class MainActivity extends AppCompatActivity{
         falabotao.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-
-                somPerg.start();
                 String oque = entrada.getText().toString();
                 if(!perguntas.contains(oque)){
                     somPerg.start();
