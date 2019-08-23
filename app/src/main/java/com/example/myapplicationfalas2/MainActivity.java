@@ -10,10 +10,12 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.provider.MediaStore;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.UtteranceProgressListener;
 import android.view.Gravity;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -41,12 +43,37 @@ public class MainActivity extends AppCompatActivity{
     TextView entrada;
     int tempo;
     MediaPlayer somSaiu;
+    TextView mensagens;
+    Button voltar;
+    Button falabotao;
+    Button editar;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        final MediaPlayer somPerg = MediaPlayer.create(this, R.raw.notification);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Button falabotao = findViewById(R.id.Fala);
-        entrada = findViewById(R.id.Entrada);
+        totela1(somPerg);
+
+
+        /*try{
+
+        }
+        catch (Exception e){
+            entrada.setText("ERRO: "+e.toString());
+        }*/
+
+        /*
+        setContentView(R.layout.configurator);
+        Button voltar= findViewById(R.id.button13);
+        setContentView(R.layout.activity_main);*/
+
+        //Button voltar = paginaconfiguradora.findViewById(R.id.button13);
+        //mensagens=paginaconfiguradora.findViewById(R.id.textView);
+
+
+
+        /*
         falador = new TextToSpeech(MainActivity.this, new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int i) {
@@ -85,21 +112,15 @@ public class MainActivity extends AppCompatActivity{
             }
 
         });
-        final MediaPlayer somPerg = MediaPlayer.create(this, R.raw.notification);
-        falabotao.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                String oque = entrada.getText().toString();
-                if(!perguntas.contains(oque)){
-                    somPerg.start();
-                    perguntas.add(oque);
-                } else {
-                    Toast.makeText(getApplicationContext(),"Essa mensagem já foi enviada", Toast.LENGTH_SHORT).show();
 
-                }
 
-            }
-        });
+
+
+
+
+
+
+*/
     }
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {//sucodeuvaa
@@ -121,10 +142,47 @@ public class MainActivity extends AppCompatActivity{
             falador.speak(perg, TextToSpeech.QUEUE_FLUSH, map);
 
         }
-
-
-
     }
+
+    public void totela2(final MediaPlayer sperg){
+        setContentView(R.layout.configurator);
+        voltar=findViewById(R.id.button13);
+        voltar.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                totela1(sperg);
+            }
+        });
+    }
+    public void totela1(final MediaPlayer sperg){
+        setContentView(R.layout.activity_main);
+        falabotao = findViewById(R.id.Fala);
+        editar = findViewById(R.id.button10);
+        entrada = findViewById(R.id.Entrada);
+        falabotao.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                String oque = entrada.getText().toString();
+                if(!perguntas.contains(oque)){
+                    sperg.start();
+                    perguntas.add(oque);
+                } else {
+                    Toast.makeText(getApplicationContext(),"Essa mensagem já foi enviada", Toast.LENGTH_SHORT).show();
+
+                }
+
+            }
+        });
+        editar.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                totela2(sperg);
+            }
+        });
+    }
+
+
+
     @Override
     protected void onPause() {
         if(falador!=null){
@@ -146,4 +204,5 @@ public class MainActivity extends AppCompatActivity{
         tempo=0;
         super.onResume();
     }
+
 }
