@@ -1,5 +1,6 @@
 package com.example.myapplicationfalas2;
 
+import android.content.Context;
 import android.content.res.Configuration;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -26,6 +27,9 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -47,13 +51,17 @@ public class MainActivity extends AppCompatActivity{
     Button voltar;
     Button falabotao;
     Button editar;
+    CharSequence textentrada;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         final MediaPlayer somPerg = MediaPlayer.create(this, R.raw.notification);
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
         totela1(somPerg);
+
 
 
         /*try{
@@ -73,7 +81,26 @@ public class MainActivity extends AppCompatActivity{
 
 
 
-        /*
+/* ESCREVE-ERROS (pode ser muito inutil), mas serve como padrao pra escrever arquivos
+        try{
+            File file= new File(this.getFilesDir(),"nomedoarquivo");
+            FileOutputStream escrever = openFileOutput("nomedoarquivo",Context.MODE_PRIVATE);
+            escrever.write("mensagem a escrever".getBytes());
+            escrever.close();
+            FileInputStream ler = openFileInput("mansagem a escrever.txt");
+            int pare=0;
+            String conteudo="";
+            while (pare!=-1){
+                pare=ler.read();
+                conteudo= conteudo + (char) pare;
+            }
+            entrada.setText(conteudo);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+*/
+
+
         falador = new TextToSpeech(MainActivity.this, new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int i) {
@@ -120,7 +147,7 @@ public class MainActivity extends AppCompatActivity{
 
 
 
-*/
+
     }
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {//sucodeuvaa
@@ -140,7 +167,6 @@ public class MainActivity extends AppCompatActivity{
             HashMap<String, String> map = new HashMap<String, String>();
             map.put(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, "ID");
             falador.speak(perg, TextToSpeech.QUEUE_FLUSH, map);
-
         }
     }
 
@@ -151,6 +177,7 @@ public class MainActivity extends AppCompatActivity{
             @Override
             public void onClick(View view){
                 totela1(sperg);
+                entrada.setText(textentrada);
             }
         });
     }
@@ -159,6 +186,7 @@ public class MainActivity extends AppCompatActivity{
         falabotao = findViewById(R.id.Fala);
         editar = findViewById(R.id.button10);
         entrada = findViewById(R.id.Entrada);
+
         falabotao.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -176,6 +204,7 @@ public class MainActivity extends AppCompatActivity{
         editar.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
+                textentrada=entrada.getText();
                 totela2(sperg);
             }
         });
