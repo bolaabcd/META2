@@ -8,20 +8,6 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <Button
-        android:id="@+id/Fala"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="FALAR!!!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <EditText
         android:id="@+id/Entrada"
         android:layout_width="wrap_content"
@@ -31,7 +17,6 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
         android:editable="true"
         android:ems="10"
         android:gravity="start|top"
@@ -40,7 +25,6 @@
         android:scrollbarSize="4dp"
         android:textSize="30sp"
         android:verticalScrollbarPosition="defaultPosition"
-        app:layout_constraintBottom_toTopOf="@+id/Fala"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
@@ -124,5 +108,72 @@
             android:layout_height="wrap_content"
             android:text="Button" />
     </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!--<Button android:id="@+id/button1"-->
+        <!--...-->
+        <!--android:layout_weight="1"/>-->
+
+        <!--<Button android:id="@+id/button2"-->
+        <!--...-->
+        <!--android:layout_weight="1"/>-->
+
+        <!--<Button-->
+        <!--android:id="@+id/button3"-->
+        <!--...-->
+        <!--android:layout_weight="1"/>-->
+
+
+        <ImageButton
+            android:id="@+id/deslike"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:layout_weight="1"
+            android:backgroundTint="#0059d6"
+            android:tint="#ffffff"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/deslike" />
+        <ImageButton
+            android:id="@+id/Fala"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:backgroundTint="#0059d6"
+            android:contentDescription="TODO"
+            android:tint="#ffffff"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/deslike"
+            app:layout_constraintStart_toEndOf="@+id/like"
+            app:srcCompat="@drawable/orelha" />
+
+        <ImageButton
+            android:id="@+id/like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:backgroundTint="#0059d6"
+            android:rotation="-180"
+            android:tint="#ffffff"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/Fala"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/deslike" />
+
+
+    </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

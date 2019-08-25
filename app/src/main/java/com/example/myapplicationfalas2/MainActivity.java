@@ -1,43 +1,25 @@
 package com.example.myapplicationfalas2;
 
-import android.content.Context;
-import android.content.res.Configuration;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
-import android.provider.MediaStore;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.UtteranceProgressListener;
-import android.view.Gravity;
 import android.view.KeyEvent;
-import android.view.LayoutInflater;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Locale;
 
-import static java.lang.Boolean.FALSE;
-import static java.lang.Boolean.TRUE;
 import static java.lang.Thread.sleep;
 
 public class MainActivity extends AppCompatActivity{
@@ -49,7 +31,9 @@ public class MainActivity extends AppCompatActivity{
     MediaPlayer somSaiu;
     TextView mensagens;
     Button voltar;
-    Button falabotao;
+    ImageButton falabotao;
+    ImageButton deslikebotao;
+    ImageButton likebotao;
     Button editar;
     CharSequence textentrada;
 
@@ -184,6 +168,8 @@ public class MainActivity extends AppCompatActivity{
     public void totela1(final MediaPlayer sperg){
         setContentView(R.layout.activity_main);
         falabotao = findViewById(R.id.Fala);
+        likebotao = findViewById(R.id.like);
+        deslikebotao = findViewById(R.id.deslike);
         editar = findViewById(R.id.button10);
         entrada = findViewById(R.id.Entrada);
 
@@ -201,6 +187,19 @@ public class MainActivity extends AppCompatActivity{
 
             }
         });
+        likebotao.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                falador.speak("entendi",TextToSpeech.QUEUE_FLUSH,null);
+            }
+        });
+        deslikebotao.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                falador.speak("não entendi",TextToSpeech.QUEUE_FLUSH,null);
+            }
+        });
+
         editar.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
