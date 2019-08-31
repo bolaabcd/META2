@@ -1,33 +1,25 @@
 package com.example.myapplicationfalas2;
 
-import android.content.res.Configuration;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.UtteranceProgressListener;
 import android.view.KeyEvent;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
-
-import org.w3c.dom.Text;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Locale;
 
-import static java.lang.Boolean.FALSE;
-import static java.lang.Boolean.TRUE;
 import static java.lang.Thread.sleep;
 
 public class MainActivity extends AppCompatActivity{
@@ -35,12 +27,64 @@ public class MainActivity extends AppCompatActivity{
     ArrayList<String> perguntas = new ArrayList<>();
     TextToSpeech falador;
     TextView entrada;
+    int tempo;
+    MediaPlayer somSaiu;
+    TextView mensagens;
+    Button voltar;
+    ImageButton falabotao;
+    ImageButton deslikebotao;
+    ImageButton likebotao;
+    Button editar;
+    CharSequence textentrada;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        final MediaPlayer somPerg = MediaPlayer.create(this, R.raw.notification);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button falabotao = findViewById(R.id.Fala);
-        entrada = findViewById(R.id.Entrada);
+        totela1(somPerg);
+
+
+
+        /*try{
+
+        }
+        catch (Exception e){
+            entrada.setText("ERRO: "+e.toString());
+        }*/
+
+        /*
+        setContentView(R.layout.configurator);
+        Button voltar= findViewById(R.id.button13);
+        setContentView(R.layout.activity_main);*/
+
+        //Button voltar = paginaconfiguradora.findViewById(R.id.button13);
+        //mensagens=paginaconfiguradora.findViewById(R.id.textView);
+
+
+
+/* ESCREVE-ERROS (pode ser muito inutil), mas serve como padrao pra escrever arquivos
+        try{
+            File file= new File(this.getFilesDir(),"nomedoarquivo");
+            FileOutputStream escrever = openFileOutput("nomedoarquivo",Context.MODE_PRIVATE);
+            escrever.write("mensagem a escrever".getBytes());
+            escrever.close();
+            FileInputStream ler = openFileInput("mansagem a escrever.txt");
+            int pare=0;
+            String conteudo="";
+            while (pare!=-1){
+                pare=ler.read();
+                conteudo= conteudo + (char) pare;
+            }
+            entrada.setText(conteudo);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+*/
+
+
         falador = new TextToSpeech(MainActivity.this, new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int i) {
@@ -67,7 +111,7 @@ public class MainActivity extends AppCompatActivity{
                         e.printStackTrace();
                     }
                     String strnPerg = new Integer(perguntas.size()).toString();
-                    String pRest = "Número de perguntas restantes" + strnPerg;
+                    String pRest = strnPerg + "perguntas";
                     falador.speak(pRest,TextToSpeech.QUEUE_FLUSH,null);
                 }
             }
@@ -79,27 +123,26 @@ public class MainActivity extends AppCompatActivity{
             }
 
         });
-        final MediaPlayer somPerg = MediaPlayer.create(this, R.raw.notification);
-        falabotao.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
 
-                somPerg.start();
-                String oque = entrada.getText().toString();
-                perguntas.add(oque);
-                System.out.println("gkmreskgmosr");
 
-            }
-        });
+
+
+
+
+
+
+
     }
     @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        //entrada.setText("O numero é: "+Integer.toString(keyCode));
+    public boolean onKeyDown(int keyCode, KeyEvent event) {//sucodeuvaa
         if(keyCode == KeyEvent.KEYCODE_HEADSETHOOK||keyCode == 126||keyCode == 127){
             falar();
             return true;
         }
         return super.onKeyDown(keyCode, event);
+    }
+    public int getempo(){
+        return 3600000*Calendar.getInstance().get(Calendar.HOUR_OF_DAY)+60000*Calendar.getInstance().get(Calendar.MINUTE)+1000*Calendar.getInstance().get(Calendar.SECOND)+Calendar.getInstance().get(Calendar.MILLISECOND);
     }
     public void falar(){
         if (perguntas.size() > 0) {
@@ -108,16 +151,71 @@ public class MainActivity extends AppCompatActivity{
             HashMap<String, String> map = new HashMap<String, String>();
             map.put(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, "ID");
             falador.speak(perg, TextToSpeech.QUEUE_FLUSH, map);
-
         }
-
-
-
     }
+
+    public void totela2(final MediaPlayer sperg){
+        setContentView(R.layout.configurator);
+        voltar=findViewById(R.id.button13);
+        voltar.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                totela1(sperg);
+                entrada.setText(textentrada);
+            }
+        });
+    }
+    public void totela1(final MediaPlayer sperg){
+        setContentView(R.layout.activity_main);
+        falabotao = findViewById(R.id.Fala);
+        likebotao = findViewById(R.id.like);
+        deslikebotao = findViewById(R.id.deslike);
+        editar = findViewById(R.id.button10);
+        entrada = findViewById(R.id.Entrada);
+
+        falabotao.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                String oque = entrada.getText().toString();
+                if(!perguntas.contains(oque)){
+                    sperg.start();
+                    perguntas.add(oque);
+                } else {
+                    Toast.makeText(getApplicationContext(),"Essa mensagem já foi enviada", Toast.LENGTH_SHORT).show();
+
+                }
+
+            }
+        });
+        likebotao.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                falador.speak("entendi",TextToSpeech.QUEUE_FLUSH,null);
+            }
+        });
+        deslikebotao.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                falador.speak("não entendi",TextToSpeech.QUEUE_FLUSH,null);
+            }
+        });
+
+        editar.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                textentrada=entrada.getText();
+                totela2(sperg);
+            }
+        });
+    }
+
+
+
     @Override
     protected void onPause() {
         if(falador!=null){
-            final MediaPlayer somSaiu = MediaPlayer.create(this,R.raw.saiu_app);
+            tempo=getempo();
+            somSaiu=MediaPlayer.create(this,R.raw.saiu_app);
             somSaiu.start();
 //            entrada.setText("VOCE SAIU DO APLICAtIVO NAO E MESMO???");
             //falador.stop();
@@ -125,4 +223,14 @@ public class MainActivity extends AppCompatActivity{
         }
         super.onPause();
     }
+    @Override
+    protected void onResume(){
+        if (getempo()-tempo<200){
+            somSaiu.stop();
+            falar();
+        }
+        tempo=0;
+        super.onResume();
+    }
+
 }
