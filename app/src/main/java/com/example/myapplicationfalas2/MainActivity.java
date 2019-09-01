@@ -44,8 +44,30 @@ public class MainActivity extends AppCompatActivity{
     TextView pag2;//MENSAGENS PAGINA 2
     Button somapag2;//botão + Página 2
 
-    int paginatual;//SALVA EM QUAL PÁGINA ESTÁ!
+    int telatual;//SALVA EM QUAL tela ESTÁ!
     ArrayList<String> palavras;//SALVA AS PALAVRAS DO MOMENTO!
+    int pagpaltel2=1;//Página atual de palavras da tela 2
+
+    //Botões da página 2:
+    Button b1pp2;
+    Button b2pp2;
+    Button b3pp2;
+    Button b4pp2;
+    Button b5pp2;
+    Button b6pp2;
+    Button b7pp2;
+    Button b8pp2;
+    Button b9pp2;
+    Button b10pp2;
+    Button b11pp2;
+    Button b12pp2;
+    Button b13pp2;
+    Button b14pp2;
+    Button b15pp2;
+
+    //Botões de ir e voltar página 2:
+    Button vaipag2;
+    Button voltapag2;
 
     public ArrayList<String> getpage(int palporpag,int numerodapag,ArrayList<String>palavras){//Retorna página especificada
         return null;
@@ -53,14 +75,59 @@ public class MainActivity extends AppCompatActivity{
     public void updatepagef1(ArrayList<String> palavrasdapag){//Atualiza palavras da página na tela 1
 
     }
-    public void updatepagef2(int numerodalista){//Atualiza as palavras da página na tela 2
-        pag2.setText("OILA");
-        ArrayList<String> botoestexto=getsavedwords(1,true);
-        int n=0;
-        while(n<botoestexto.size()){
-            pag2.setText(botoestexto.get(n));
-            n+=1;
+    public void updatepagef2(int numerodalista,int paginadepalavras){//Atualiza as palavras da página na tela 2
+        //pag2.setText("OILA");
+        ArrayList<String> botoestexto=getpage(getsavedwords(numerodalista,true),15,paginadepalavras);
+        if (botoestexto.size()>0)b1pp2.setText(botoestexto.get(0));
+        else b1pp2.setText("");
+        if (botoestexto.size()>1)b2pp2.setText(botoestexto.get(1));
+        else b2pp2.setText("");
+        if (botoestexto.size()>2)b3pp2.setText(botoestexto.get(2));
+        else b3pp2.setText("");
+        if (botoestexto.size()>3)b4pp2.setText(botoestexto.get(3));
+        else b4pp2.setText("");
+        if (botoestexto.size()>4)b5pp2.setText(botoestexto.get(4));
+        else b5pp2.setText("");
+        if (botoestexto.size()>5)b6pp2.setText(botoestexto.get(5));
+        else b6pp2.setText("");
+        if (botoestexto.size()>6)b7pp2.setText(botoestexto.get(6));
+        else b7pp2.setText("");
+        if (botoestexto.size()>7)b8pp2.setText(botoestexto.get(7));
+        else b8pp2.setText("");
+        if (botoestexto.size()>8)b9pp2.setText(botoestexto.get(8));
+        else b9pp2.setText("");
+        if (botoestexto.size()>9)b10pp2.setText(botoestexto.get(9));
+        else b10pp2.setText("");
+        if (botoestexto.size()>10)b11pp2.setText(botoestexto.get(10));
+        else b11pp2.setText("");
+        if (botoestexto.size()>11)b12pp2.setText(botoestexto.get(11));
+        else b12pp2.setText("");
+        if (botoestexto.size()>12)b13pp2.setText(botoestexto.get(12));
+        else b13pp2.setText("");
+        if (botoestexto.size()>13)b14pp2.setText(botoestexto.get(13));
+        else b14pp2.setText("");
+        if (botoestexto.size()>14)b15pp2.setText(botoestexto.get(14));
+        else b15pp2.setText("");
+    }
+    public ArrayList<String> getpage(ArrayList<String> palavras,int palporpag,int paginadesejada){
+        String palavratual;
+        int limite=palavras.size();
+        int inicial=palporpag*(paginadesejada-1);
+        int finali=palporpag*paginadesejada-1;
+        int palavratualn=inicial;
+        if(finali>limite-1)finali=limite-1;
+        ArrayList<String> resposta= new ArrayList<String>();
+        try{
+        while(palavratualn<=finali){
+            palavratual=palavras.get(palavratualn);
+            palavratualn+=1;
+            resposta.add(palavratual);
         }
+        }
+        catch (Exception e){
+            pag2.setText(e.toString());
+        }
+        return resposta;
     }
     public int getnumpag(int palporpag,int numpalavras){//Retorna o número de páginas
         return (int) Math.floor(palporpag/numpalavras);
@@ -87,7 +154,7 @@ public class MainActivity extends AppCompatActivity{
     public String getsavedstring(boolean palavrasfrases){
         try{
             FileOutputStream escrever = openFileOutput("palavras.txt", Context.MODE_PRIVATE);
-            escrever.write("mensagem a escrever COMPLETA\nAOAOAOIAOIOAIOIA\noioioioioioi\nobamanaracasa\nuiawuadduwa\nOLHASO\nFUNCIONOU????\nnaofacoideiaainda!!!".getBytes());
+            escrever.write("mensagem\nAOAOAOIAOIOAIOIA\noioioioioioi\nobamanaracasa\nuiawuadduwa\nOLHASO\nFUNCIONOU????\nnaofacoideiaainda!!!\nmas\nlogo\nsaberei\nnão\né\nmesmo???\n1\n2\n3n\4n\5\n6\n7\n8\n9\n10\n11\n12\n13n\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30".getBytes());
             escrever.close();
             FileInputStream ler;
             if (palavrasfrases) ler = openFileInput("palavras.txt");
@@ -237,13 +304,38 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.configurator);
         voltar=findViewById(R.id.button13);
         pag2=findViewById(R.id.textView);
+        //Botões das palavras:
+        b1pp2=findViewById(R.id.button21);
+        b2pp2=findViewById(R.id.button24);
+        b3pp2=findViewById(R.id.button18);
+        b4pp2=findViewById(R.id.button16);
+        b5pp2=findViewById(R.id.button27);
+        b6pp2=findViewById(R.id.button30);
+        b7pp2=findViewById(R.id.button33);
+        b8pp2=findViewById(R.id.button36);
+        b9pp2=findViewById(R.id.button60);
+        b10pp2=findViewById(R.id.button57);
+        b11pp2=findViewById(R.id.button54);
+        b12pp2=findViewById(R.id.button51);
+        b13pp2=findViewById(R.id.button48);
+        b14pp2=findViewById(R.id.button45);
+        b15pp2=findViewById(R.id.button42);
+
+        //Botões de ir e voltar página 2:
+        vaipag2=findViewById(R.id.button11);
+        voltapag2=findViewById(R.id.button12);
+
+
         somapag2=findViewById(R.id.button39);
+
+        //Setando Botões:
         somapag2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                updatepagef2(0);
+                pag2.setText("Ainda não!!!");
             }
         });
+
         voltar.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -251,6 +343,35 @@ public class MainActivity extends AppCompatActivity{
                 entrada.setText(textentrada);
             }
         });
+        vaipag2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                //try{
+                if(getnumpag(15,getsavedwords(1,true).size())<pagpaltel2) {
+                    pagpaltel2+=1;
+                    //try {
+                        updatepagef2(1, pagpaltel2);
+                    //}
+                    //catch (Exception e){
+                    //    pag2.setText(e.toString());
+                    //}
+                }
+                //}
+                //catch (Exception e){
+                //    pag2.setText(e.toString());
+                //}
+            }
+
+        });
+        voltapag2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                if (pagpaltel2!=1) {
+                    pagpaltel2-=1;
+                    updatepagef2(1,pagpaltel2);}
+            }
+        });
+        updatepagef2(1,pagpaltel2);
     }
     public void totela1(final MediaPlayer sperg){
         setContentView(R.layout.activity_main);
