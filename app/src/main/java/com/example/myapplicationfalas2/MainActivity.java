@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity{
         return resposta;
     }
     public int getnumpag(int palporpag,int numpalavras){//Retorna o número de páginas
-        return (int) Math.floor(palporpag/numpalavras);
+        return (int) Math.ceil(((double)numpalavras)/((double)palporpag));
     }
     public ArrayList<String> move(boolean baixocima, ArrayList<String> lista, int numerodobotao){//move um botão da segunda página
         return null;
@@ -346,20 +346,13 @@ public class MainActivity extends AppCompatActivity{
         vaipag2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                //try{
-                if(getnumpag(15,getsavedwords(1,true).size())<pagpaltel2) {
-                    pagpaltel2+=1;
-                    //try {
-                        updatepagef2(1, pagpaltel2);
-                    //}
-                    //catch (Exception e){
-                    //    pag2.setText(e.toString());
-                    //}
+                //pag2.setText(Integer.toString(getnumpag(15,getsavedwords(1,true).size())));
+                //pag2.setText(Integer.toString(pagpaltel2));
+                if(getnumpag(15,getsavedwords(1,true).size())>pagpaltel2) {
+                    pagpaltel2 += 1;
+                    updatepagef2(1, pagpaltel2);
                 }
-                //}
-                //catch (Exception e){
-                //    pag2.setText(e.toString());
-                //}
+
             }
 
         });
