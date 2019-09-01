@@ -1,5 +1,6 @@
 package com.example.myapplicationfalas2;
 
+import android.content.Context;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 
@@ -15,6 +16,10 @@ import android.widget.TextView;
 import android.view.View;
 import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -36,10 +41,84 @@ public class MainActivity extends AppCompatActivity{
     ImageButton likebotao;
     Button editar;
     CharSequence textentrada;
+    TextView pag2;//MENSAGENS PAGINA 2
+    Button somapag2;//botão + Página 2
 
+    int paginatual;//SALVA EM QUAL PÁGINA ESTÁ!
+    ArrayList<String> palavras;//SALVA AS PALAVRAS DO MOMENTO!
 
+    public ArrayList<String> getpage(int palporpag,int numerodapag,ArrayList<String>palavras){//Retorna página especificada
+        return null;
+    }
+    public void updatepagef1(ArrayList<String> palavrasdapag){//Atualiza palavras da página na tela 1
+
+    }
+    public void updatepagef2(int numerodalista){//Atualiza as palavras da página na tela 2
+        pag2.setText("OILA");
+        ArrayList<String> botoestexto=getsavedwords(1,true);
+        int n=0;
+        while(n<botoestexto.size()){
+            pag2.setText(botoestexto.get(n));
+            n+=1;
+        }
+    }
+    public int getnumpag(int palporpag,int numpalavras){//Retorna o número de páginas
+        return (int) Math.floor(palporpag/numpalavras);
+    }
+    public ArrayList<String> move(boolean baixocima, ArrayList<String> lista, int numerodobotao){//move um botão da segunda página
+        return null;
+    }
+    public ArrayList<String> getsavedwords(int numerodalista/*Pra fazer listas de matérias diferentes por exemplo*/, boolean palavrasfrases){
+        String[] lines = getsavedstring(palavrasfrases).split(System.getProperty("line.separator"));
+        int linha=0;
+        int ultimalinha=lines.length;
+        ArrayList<String> resultado= new ArrayList<String>();
+        int listatual=1;
+    while(true){
+        if (linha==ultimalinha)break;
+        else if(palavrasfrases&&lines[linha]!="") resultado.add(lines[linha]);
+        else if((!palavrasfrases)&&lines[linha]!=""&&listatual!=numerodalista)numerodalista=+1;
+        else if(!(palavrasfrases)&&lines[linha]!=""&&listatual==numerodalista)resultado.add(lines[linha]);
+        else break;
+        linha+=1;
+        }
+    return resultado;
+    }
+    public String getsavedstring(boolean palavrasfrases){
+        try{
+            FileOutputStream escrever = openFileOutput("palavras.txt", Context.MODE_PRIVATE);
+            escrever.write("mensagem a escrever COMPLETA\nAOAOAOIAOIOAIOIA\noioioioioioi\nobamanaracasa\nuiawuadduwa\nOLHASO\nFUNCIONOU????\nnaofacoideiaainda!!!".getBytes());
+            escrever.close();
+            FileInputStream ler;
+            if (palavrasfrases) ler = openFileInput("palavras.txt");
+            else ler = openFileInput("frases.txt");
+            int pare=0;
+            String conteudo="";
+            while (true){
+                pare=ler.read();
+                if(pare!=-1) conteudo= conteudo + (char) pare;
+                else break;
+            }
+            //pag2.setText(conteudo);
+            return conteudo;
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public ArrayList<String> changeplace(int primeiro, int segundo, ArrayList<String> lista){//trocar posição de duas palavras
+        return null;
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        try{FileInputStream ler = openFileInput("palavras.txt");}
+        catch (FileNotFoundException ex){
+            File file= new File(this.getFilesDir(),"palavras.txt");
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
 
         final MediaPlayer somPerg = MediaPlayer.create(this, R.raw.notification);
         super.onCreate(savedInstanceState);
@@ -157,6 +236,14 @@ public class MainActivity extends AppCompatActivity{
     public void totela2(final MediaPlayer sperg){
         setContentView(R.layout.configurator);
         voltar=findViewById(R.id.button13);
+        pag2=findViewById(R.id.textView);
+        somapag2=findViewById(R.id.button39);
+        somapag2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                updatepagef2(0);
+            }
+        });
         voltar.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){

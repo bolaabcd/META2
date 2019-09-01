@@ -45,19 +45,37 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/button20"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="X" />
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#00FFFFFF"
+                android:text="UP"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/button40"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#00FFFFFF"
+                android:text="DN"
+                android:textSize="14sp" />
+        </LinearLayout>
 
         <Button
             android:id="@+id/button21"
+            style="@android:style/Widget.DeviceDefault.Light.Button"
             android:layout_width="326dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="#00FFFFFF"
             android:text="Button" />
 
         <Button
@@ -65,7 +83,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Edit" />
+            android:background="#00FFFFFF"
+            android:text="DEL" />
     </LinearLayout>
 
     <LinearLayout
@@ -74,18 +93,36 @@
         android:layout_weight="1"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/button23"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="X" />
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button62"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#00FFFFFF"
+                android:text="UP" />
+
+            <Button
+                android:id="@+id/button63"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#00FFFFFF"
+                android:text="DN" />
+        </LinearLayout>
+
 
         <Button
             android:id="@+id/button24"
+            style="@android:style/Widget.DeviceDefault.Light.Button"
             android:layout_width="326dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="#00FFFFFF"
             android:text="Button" />
 
         <Button
@@ -93,6 +130,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="#00FFFFFF"
             android:text="Edit" />
 
     </LinearLayout>
@@ -103,18 +141,36 @@
         android:layout_weight="1"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/button17"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="X" />
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button64"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#00FFFFFF"
+                android:text="UP" />
+
+            <Button
+                android:id="@+id/button65"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#00FFFFFF"
+                android:text="DN" />
+        </LinearLayout>
+
 
         <Button
             android:id="@+id/button18"
+            style="@android:style/Widget.DeviceDefault.Light.Button"
             android:layout_width="326dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="#00FFFFFF"
             android:text="Button" />
 
         <Button
@@ -122,6 +178,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="#00FFFFFF"
             android:text="Edit" />
 
     </LinearLayout>
@@ -132,18 +189,36 @@
         android:layout_weight="1"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/button14"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="X" />
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button66"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#00FFFFFF"
+                android:text="UP" />
+
+            <Button
+                android:id="@+id/button67"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#00FFFFFF"
+                android:text="DN" />
+        </LinearLayout>
+
 
         <Button
             android:id="@+id/button16"
+            style="@android:style/Widget.DeviceDefault.Light.Button"
             android:layout_width="326dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="#00FFFFFF"
             android:text="Button" />
 
         <Button
@@ -151,6 +226,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="#00FFFFFF"
             android:text="Edit" />
     </LinearLayout>
 
@@ -160,18 +236,36 @@
         android:layout_weight="1"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/button26"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="X" />
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button68"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#00FFFFFF"
+                android:text="UP" />
+
+            <Button
+                android:id="@+id/button69"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#00FFFFFF"
+                android:text="DN" />
+        </LinearLayout>
+
 
         <Button
             android:id="@+id/button27"
+            style="@android:style/Widget.DeviceDefault.Light.Button"
             android:layout_width="326dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="#00FFFFFF"
             android:text="Button" />
 
         <Button
@@ -179,6 +273,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="#00FFFFFF"
             android:text="Edit" />
 
     </LinearLayout>
@@ -189,18 +284,36 @@
         android:layout_weight="1"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/button29"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="X" />
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button70"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#00FFFFFF"
+                android:text="UP" />
+
+            <Button
+                android:id="@+id/button71"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#00FFFFFF"
+                android:text="DN" />
+        </LinearLayout>
+
 
         <Button
             android:id="@+id/button30"
+            style="@android:style/Widget.DeviceDefault.Light.Button"
             android:layout_width="326dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="#00FFFFFF"
             android:text="Button" />
 
         <Button
@@ -208,6 +321,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="#00FFFFFF"
             android:text="Edit" />
     </LinearLayout>
 
@@ -217,18 +331,36 @@
         android:layout_weight="1"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/button32"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="X" />
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button72"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#00FFFFFF"
+                android:text="UP" />
+
+            <Button
+                android:id="@+id/button73"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#00FFFFFF"
+                android:text="DN" />
+        </LinearLayout>
+
 
         <Button
             android:id="@+id/button33"
+            style="@android:style/Widget.DeviceDefault.Light.Button"
             android:layout_width="326dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="#00FFFFFF"
             android:text="Button" />
 
         <Button
@@ -236,6 +368,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="#00FFFFFF"
             android:text="Edit" />
 
     </LinearLayout>
@@ -246,18 +379,36 @@
         android:layout_weight="1"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/button35"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="X" />
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button74"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#00FFFFFF"
+                android:text="UP" />
+
+            <Button
+                android:id="@+id/button75"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#00FFFFFF"
+                android:text="DN" />
+        </LinearLayout>
+
 
         <Button
             android:id="@+id/button36"
+            style="@android:style/Widget.DeviceDefault.Light.Button"
             android:layout_width="326dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="#00FFFFFF"
             android:text="Button" />
 
         <Button
@@ -265,6 +416,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="#00FFFFFF"
             android:text="Edit" />
     </LinearLayout>
 
@@ -274,18 +426,36 @@
         android:layout_weight="1"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/button59"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="X" />
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button59"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#00FFFFFF"
+                android:text="UP" />
+
+            <Button
+                android:id="@+id/button32"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#00FFFFFF"
+                android:text="DN" />
+        </LinearLayout>
+
 
         <Button
             android:id="@+id/button60"
+            style="@android:style/Widget.DeviceDefault.Light.Button"
             android:layout_width="326dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="#00FFFFFF"
             android:text="Button" />
 
         <Button
@@ -293,6 +463,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="#00FFFFFF"
             android:text="Edit" />
     </LinearLayout>
 
@@ -302,18 +473,36 @@
         android:layout_weight="1"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/button56"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="X" />
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#00FFFFFF"
+                android:text="UP" />
+
+            <Button
+                android:id="@+id/button26"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#00FFFFFF"
+                android:text="DN" />
+        </LinearLayout>
+
 
         <Button
             android:id="@+id/button57"
+            style="@android:style/Widget.DeviceDefault.Light.Button"
             android:layout_width="326dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="#00FFFFFF"
             android:text="Button" />
 
         <Button
@@ -321,6 +510,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="#00FFFFFF"
             android:text="Edit" />
 
     </LinearLayout>
@@ -331,18 +521,36 @@
         android:layout_weight="1"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/button53"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="X" />
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button29"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#00FFFFFF"
+                android:text="UP" />
+
+            <Button
+                android:id="@+id/button35"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#00FFFFFF"
+                android:text="DN" />
+        </LinearLayout>
+
 
         <Button
             android:id="@+id/button54"
+            style="@android:style/Widget.DeviceDefault.Light.Button"
             android:layout_width="326dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="#00FFFFFF"
             android:text="Button" />
 
         <Button
@@ -350,6 +558,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="#00FFFFFF"
             android:text="Edit" />
 
     </LinearLayout>
@@ -360,18 +569,36 @@
         android:layout_weight="1"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/button50"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="X" />
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#00FFFFFF"
+                android:text="UP" />
+
+            <Button
+                android:id="@+id/button38"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#00FFFFFF"
+                android:text="DN" />
+        </LinearLayout>
+
 
         <Button
             android:id="@+id/button51"
+            style="@android:style/Widget.DeviceDefault.Light.Button"
             android:layout_width="326dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="#00FFFFFF"
             android:text="Button" />
 
         <Button
@@ -379,6 +606,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="#00FFFFFF"
             android:text="Edit" />
     </LinearLayout>
 
@@ -388,18 +616,37 @@
         android:layout_weight="1"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/button47"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="X" />
+            android:orientation="vertical
+">
+
+            <Button
+                android:id="@+id/button14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#00FFFFFF"
+                android:text="UP" />
+
+            <Button
+                android:id="@+id/button17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#00FFFFFF"
+                android:text="DN" />
+        </LinearLayout>
+
 
         <Button
             android:id="@+id/button48"
+            style="@android:style/Widget.DeviceDefault.Light.Button"
             android:layout_width="326dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="#00FFFFFF"
             android:text="Button" />
 
         <Button
@@ -407,6 +654,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="#00FFFFFF"
             android:text="Edit" />
     </LinearLayout>
 
@@ -416,18 +664,36 @@
         android:layout_weight="1"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/button44"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="X" />
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button44"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#00FFFFFF"
+                android:text="UP" />
+
+            <Button
+                android:id="@+id/button47"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#00FFFFFF"
+                android:text="DN" />
+        </LinearLayout>
+
 
         <Button
             android:id="@+id/button45"
+            style="@android:style/Widget.DeviceDefault.Light.Button"
             android:layout_width="326dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="#00FFFFFF"
             android:text="Button" />
 
         <Button
@@ -435,6 +701,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="#00FFFFFF"
             android:text="Edit" />
 
     </LinearLayout>
@@ -445,18 +712,36 @@
         android:layout_weight="1"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/button41"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="X" />
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button41"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#00FFFFFF"
+                android:text="UP" />
+
+            <Button
+                android:id="@+id/button50"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#00FFFFFF"
+                android:text="DN" />
+        </LinearLayout>
+
 
         <Button
             android:id="@+id/button42"
+            style="@android:style/Widget.DeviceDefault.Light.Button"
             android:layout_width="326dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="#00FFFFFF"
             android:text="Button" />
 
         <Button
@@ -464,6 +749,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="#00FFFFFF"
             android:text="Edit" />
 
     </LinearLayout>
@@ -475,25 +761,12 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button38"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="X" />
-
-        <Button
             android:id="@+id/button39"
             android:layout_width="326dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="+" />
 
-        <Button
-            android:id="@+id/button40"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Edit" />
     </LinearLayout>
 
 </LinearLayout>
