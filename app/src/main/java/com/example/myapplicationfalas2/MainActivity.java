@@ -1,15 +1,19 @@
 package com.example.myapplicationfalas2;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.UtteranceProgressListener;
+import android.text.InputType;
 import android.view.KeyEvent;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -47,6 +51,7 @@ public class MainActivity extends AppCompatActivity{
     int telatual;//SALVA EM QUAL tela ESTÁ!
     ArrayList<String> palavras;//SALVA AS PALAVRAS DO MOMENTO!
     int pagpaltel2=1;//Página atual de palavras da tela 2
+    int pagpaltel1=1;//Página atual de palavras da tela 1
 
     //Botões da página 2:
     Button b1pp2;
@@ -69,13 +74,44 @@ public class MainActivity extends AppCompatActivity{
     Button vaipag2;
     Button voltapag2;
 
+    //Botões de palavras da pagina 1:
+    Button b1pp1;
+    Button b2pp1;
+    Button b3pp1;
+    Button b4pp1;
+    Button b5pp1;
+    Button b6pp1;
+    Button b7pp1;
+
+    //Botões de ir e voltar da tela 1:
+    Button vaipag1;
+    Button voltapag1;
+
     public ArrayList<String> getpage(int palporpag,int numerodapag,ArrayList<String>palavras){//Retorna página especificada
         return null;
     }
-    public void updatepagef1(ArrayList<String> palavrasdapag){//Atualiza palavras da página na tela 1
+    public void updatepagef1(int numerodalista/*Pra fazer listas de matérias diferentes por exemplo*/,int paginadepalavras){//Atualiza palavras da página na tela 1
+        try{
+            ArrayList<String> botoestexto=getpage(getsavedwords(numerodalista,true),7,paginadepalavras);
 
+            if (botoestexto.size()>0)b1pp1.setText(botoestexto.get(0));
+        else b1pp1.setText("");
+        if (botoestexto.size()>1)b2pp1.setText(botoestexto.get(1));
+        else b2pp1.setText("");
+        if (botoestexto.size()>2)b3pp1.setText(botoestexto.get(2));
+        else b3pp1.setText("");
+        if (botoestexto.size()>3)b4pp1.setText(botoestexto.get(3));
+        else b4pp1.setText("");
+        if (botoestexto.size()>4)b5pp1.setText(botoestexto.get(4));
+        else b5pp1.setText("");
+        if (botoestexto.size()>5)b6pp1.setText(botoestexto.get(5));
+        else b6pp1.setText("");
+        if (botoestexto.size()>6)b7pp1.setText(botoestexto.get(6));
+        else b7pp1.setText("");}catch (Exception e){
+            entrada.setText(e.toString());
+        }
     }
-    public void updatepagef2(int numerodalista,int paginadepalavras){//Atualiza as palavras da página na tela 2
+    public void updatepagef2(int numerodalista/*Pra fazer listas de matérias diferentes por exemplo*/,int paginadepalavras){//Atualiza as palavras da página na tela 2
         //pag2.setText("OILA");
         ArrayList<String> botoestexto=getpage(getsavedwords(numerodalista,true),15,paginadepalavras);
         if (botoestexto.size()>0)b1pp2.setText(botoestexto.get(0));
@@ -136,9 +172,16 @@ public class MainActivity extends AppCompatActivity{
         return null;
     }
     public ArrayList<String> getsavedwords(int numerodalista/*Pra fazer listas de matérias diferentes por exemplo*/, boolean palavrasfrases){
-        String[] lines = getsavedstring(palavrasfrases).split(System.getProperty("line.separator"));
+        int ultimalinha;
+        String[] lines;
+         if(getsavedstring(palavrasfrases)==null) {
+             lines= new String[0];
+             ultimalinha=0;
+        }else{
+            lines = getsavedstring(palavrasfrases).split(System.getProperty("line.separator"));
+            ultimalinha=lines.length;
+        }
         int linha=0;
-        int ultimalinha=lines.length;
         ArrayList<String> resultado= new ArrayList<String>();
         int listatual=1;
     while(true){
@@ -153,9 +196,11 @@ public class MainActivity extends AppCompatActivity{
     }
     public String getsavedstring(boolean palavrasfrases){
         try{
+            /*
             FileOutputStream escrever = openFileOutput("palavras.txt", Context.MODE_PRIVATE);
             escrever.write("mensagem\nAOAOAOIAOIOAIOIA\noioioioioioi\nobamanaracasa\nuiawuadduwa\nOLHASO\nFUNCIONOU????\nnaofacoideiaainda!!!\nmas\nlogo\nsaberei\nnão\né\nmesmo???\n1\n2\n3n\4n\5\n6\n7\n8\n9\n10\n11\n12\n13n\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30".getBytes());
             escrever.close();
+            */
             FileInputStream ler;
             if (palavrasfrases) ler = openFileInput("palavras.txt");
             else ler = openFileInput("frases.txt");
@@ -176,6 +221,66 @@ public class MainActivity extends AppCompatActivity{
     }
     public ArrayList<String> changeplace(int primeiro, int segundo, ArrayList<String> lista){//trocar posição de duas palavras
         return null;
+    }
+    public boolean hasespaco(String entrada){
+        int i;
+        for(i=0;i<entrada.length();i++){
+            if (entrada.charAt(i)==" ".charAt(0)||entrada.charAt(i)=="\n".charAt(0)) return true;
+        }
+        return false;
+    }
+    public void savestring(String s, boolean palavrasfrases){
+        try {
+            if (palavrasfrases) {
+                FileOutputStream escrever = openFileOutput("palavras.txt", Context.MODE_PRIVATE);
+                escrever.write(s.getBytes());
+                escrever.close();
+            }else{
+                FileOutputStream escrever = openFileOutput("frases.txt", Context.MODE_PRIVATE);
+                escrever.write(s.getBytes());
+                escrever.close();
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+    public void ativarcaixadepalavras(){ //Retorna "cancelado" se o usuário cancelar
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Digite a palavra:");
+        final EditText input = new EditText(this);
+// Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
+        input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_NORMAL);
+        builder.setView(input);
+
+        builder.setPositiveButton("Salvar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if (hasespaco(input.getText().toString())) {
+                    Toast.makeText(getApplicationContext(), "Frases não são salvas por aqui!", Toast.LENGTH_SHORT).show();
+                    dialog.cancel();
+                } else if (input.getText().toString().length() == 0) {
+                    Toast.makeText(getApplicationContext(), "Digite algo para salvar!!", Toast.LENGTH_SHORT).show();
+                    dialog.cancel();
+                } else {
+                    if (getsavedstring(true)!=null) savestring(getsavedstring(true) + "\n" + input.getText().toString(), true);//ISSO AQUI TA ERRaDO!!!
+                    else savestring(input.getText().toString(), true);
+                    Toast.makeText(getApplicationContext(), "Palavra salva com sucesso!", Toast.LENGTH_SHORT).show();
+                    updatepagef2(1, pagpaltel2);
+                }
+            }
+        });
+        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+                Toast.makeText(getApplicationContext(),"Operação cancelada com sucesso.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        builder.show();
+
+
+        //else Toast.makeText(getApplicationContext(),"Palavra salva com sucesso!", Toast.LENGTH_SHORT).show();
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -304,7 +409,7 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.configurator);
         voltar=findViewById(R.id.button13);
         pag2=findViewById(R.id.textView);
-        //Botões das palavras:
+        //Botões das palavras tela 2:
         b1pp2=findViewById(R.id.button21);
         b2pp2=findViewById(R.id.button24);
         b3pp2=findViewById(R.id.button18);
@@ -321,6 +426,7 @@ public class MainActivity extends AppCompatActivity{
         b14pp2=findViewById(R.id.button45);
         b15pp2=findViewById(R.id.button42);
 
+
         //Botões de ir e voltar página 2:
         vaipag2=findViewById(R.id.button11);
         voltapag2=findViewById(R.id.button12);
@@ -332,7 +438,9 @@ public class MainActivity extends AppCompatActivity{
         somapag2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                pag2.setText("Ainda não!!!");
+                String ent;
+                ativarcaixadepalavras();
+                //ent=getnewWORDinput();
             }
         });
 
@@ -374,11 +482,26 @@ public class MainActivity extends AppCompatActivity{
         editar = findViewById(R.id.button10);
         entrada = findViewById(R.id.Entrada);
 
+        //Botões das palavras tela 1:
+        b1pp1=findViewById(R.id.button);
+        b2pp1=findViewById(R.id.button2);
+        b3pp1=findViewById(R.id.button3);
+        b4pp1=findViewById(R.id.button4);
+        b5pp1=findViewById(R.id.button5);
+        b6pp1=findViewById(R.id.button6);
+        b7pp1=findViewById(R.id.button7);
+        //Botões de ir e voltar tela 1:
+        vaipag1=findViewById(R.id.button8);
+        voltapag1=findViewById(R.id.button9);
+
+
+        //setando botões
         falabotao.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 String oque = entrada.getText().toString();
-                if(!perguntas.contains(oque)){
+                if(oque.equals(""))Toast.makeText(getApplicationContext(),"Digite algo para enviar uma mensagem!", Toast.LENGTH_SHORT).show();
+                else if(!perguntas.contains(oque)){
                     sperg.start();
                     perguntas.add(oque);
                 } else {
@@ -408,6 +531,28 @@ public class MainActivity extends AppCompatActivity{
                 totela2(sperg);
             }
         });
+        vaipag1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                //pag2.setText(Integer.toString(getnumpag(15,getsavedwords(1,true).size())));
+                //pag2.setText(Integer.toString(pagpaltel2));
+                if(getnumpag(7,getsavedwords(1,true).size())>pagpaltel1) {
+                    pagpaltel1 += 1;
+                    updatepagef1(1, pagpaltel1);
+                }
+
+            }
+
+        });
+        voltapag1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                if (pagpaltel1!=1) {
+                    pagpaltel1-=1;
+                    updatepagef1(1,pagpaltel1);}
+            }
+        });
+        updatepagef1(1,pagpaltel1);
     }
 
 
