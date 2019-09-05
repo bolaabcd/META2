@@ -1,17 +1,22 @@
+
 package com.example.myapplicationfalas2;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.PopupMenu;
 
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.UtteranceProgressListener;
 import android.text.InputType;
 import android.view.KeyEvent;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -31,7 +36,8 @@ import java.util.Locale;
 
 import static java.lang.Thread.sleep;
 
-public class MainActivity extends AppCompatActivity{
+
+public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener{
 
     ArrayList<String> perguntas = new ArrayList<>();
     TextToSpeech falador;
@@ -47,6 +53,7 @@ public class MainActivity extends AppCompatActivity{
     CharSequence textentrada;
     TextView pag2;//MENSAGENS PAGINA 2
     Button somapag2;//botão + Página 2
+    Button trespontos;
 
     int telatual;//SALVA EM QUAL tela ESTÁ!
     ArrayList<String> palavras;//SALVA AS PALAVRAS DO MOMENTO!
@@ -79,35 +86,28 @@ public class MainActivity extends AppCompatActivity{
     Button b2pp1;
     Button b3pp1;
     Button b4pp1;
-    Button b5pp1;
-    Button b6pp1;
-    Button b7pp1;
 
     //Botões de ir e voltar da tela 1:
     Button vaipag1;
     Button voltapag1;
+
 
     public ArrayList<String> getpage(int palporpag,int numerodapag,ArrayList<String>palavras){//Retorna página especificada
         return null;
     }
     public void updatepagef1(int numerodalista/*Pra fazer listas de matérias diferentes por exemplo*/,int paginadepalavras){//Atualiza palavras da página na tela 1
         try{
-            ArrayList<String> botoestexto=getpage(getsavedwords(numerodalista,true),7,paginadepalavras);
+            ArrayList<String> botoestexto=getpage(getsavedwords(numerodalista,true),4,paginadepalavras);
 
             if (botoestexto.size()>0)b1pp1.setText(botoestexto.get(0));
-        else b1pp1.setText("");
-        if (botoestexto.size()>1)b2pp1.setText(botoestexto.get(1));
-        else b2pp1.setText("");
-        if (botoestexto.size()>2)b3pp1.setText(botoestexto.get(2));
-        else b3pp1.setText("");
-        if (botoestexto.size()>3)b4pp1.setText(botoestexto.get(3));
-        else b4pp1.setText("");
-        if (botoestexto.size()>4)b5pp1.setText(botoestexto.get(4));
-        else b5pp1.setText("");
-        if (botoestexto.size()>5)b6pp1.setText(botoestexto.get(5));
-        else b6pp1.setText("");
-        if (botoestexto.size()>6)b7pp1.setText(botoestexto.get(6));
-        else b7pp1.setText("");}catch (Exception e){
+            else b1pp1.setText("");
+            if (botoestexto.size()>1)b2pp1.setText(botoestexto.get(1));
+            else b2pp1.setText("");
+            if (botoestexto.size()>2)b3pp1.setText(botoestexto.get(2));
+            else b3pp1.setText("");
+            if (botoestexto.size()>3)b4pp1.setText(botoestexto.get(3));
+            else b4pp1.setText("");}
+        catch (Exception e){
             entrada.setText(e.toString());
         }
     }
@@ -284,6 +284,7 @@ public class MainActivity extends AppCompatActivity{
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         try{FileInputStream ler = openFileInput("palavras.txt");}
         catch (FileNotFoundException ex){
             File file= new File(this.getFilesDir(),"palavras.txt");
@@ -296,6 +297,18 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         totela1(somPerg);
+
+        trespontos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopupMenu popup = new PopupMenu(MainActivity.this, v);
+                popup.setOnMenuItemClickListener(MainActivity.this);
+                popup.inflate(R.menu.popup_menu);
+                popup.show();
+            }
+        });
+
+
 
 
 
@@ -383,6 +396,25 @@ public class MainActivity extends AppCompatActivity{
 
 
 
+    }
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.cfg:
+                Intent intent = new Intent(this, config.class);
+                startActivity(intent);
+                return true;
+            case R.id.help:
+                Intent intent2 = new Intent(this, AjudaActivity.class);
+                startActivity(intent2);
+                return true;
+            case R.id.sobre:
+                Intent intent3 = new Intent(this, SobreActivity.class);
+                startActivity(intent3);
+                return true;
+            default:
+                return false;
+        }
     }
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {//sucodeuvaa
@@ -479,6 +511,7 @@ public class MainActivity extends AppCompatActivity{
         falabotao = findViewById(R.id.Fala);
         likebotao = findViewById(R.id.like);
         deslikebotao = findViewById(R.id.deslike);
+        trespontos =findViewById(R.id.opcoes);
         editar = findViewById(R.id.button10);
         entrada = findViewById(R.id.Entrada);
 
@@ -487,9 +520,6 @@ public class MainActivity extends AppCompatActivity{
         b2pp1=findViewById(R.id.button2);
         b3pp1=findViewById(R.id.button3);
         b4pp1=findViewById(R.id.button4);
-        b5pp1=findViewById(R.id.button5);
-        b6pp1=findViewById(R.id.button6);
-        b7pp1=findViewById(R.id.button7);
         //Botões de ir e voltar tela 1:
         vaipag1=findViewById(R.id.button8);
         voltapag1=findViewById(R.id.button9);
@@ -523,6 +553,12 @@ public class MainActivity extends AppCompatActivity{
                 falador.speak("não entendi",TextToSpeech.QUEUE_FLUSH,null);
             }
         });
+//        trespontos.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View view){
+//                // nothing yet
+//            }
+//        });
 
         editar.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -536,7 +572,7 @@ public class MainActivity extends AppCompatActivity{
             public void onClick(View view){
                 //pag2.setText(Integer.toString(getnumpag(15,getsavedwords(1,true).size())));
                 //pag2.setText(Integer.toString(pagpaltel2));
-                if(getnumpag(7,getsavedwords(1,true).size())>pagpaltel1) {
+                if(getnumpag(4,getsavedwords(1,true).size())>pagpaltel1) {
                     pagpaltel1 += 1;
                     updatepagef1(1, pagpaltel1);
                 }
