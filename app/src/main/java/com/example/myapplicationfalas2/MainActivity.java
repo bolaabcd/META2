@@ -34,6 +34,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Locale;
 
+import static java.lang.Boolean.TRUE;
 import static java.lang.Thread.sleep;
 
 
@@ -54,6 +55,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     TextView pag2;//MENSAGENS PAGINA 2
     Button somapag2;//botão + Página 2
     Button trespontos;
+    Boolean saiu = true;
 
     int telatual;//SALVA EM QUAL tela ESTÁ!
     ArrayList<String> palavras;//SALVA AS PALAVRAS DO MOMENTO!
@@ -298,15 +300,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         setContentView(R.layout.activity_main);
         totela1(somPerg);
 
-        trespontos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                PopupMenu popup = new PopupMenu(MainActivity.this, v);
-                popup.setOnMenuItemClickListener(MainActivity.this);
-                popup.inflate(R.menu.popup_menu);
-                popup.show();
-            }
-        });
+
 
 
 
@@ -401,14 +395,17 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     public boolean onMenuItemClick(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.cfg:
+                saiu = false;
                 Intent intent = new Intent(this, config.class);
                 startActivity(intent);
                 return true;
             case R.id.help:
+                saiu = false;
                 Intent intent2 = new Intent(this, AjudaActivity.class);
                 startActivity(intent2);
                 return true;
             case R.id.sobre:
+                saiu = false;
                 Intent intent3 = new Intent(this, SobreActivity.class);
                 startActivity(intent3);
                 return true;
@@ -416,6 +413,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 return false;
         }
     }
+
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {//sucodeuvaa
         if(keyCode == KeyEvent.KEYCODE_HEADSETHOOK||keyCode == 126||keyCode == 127){
@@ -511,11 +509,12 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         falabotao = findViewById(R.id.Fala);
         likebotao = findViewById(R.id.like);
         deslikebotao = findViewById(R.id.deslike);
-        trespontos =findViewById(R.id.opcoes);
         editar = findViewById(R.id.button10);
         entrada = findViewById(R.id.Entrada);
 
+
         //Botões das palavras tela 1:
+        trespontos =findViewById(R.id.opcoes);
         b1pp1=findViewById(R.id.button);
         b2pp1=findViewById(R.id.button2);
         b3pp1=findViewById(R.id.button3);
@@ -563,7 +562,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         editar.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                textentrada=entrada.getText();
+                textentrada = entrada.getText();
                 totela2(sperg);
             }
         });
@@ -589,16 +588,29 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             }
         });
         updatepagef1(1,pagpaltel1);
-    }
 
+        trespontos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopupMenu popup = new PopupMenu(MainActivity.this, v);
+                popup.setOnMenuItemClickListener(MainActivity.this);
+                popup.inflate(R.menu.popup_menu);
+                popup.show();
+            }
+        });
+    }
 
 
     @Override
     protected void onPause() {
         if(falador!=null){
             tempo=getempo();
-            somSaiu=MediaPlayer.create(this,R.raw.saiu_app);
-            somSaiu.start();
+            if(saiu){
+                somSaiu=MediaPlayer.create(this,R.raw.saiu_app);
+                somSaiu.start();
+            } else{
+                saiu = false;
+            }
 //            entrada.setText("VOCE SAIU DO APLICAtIVO NAO E MESMO???");
             //falador.stop();
             //falador.shutdown();
@@ -612,6 +624,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             falar();
         }
         tempo=0;
+        saiu = true;
         super.onResume();
     }
 
