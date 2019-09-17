@@ -231,6 +231,14 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         }
         return false;
     }
+    public String removeespaco(String entrada){
+        int i;
+        String resposta="";
+        for(i=0;i<entrada.length();i++){
+            if (!(entrada.charAt(i)==" ".charAt(0)||entrada.charAt(i)=="\n".charAt(0)))resposta+=entrada.charAt(i);
+        }
+        return resposta;
+    }
     public void savestring(String s, boolean palavrasfrases){
         try {
             if (palavrasfrases) {
@@ -283,6 +291,26 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
 
         //else Toast.makeText(getApplicationContext(),"Palavra salva com sucesso!", Toast.LENGTH_SHORT).show();
+    }
+    public int[] getposultpal(String entrada){//retorna posição inicial e final da ultima palavra
+        int[] resposta= new int[2];
+
+        return resposta;
+    }
+    public String tirapalavra(String entrada){//ARRUNMAR
+        String resultado="";
+        if(entrada.equals(""))return entrada;
+        boolean atencao=false;
+
+        if(entrada.charAt(0)==" ".charAt(0)||entrada.charAt(0)=="\n".charAt(0))atencao=true;
+        for(int i=0;i<entrada.length();i++){
+            if((!atencao)&&(entrada.charAt(i)==" ".charAt(0)||entrada.charAt(i)=="\n".charAt(0)))break;
+            else if(atencao&&(entrada.charAt(i)==" ".charAt(0)||entrada.charAt(i)=="\n".charAt(0)))continue;
+            atencao=false;
+            resultado+=entrada.charAt(i);
+        }
+
+        return resultado;
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -522,8 +550,86 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         //Botões de ir e voltar tela 1:
         vaipag1=findViewById(R.id.button8);
         voltapag1=findViewById(R.id.button9);
+        //Botões de apagar:
+        //apagatudo=findViewById(R.id.button56);
+        //apagapalavra=findViewById(R.id.button76);
 
 
+        //setando Botões da apagar:
+        //apagatudo.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                if(!entrada.getText().toString().equals("")){
+                    entrada.setText("");
+                }
+            }
+        });
+
+    //apagapalavra.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                if(!entrada.getText().toString().equals("")){
+                    entrada.setText(tirapalavra(entrada.getText().toString()));
+                }
+            }
+        });
+        //BOTOES DAS PALAVRAS TELA 1:
+        b1pp1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                if(!b1pp1.getText().toString().equals("")){
+                    entrada.setText(entrada.getText().toString()+" "+b1pp1.getText().toString());
+                }
+            }
+        });
+        b2pp1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                if(!b2pp1.getText().toString().equals("")){
+                    entrada.setText(entrada.getText().toString()+" "+b2pp1.getText().toString());
+                }
+            }
+        });
+        b3pp1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                if(!b3pp1.getText().toString().equals("")){
+                    entrada.setText(entrada.getText().toString()+" "+b3pp1.getText().toString());
+                }
+            }
+        });
+        b4pp1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                if(!b4pp1.getText().toString().equals("")){
+                    entrada.setText(entrada.getText().toString()+" "+b4pp1.getText().toString());
+                }
+            }
+        });
+        b5pp1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                if(!b5pp1.getText().toString().equals("")){
+                    entrada.setText(entrada.getText().toString()+" "+b5pp1.getText().toString());
+                }
+            }
+        });
+        b6pp1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                if(!b6pp1.getText().toString().equals("")){
+                    entrada.setText(entrada.getText().toString()+" "+b6pp1.getText().toString());
+                }
+            }
+        });
+        b7pp1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                if(!b7pp1.getText().toString().equals("")){
+                    entrada.setText(entrada.getText().toString()+" "+b7pp1.getText().toString());
+                }
+            }
+        });
         //setando botões
         falabotao.setOnClickListener(new View.OnClickListener(){
             @Override
