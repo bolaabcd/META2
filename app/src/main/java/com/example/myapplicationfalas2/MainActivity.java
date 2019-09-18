@@ -549,6 +549,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         b4pp1=findViewById(R.id.button4);
         //Botões de ir e voltar tela 1:
         vaipag1=findViewById(R.id.button8);
+        vaipag1.setRotation(180);
         voltapag1=findViewById(R.id.button9);
         //Botões de apagar:
         //apagatudo=findViewById(R.id.button56);

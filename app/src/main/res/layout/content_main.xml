@@ -50,9 +50,9 @@
                 android:id="@+id/button9"
                 android:layout_width="66dp"
                 android:layout_height="wrap_content"
+                android:background="@drawable/setinha"
                 android:backgroundTint="@color/azulbonito"
-                android:textColor="#ffffff"
-                android:text="((" />
+                android:textColor="#ffffff" />
 
             <Button
                 android:id="@+id/button10"
@@ -67,9 +67,9 @@
                 android:id="@+id/button8"
                 android:layout_width="66dp"
                 android:layout_height="match_parent"
+                android:background="@drawable/setinha"
                 android:backgroundTint="@color/azulbonito"
-                android:textColor="#ffffff"
-                android:text="))" />
+                android:textColor="#ffffff" />
         </LinearLayout>
 
         <Button
