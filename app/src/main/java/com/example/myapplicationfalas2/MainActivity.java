@@ -556,29 +556,29 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
 
         //setando Botões da apagar:
-        //apagatudo.setOnClickListener(new View.OnClickListener(){
+        /*apagatudo.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 if(!entrada.getText().toString().equals("")){
                     entrada.setText("");
                 }
             }
-        });
+        });*/
 
-    //apagapalavra.setOnClickListener(new View.OnClickListener(){
+    /*apagapalavra.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 if(!entrada.getText().toString().equals("")){
                     entrada.setText(tirapalavra(entrada.getText().toString()));
                 }
             }
-        });
+        });*/
         //BOTOES DAS PALAVRAS TELA 1:
         b1pp1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 if(!b1pp1.getText().toString().equals("")){
-                    entrada.setText(entrada.getText().toString()+" "+b1pp1.getText().toString());
+                    entrada.setText(entrada.getText().toString()+b1pp1.getText().toString()+" ");
                 }
             }
         });
@@ -586,7 +586,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             @Override
             public void onClick(View view){
                 if(!b2pp1.getText().toString().equals("")){
-                    entrada.setText(entrada.getText().toString()+" "+b2pp1.getText().toString());
+                    entrada.setText(entrada.getText().toString()+b2pp1.getText().toString()+" ");
                 }
             }
         });
@@ -594,7 +594,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             @Override
             public void onClick(View view){
                 if(!b3pp1.getText().toString().equals("")){
-                    entrada.setText(entrada.getText().toString()+" "+b3pp1.getText().toString());
+                    entrada.setText(entrada.getText().toString()+b3pp1.getText().toString()+" ");
                 }
             }
         });
@@ -602,10 +602,11 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             @Override
             public void onClick(View view){
                 if(!b4pp1.getText().toString().equals("")){
-                    entrada.setText(entrada.getText().toString()+" "+b4pp1.getText().toString());
+                    entrada.setText(entrada.getText().toString()+b4pp1.getText().toString()+" ");
                 }
             }
         });
+        /*
         b5pp1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -629,7 +630,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                     entrada.setText(entrada.getText().toString()+" "+b7pp1.getText().toString());
                 }
             }
-        });
+        });*/
         //setando botões
         falabotao.setOnClickListener(new View.OnClickListener(){
             @Override
