@@ -11,10 +11,7 @@
         android:id="@+id/Entrada"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
         android:editable="true"
         android:ems="10"
         android:gravity="start|top"
@@ -23,52 +20,56 @@
         android:scrollbarSize="4dp"
         android:textSize="30sp"
         android:verticalScrollbarPosition="defaultPosition"
-        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
         app:layout_constraintEnd_toStartOf="@+id/linearLayout"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/button9"
-                android:layout_width="66dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/setinha"
                 android:backgroundTint="@color/azulbonito"
+                android:textAllCaps="false"
                 android:textColor="#ffffff" />
 
             <Button
                 android:id="@+id/button10"
-                android:layout_width="66dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="@color/azulbonito"
-                android:textColor="#ffffff"
-                android:text="EDIT" />
+                android:capitalize="none"
+                android:text="Edit"
+                android:textAllCaps="false"
+                android:textColor="#ffffff" />
 
             <Button
                 android:id="@+id/button8"
-                android:layout_width="66dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@drawable/setinha"
                 android:backgroundTint="@color/azulbonito"
+                android:textAllCaps="false"
                 android:textColor="#ffffff" />
         </LinearLayout>
 
@@ -77,94 +78,40 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/azulbonito"
-            android:textColor="#ffffff"
-            android:text="Button" />
+            android:capitalize="none"
+            android:text="Button"
+            android:textAllCaps="false"
+            android:textColor="#ffffff" />
 
         <Button
             android:id="@+id/button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/azulbonito"
-            android:textColor="#ffffff"
-            android:text="Button" />
+            android:capitalize="none"
+            android:text="Button"
+            android:textAllCaps="false"
+            android:textColor="#ffffff" />
 
         <Button
             android:id="@+id/button3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/azulbonito"
-            android:textColor="#ffffff"
-            android:text="Button" />
+            android:capitalize="none"
+            android:text="Button"
+            android:textAllCaps="false"
+            android:textColor="#ffffff" />
 
         <Button
             android:id="@+id/button4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/azulbonito"
-            android:textColor="#ffffff"
-            android:text="Button" />
-    </LinearLayout>
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/linearLayout2"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:orientation="horizontal"
-        android:weightSum="3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <!--<Button android:id="@+id/button1"-->
-        <!--...-->
-        <!--android:layout_weight="1"/>-->
-
-        <!--<Button android:id="@+id/button2"-->
-        <!--...-->
-        <!--android:layout_weight="1"/>-->
-
-        <!--<Button-->
-        <!--android:id="@+id/button3"-->
-        <!--...-->
-        <!--android:layout_weight="1"/>-->
-
-        <ImageButton
-            android:id="@+id/like"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="@color/azulbonito"
-            android:tint="#ffffff"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/Fala"
-            app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/ic_thumb_up_black_24dp" />
-
-        <ImageButton
-            android:id="@+id/Fala"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="@color/azulbonito"
-            android:contentDescription="TODO"
-            android:tint="#ffffff"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/deslike"
-            app:layout_constraintStart_toEndOf="@+id/like"
-            app:srcCompat="@drawable/ic_hearing_black_24dp" />
-
-        <ImageButton
-            android:id="@+id/deslike"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:backgroundTint="@color/azulbonito"
-            android:tint="#ffffff"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/ic_thumb_down_black_24dp" />
-
-
+            android:capitalize="none"
+            android:text="Button"
+            android:textAllCaps="false"
+            android:textColor="#ffffff" />
     </LinearLayout>
 
     <androidx.appcompat.widget.Toolbar
@@ -176,71 +123,141 @@
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toTopOf="parent">
 
         <Button
             android:id="@+id/opcoes"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="end"
             android:background="@null"
             android:text="@string/vertical_ellipsis"
             android:textColor="#ffffff"
-            android:layout_gravity="end"
             android:textSize="30dp" />
+
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="APAA"
-            android:textSize="30dp"
-            android:textColor="#ffffff"
             android:layout_gravity="start"
-             />
+            android:text="APAA"
+            android:textColor="#ffffff"
+            android:textSize="30dp" />
 
     </androidx.appcompat.widget.Toolbar>
 
     <LinearLayout
-        android:layout_width="715dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        android:id="@+id/linearLayout4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        app:layout_constraintStart_toStartOf="parent">
 
-        <ImageButton
-            android:id="@+id/imageButton7"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:srcCompat="@android:drawable/ic_menu_help" />
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginBottom="0dp"
+            android:orientation="horizontal">
 
-        <ImageButton
-            android:id="@+id/imageButton10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:srcCompat="@android:drawable/ic_menu_help" />
+            <ImageButton
+                android:id="@+id/imageButton7"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@android:drawable/ic_menu_help" />
 
-        <ImageButton
-            android:id="@+id/imageButton8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:srcCompat="@android:drawable/ic_menu_help" />
+            <ImageButton
+                android:id="@+id/imageButton10"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@android:drawable/ic_menu_help" />
 
-        <ImageButton
-            android:id="@+id/imageButton9"
-            android:layout_width="wrap_content"
+            <ImageButton
+                android:id="@+id/imageButton9"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@android:drawable/ic_menu_help" />
+
+            <ImageButton
+                android:id="@+id/imageButton8"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@android:drawable/ic_menu_help" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:srcCompat="@android:drawable/ic_menu_help" />
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginBottom="0dp"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <!--<Button android:id="@+id/button1"-->
+            <!--...-->
+            <!--android:layout_weight="1"/>-->
+
+            <!--<Button android:id="@+id/button2"-->
+            <!--...-->
+            <!--android:layout_weight="1"/>-->
+
+            <!--<Button-->
+            <!--android:id="@+id/button3"-->
+            <!--...-->
+            <!--android:layout_weight="1"/>-->
+
+            <ImageButton
+                android:id="@+id/like"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/azulbonito"
+                android:tint="#ffffff"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/Fala"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/ic_thumb_up_black_24dp" />
+
+            <ImageButton
+                android:id="@+id/Fala"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/azulbonito"
+                android:contentDescription="TODO"
+                android:tint="#ffffff"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/deslike"
+                app:layout_constraintStart_toEndOf="@+id/like"
+                app:srcCompat="@drawable/ic_hearing_black_24dp" />
+
+            <ImageButton
+                android:id="@+id/deslike"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:backgroundTint="@color/azulbonito"
+                android:tint="#ffffff"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="@drawable/ic_thumb_down_black_24dp" />
+
+
+        </LinearLayout>
+
     </LinearLayout>
 
 

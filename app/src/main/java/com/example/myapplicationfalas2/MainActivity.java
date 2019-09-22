@@ -108,7 +108,9 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             if (botoestexto.size()>2)b3pp1.setText(botoestexto.get(2));
             else b3pp1.setText("");
             if (botoestexto.size()>3)b4pp1.setText(botoestexto.get(3));
-            else b4pp1.setText("");}
+            else b4pp1.setText("");
+            //b1pp1.setText("MaiúÚSculho");
+        }
         catch (Exception e){
             entrada.setText(e.toString());
         }
@@ -204,9 +206,46 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             escrever.close();
             */
             FileInputStream ler;
-            if (palavrasfrases) ler = openFileInput("palavras.txt");
-            else ler = openFileInput("frases.txt");
+            //File arq;
+            byte[] bytes;
+            int pare;
+            int leng=1313131313;
+            FileInputStream arq;
+            if (palavrasfrases) {
+                leng=0;
+                arq=openFileInput("palavras.txt");
+                while (true){
+                    pare=arq.read();
+                    if(pare==-1) break;
+                    leng+=1;
+                }
+                bytes = new byte[leng];
+                ler= openFileInput("palavras.txt");
+            }
+            else {
+                leng=0;
+                arq=openFileInput("frases.txt");
+                while (true){
+                    pare=arq.read();
+                    if(pare==-1) break;
+                    leng+=1;
+                }
+                bytes = new byte[leng];
+                ler= openFileInput("frases.txt");
+                /*arq = new File("frases.txt") ;
+                bytes = new byte[(int) arq.length()];
+                ler =  openFileInput("frases.txt");*/
+            }
+            //ler = new FileInputStream(arquivo);
+
+            ler.read(bytes);
+            //pag2.setText(Integer.toString(leng));
+            String saida= new String(bytes);
+            //pag2.setText(saida);
+            return saida;
+            /*
             int pare=0;
+
             String conteudo="";
             while (true){
                 pare=ler.read();
@@ -214,9 +253,10 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 else break;
             }
             //pag2.setText(conteudo);
-            return conteudo;
+            return conteudo;*/
         }
         catch (Exception e){
+            //pag2.setText(e.toString());
             e.printStackTrace();
         }
         return null;
