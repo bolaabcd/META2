@@ -9,6 +9,8 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.appcompat.widget.PopupMenu;
 
 import android.speech.tts.TextToSpeech;
@@ -46,15 +48,15 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     int tempo;
     MediaPlayer somSaiu;
     TextView mensagens;
-    Button voltar;
-    ImageButton falabotao;
-    ImageButton deslikebotao;
-    ImageButton likebotao;
-    Button editar;
+    AppCompatButton voltar;
+    AppCompatImageButton falabotao;
+    AppCompatImageButton deslikebotao;
+    AppCompatImageButton likebotao;
+    AppCompatButton editar;
     CharSequence textentrada;
     TextView pag2;//MENSAGENS PAGINA 2
-    Button somapag2;//botão + Página 2
-    Button trespontos;
+    AppCompatButton somapag2;//botão + Página 2
+    AppCompatButton trespontos;
     Boolean saiu = true;
 
     int telatual;//SALVA EM QUAL tela ESTÁ!
@@ -63,35 +65,35 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     int pagpaltel1=1;//Página atual de palavras da tela 1
 
     //Botões da página 2:
-    Button b1pp2;
-    Button b2pp2;
-    Button b3pp2;
-    Button b4pp2;
-    Button b5pp2;
-    Button b6pp2;
-    Button b7pp2;
-    Button b8pp2;
-    Button b9pp2;
-    Button b10pp2;
-    Button b11pp2;
-    Button b12pp2;
-    Button b13pp2;
-    Button b14pp2;
-    Button b15pp2;
+    AppCompatButton b1pp2;
+    AppCompatButton b2pp2;
+    AppCompatButton b3pp2;
+   AppCompatButton b4pp2;
+   AppCompatButton b5pp2;
+   AppCompatButton b6pp2;
+   AppCompatButton b7pp2;
+   AppCompatButton b8pp2;
+   AppCompatButton b9pp2;
+   AppCompatButton b10pp2;
+   AppCompatButton b11pp2;
+   AppCompatButton b12pp2;
+   AppCompatButton b13pp2;
+   AppCompatButton b14pp2;
+   AppCompatButton b15pp2;
 
     //Botões de ir e voltar página 2:
-    Button vaipag2;
-    Button voltapag2;
+   AppCompatButton vaipag2;
+   AppCompatButton voltapag2;
 
     //Botões de palavras da pagina 1:
-    Button b1pp1;
-    Button b2pp1;
-    Button b3pp1;
-    Button b4pp1;
+   AppCompatButton b1pp1;
+   AppCompatButton b2pp1;
+   AppCompatButton b3pp1;
+   AppCompatButton b4pp1;
 
     //Botões de ir e voltar da tela 1:
-    Button vaipag1;
-    Button voltapag1;
+   AppCompatButton vaipag1;
+   AppCompatButton voltapag1;
 
 
     public ArrayList<String> getpage(int palporpag,int numerodapag,ArrayList<String>palavras){//Retorna página especificada
@@ -383,7 +385,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
         /*
         setContentView(R.layout.configurator);
-        Button voltar= findViewById(R.id.button13);
+       AppCompatButton voltar= findViewById(R.id.button13);
         setContentView(R.layout.activity_main);*/
 
         //Button voltar = paginaconfiguradora.findViewById(R.id.button13);
