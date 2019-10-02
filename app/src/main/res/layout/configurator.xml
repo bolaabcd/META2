@@ -4,13 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Configurar ALGO"
+        android:text="Editar palavras"
+        android:gravity='center'
+        android:textColor='#fff'
+        android:background="@color/azulbonito"
         android:textSize="36sp" />
 
     <LinearLayout
@@ -18,27 +22,33 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button12"
             android:layout_width="wrap_content"
+            app:backgroundTint="@color/azulbonito"
+            android:textColor="#fff"
             android:layout_height="wrap_content"
             android:textAllCaps="false"
             android:layout_weight="1"
             android:text="((((" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button13"
             android:layout_width="wrap_content"
+            app:backgroundTint="@color/azulbonito"
             android:layout_height="wrap_content"
+            android:textColor="#fff"
             android:textAllCaps="false"
             android:layout_weight="1"
             android:text="BACK" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button11"
+            app:backgroundTint="@color/azulbonito"
             android:layout_width="wrap_content"
             android:textAllCaps="false"
             android:layout_height="wrap_content"
+            android:textColor="#fff"
             android:layout_weight="1"
             android:text="))))" />
 
@@ -53,44 +63,27 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"/>
 
-            <Button
-                android:id="@+id/button20"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#00FFFFFF"
-                android:textAllCaps="false"
-                android:text="UP"
-                android:textSize="14sp" />
-
-            <Button
-                android:id="@+id/button40"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textAllCaps="false"
-                android:background="#00FFFFFF"
-                android:text="DN"
-                android:textSize="14sp" />
-        </LinearLayout>
-
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button21"
             style="@android:style/Widget.DeviceDefault.Light.Button"
             android:layout_width="326dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textAllCaps="false"
-            android:text="Button" />
+            android:textColor="#fff"
+            app:backgroundTint="@color/azulbonito"
+            android:text="Palavra" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button22"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textAllCaps="false"
+            app:backgroundTint="@color/azulbonito"
+            android:textColor="#fff"
             android:text="DEL" />
     </LinearLayout>
 
@@ -103,46 +96,29 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <Button
-                android:textAllCaps="false"
-                android:id="@+id/button62"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#646464"
-                android:text="UP" />
-
-            <Button
-                android:id="@+id/button63"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:layout_weight="1"
-                android:background="#6E6E6E"
-                android:text="DN" />
-        </LinearLayout>
+            android:orientation="vertical"/>
 
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button24"
             style="@android:style/Widget.DeviceDefault.Light.Button"
             android:layout_width="326dp"
             android:layout_height="wrap_content"
-            android:textAllCaps="false"
             android:layout_weight="1"
-            android:background="#64646E"
-            android:text="Button" />
+            android:text="Nem aqui"
+            android:textColor="#fff"
+            android:textAllCaps="false"
+            app:backgroundTint="@color/azulbonito" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button25"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textAllCaps="false"
-            android:background="#646E64"
-            android:text="Edit" />
+            app:backgroundTint="@color/azulbonito"
+
+            />
 
     </LinearLayout>
 
@@ -155,46 +131,29 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/button64"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:layout_weight="1"
-                android:background="#646464"
-                android:text="UP" />
-
-            <Button
-                android:id="@+id/button65"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:layout_weight="1"
-                android:background="#6E6E6E"
-                android:text="DN" />
-        </LinearLayout>
+            android:orientation="vertical"/>
 
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button18"
             android:textAllCaps="false"
             style="@android:style/Widget.DeviceDefault.Light.Button"
             android:layout_width="326dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#646E6E"
-            android:text="Button" />
+            app:backgroundTint="@color/azulbonito"
+            android:textColor="#fff"
+            android:text="Palavra" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button19"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#647864"
+            app:backgroundTint="@color/azulbonito"
             android:textAllCaps="false"
-            android:text="Edit" />
+            android:textColor="#fff"
+            />
 
     </LinearLayout>
 
@@ -207,46 +166,29 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/button66"
-                android:textAllCaps="false"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#646464"
-                android:text="UP" />
-
-            <Button
-                android:id="@+id/button67"
-                android:textAllCaps="false"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#6E6E6E"
-                android:text="DN" />
-        </LinearLayout>
+            android:orientation="vertical"/>
 
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button16"
             style="@android:style/Widget.DeviceDefault.Light.Button"
             android:layout_width="326dp"
             android:textAllCaps="false"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#64646E"
-            android:text="Button" />
+            app:backgroundTint="@color/azulbonito"
+            android:textColor="#fff"
+            android:text="Palavra" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button15"
             android:textAllCaps="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#646E64"
-            android:text="Edit" />
+            app:backgroundTint="@color/azulbonito"
+            android:textColor="#fff"
+            />
     </LinearLayout>
 
     <LinearLayout
@@ -258,46 +200,29 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/button68"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:layout_weight="1"
-                android:background="#646464"
-                android:text="UP" />
-
-            <Button
-                android:id="@+id/button69"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:layout_weight="1"
-                android:background="#6E6E6E"
-                android:text="DN" />
-        </LinearLayout>
+            android:orientation="vertical"/>
 
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button27"
             style="@android:style/Widget.DeviceDefault.Light.Button"
             android:layout_width="326dp"
             android:layout_height="wrap_content"
+            android:textColor="#fff"
             android:textAllCaps="false"
             android:layout_weight="1"
-            android:background="#646E6E"
-            android:text="Button" />
+            app:backgroundTint="@color/azulbonito"
+            android:text="Palavra" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button28"
             android:textAllCaps="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#647864"
-            android:text="Edit" />
+            app:backgroundTint="@color/azulbonito"
+            android:textColor="#fff"
+            />
 
     </LinearLayout>
 
@@ -310,46 +235,29 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/button70"
-                android:layout_width="wrap_content"
-                android:textAllCaps="false"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#646464"
-                android:text="UP" />
-
-            <Button
-                android:id="@+id/button71"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textAllCaps="false"
-                android:background="#6E6E6E"
-                android:text="DN" />
-        </LinearLayout>
+            android:orientation="vertical"/>
 
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button30"
             style="@android:style/Widget.DeviceDefault.Light.Button"
             android:layout_width="326dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textAllCaps="false"
-            android:background="#64646E"
-            android:text="Button" />
+            app:backgroundTint="@color/azulbonito"
+            android:textColor="#fff"
+            android:text="Palavra" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button31"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textAllCaps="false"
-            android:background="#646E64"
-            android:text="Edit" />
+            app:backgroundTint="@color/azulbonito"
+            android:textColor="#fff"
+            />
     </LinearLayout>
 
     <LinearLayout
@@ -361,45 +269,28 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/button72"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:layout_weight="1"
-                android:background="#646464"
-                android:text="UP" />
-
-            <Button
-                android:id="@+id/button73"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:layout_weight="1"
-                android:background="#6E6E6E"
-                android:text="DN" />
-        </LinearLayout>
+            android:orientation="vertical"/>
 
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button33"
             android:layout_width="326dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textAllCaps="false"
-            android:backgroundTint="@android:color/holo_green_light"
-            android:text="Button" />
+            app:backgroundTint="@color/azulbonito"
+            android:textColor="#fff"
+            android:text="Natan é legal"
+            android:textAllCaps="false" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button34"
             android:layout_width="wrap_content"
             android:textAllCaps="false"
             android:layout_height="wrap_content"
+            app:backgroundTint="@color/azulbonito"
+            android:textColor="#fff"
             android:layout_weight="1"
-            android:background="#646E64"
-            android:text="Edit" />
+            />
 
     </LinearLayout>
 
@@ -412,46 +303,29 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/button74"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:layout_weight="1"
-                android:background="#646464"
-                android:text="UP" />
-
-            <Button
-                android:id="@+id/button75"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:layout_weight="1"
-                android:background="#6E6E6E"
-                android:text="DN" />
-        </LinearLayout>
+            android:orientation="vertical"/>
 
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button36"
             style="@android:style/Widget.DeviceDefault.Light.Button"
             android:layout_width="326dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textAllCaps="false"
-            android:background="#64646E"
-            android:text="Button" />
+            app:backgroundTint="@color/azulbonito"
+            android:textColor="#fff"
+            android:text="Palavra" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button37"
             android:layout_width="wrap_content"
             android:textAllCaps="false"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#647864"
-            android:text="Edit" />
+            app:backgroundTint="@color/azulbonito"
+            android:textColor="#fff"
+            />
     </LinearLayout>
 
     <LinearLayout
@@ -463,46 +337,29 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/button59"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textAllCaps="false"
-                android:background="#646464"
-                android:text="UP" />
-
-            <Button
-                android:id="@+id/button32"
-                android:layout_width="wrap_content"
-                android:textAllCaps="false"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#6E6E6E"
-                android:text="DN" />
-        </LinearLayout>
+            android:orientation="vertical"/>
 
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button60"
             style="@android:style/Widget.DeviceDefault.Light.Button"
             android:layout_width="326dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textAllCaps="false"
-            android:background="#646E6E"
-            android:text="Button" />
+            app:backgroundTint="@color/azulbonito"
+            android:textColor="#fff"
+            android:text="Palavra" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button61"
             android:layout_width="wrap_content"
             android:textAllCaps="false"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#646E64"
-            android:text="Edit" />
+            app:backgroundTint="@color/azulbonito"
+            android:textColor="#fff"
+            />
     </LinearLayout>
 
     <LinearLayout
@@ -514,46 +371,29 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/button23"
-                android:layout_width="wrap_content"
-                android:textAllCaps="false"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#646464"
-                android:text="UP" />
-
-            <Button
-                android:id="@+id/button26"
-                android:layout_width="wrap_content"
-                android:textAllCaps="false"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#6E6E6E"
-                android:text="DN" />
-        </LinearLayout>
+            android:orientation="vertical"/>
 
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button57"
             style="@android:style/Widget.DeviceDefault.Light.Button"
             android:layout_width="326dp"
             android:textAllCaps="false"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#64646E"
-            android:text="Button" />
+            app:backgroundTint="@color/azulbonito"
+            android:textColor="#fff"
+            android:text="Palavra" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button58"
             android:layout_width="wrap_content"
             android:textAllCaps="false"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#647864"
-            android:text="Edit" />
+            app:backgroundTint="@color/azulbonito"
+            android:textColor="#fff"
+            />
 
     </LinearLayout>
 
@@ -566,46 +406,29 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/button29"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:layout_weight="1"
-                android:background="#646464"
-                android:text="UP" />
-
-            <Button
-                android:id="@+id/button35"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:layout_weight="1"
-                android:background="#6E6E6E"
-                android:text="DN" />
-        </LinearLayout>
+            android:orientation="vertical"/>
 
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button54"
             style="@android:style/Widget.DeviceDefault.Light.Button"
             android:layout_width="326dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#646E6E"
+            app:backgroundTint="@color/azulbonito"
+            android:textColor="#fff"
             android:textAllCaps="false"
-            android:text="Button" />
+            android:text="Palavra" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button55"
             android:layout_width="wrap_content"
             android:textAllCaps="false"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#646E64"
-            android:text="Edit" />
+            android:textColor="#fff"
+            app:backgroundTint="@color/azulbonito"
+            />
 
     </LinearLayout>
 
@@ -618,46 +441,29 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/button1"
-                android:textAllCaps="false"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#646464"
-                android:text="UP" />
-
-            <Button
-                android:id="@+id/button38"
-                android:layout_width="wrap_content"
-                android:textAllCaps="false"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#6E6E6E"
-                android:text="DN" />
-        </LinearLayout>
+            android:orientation="vertical"/>
 
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button51"
             style="@android:style/Widget.DeviceDefault.Light.Button"
             android:layout_width="326dp"
-            android:textAllCaps="false"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#64646E"
-            android:text="Button" />
+            android:text="aqui nao"
+            android:textColor="#fff"
+            android:textAllCaps="false"
+            app:backgroundTint="@color/azulbonito" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button52"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#647864"
+            android:textColor="#fff"
+            app:backgroundTint="@color/azulbonito"
             android:textAllCaps="false"
-            android:text="Edit" />
+            />
     </LinearLayout>
 
     <LinearLayout
@@ -669,46 +475,29 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/button14"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:layout_weight="1"
-                android:background="#646464"
-                android:text="UP" />
-
-            <Button
-                android:id="@+id/button17"
-                android:layout_width="wrap_content"
-                android:textAllCaps="false"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#6E6E6E"
-                android:text="DN" />
-        </LinearLayout>
+            android:orientation="vertical"/>
 
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button48"
             style="@android:style/Widget.DeviceDefault.Light.Button"
             android:layout_width="326dp"
             android:textAllCaps="false"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#646E6E"
-            android:text="Button" />
+            android:textColor="#fff"
+            app:backgroundTint="@color/azulbonito"
+            android:text="Palavra" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button49"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#646E64"
+            app:backgroundTint="@color/azulbonito"
+            android:textColor="#fff"
             android:textAllCaps="false"
-            android:text="Edit" />
+            />
     </LinearLayout>
 
     <LinearLayout
@@ -720,46 +509,29 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/button44"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textAllCaps="false"
-                android:background="#646464"
-                android:text="UP" />
-
-            <Button
-                android:id="@+id/button47"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:layout_weight="1"
-                android:background="#6E6E6E"
-                android:text="DN" />
-        </LinearLayout>
+            android:orientation="vertical"/>
 
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button45"
             style="@android:style/Widget.DeviceDefault.Light.Button"
             android:layout_width="326dp"
             android:layout_height="wrap_content"
             android:textAllCaps="false"
             android:layout_weight="1"
-            android:background="#64646E"
-            android:text="Button" />
+            android:textColor="#fff"
+            app:backgroundTint="@color/azulbonito"
+            android:text="Palavra" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button46"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#fff"
             android:textAllCaps="false"
             android:layout_weight="1"
-            android:background="#647864"
-            android:text="Edit" />
+            app:backgroundTint="@color/azulbonito"
+            />
 
     </LinearLayout>
 
@@ -772,46 +544,29 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/button41"
-                android:textAllCaps="false"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#646464"
-                android:text="UP" />
-
-            <Button
-                android:id="@+id/button50"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:layout_weight="1"
-                android:background="#6E6E6E"
-                android:text="DN" />
-        </LinearLayout>
+            android:orientation="vertical"/>
 
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button42"
             style="@android:style/Widget.DeviceDefault.Light.Button"
             android:layout_width="326dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#646E6E"
+            app:backgroundTint="@color/azulbonito"
+            android:textColor="#fff"
             android:textAllCaps="false"
-            android:text="Button" />
+            android:text="Palavra" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button43"
             android:textAllCaps="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#fff"
             android:layout_weight="1"
-            android:background="#646E64"
-            android:text="Edit" />
+            app:backgroundTint="@color/azulbonito"
+            />
 
     </LinearLayout>
 
@@ -821,12 +576,14 @@
         android:layout_weight="1"
         android:orientation="horizontal">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button39"
             android:layout_width="326dp"
             android:textAllCaps="false"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            app:backgroundTint="@color/azulbonito"
+            android:textColor="#fff"
             android:text="+" />
 
     </LinearLayout>

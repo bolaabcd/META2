@@ -16,6 +16,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/multilinetext_border"
+        android:textCursorDrawable ="@null"
         android:editable="true"
         android:ems="10"
         android:gravity="start|top"
@@ -47,71 +48,71 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/setinha"
-                android:backgroundTint="@color/azulbonito"
+                app:backgroundTint="@color/azulbonito"
                 android:textAllCaps="false"
                 android:textColor="#ffffff" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button10"
                 android:layout_width="wrap_content"
+                app:backgroundTint="@color/azulbonito"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:backgroundTint="@color/azulbonito"
                 android:capitalize="none"
                 android:text="Edit"
                 android:textAllCaps="false"
                 android:textColor="#ffffff" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button8"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@drawable/setinha"
-                android:backgroundTint="@color/azulbonito"
+                app:backgroundTint="@color/azulbonito"
                 android:textAllCaps="false"
                 android:textColor="#ffffff" />
         </LinearLayout>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/azulbonito"
+            app:backgroundTint="@color/azulbonito"
             android:capitalize="none"
             android:text="Button"
             android:textAllCaps="false"
             android:textColor="#ffffff" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/azulbonito"
+            app:backgroundTint="@color/azulbonito"
             android:capitalize="none"
             android:text="Button"
             android:textAllCaps="false"
             android:textColor="#ffffff" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/azulbonito"
+            app:backgroundTint="@color/azulbonito"
             android:capitalize="none"
             android:text="Button"
             android:textAllCaps="false"
             android:textColor="#ffffff" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/azulbonito"
+            app:backgroundTint="@color/azulbonito"
             android:capitalize="none"
             android:text="Button"
             android:textAllCaps="false"
@@ -129,7 +130,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/opcoes"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
@@ -170,35 +171,35 @@
             android:layout_marginBottom="0dp"
             android:orientation="horizontal">
 
-            <ImageButton
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/imageButton7"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:backgroundTint="@color/azulbonito"
+                app:backgroundTint="@color/azulbonito"
                 android:layout_weight="1"
                 app:srcCompat="@android:drawable/ic_menu_help" />
 
-            <ImageButton
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/imageButton10"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:backgroundTint="@color/azulbonito"
+                app:backgroundTint="@color/azulbonito"
                 android:layout_weight="1"
                 app:srcCompat="@android:drawable/ic_menu_help" />
 
-            <ImageButton
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/imageButton9"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:backgroundTint="@color/azulbonito"
+                app:backgroundTint="@color/azulbonito"
                 android:layout_weight="1"
                 app:srcCompat="@android:drawable/ic_menu_help" />
 
-            <ImageButton
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/imageButton8"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:backgroundTint="@color/azulbonito"
+                app:backgroundTint="@color/azulbonito"
                 android:layout_weight="1"
                 app:srcCompat="@android:drawable/ic_menu_help" />
 
@@ -227,24 +228,24 @@
             <!--...-->
             <!--android:layout_weight="1"/>-->
 
-            <ImageButton
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/like"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:backgroundTint="@color/azulbonito"
+                app:backgroundTint="@color/azulbonito"
                 android:tint="#ffffff"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/Fala"
                 app:layout_constraintStart_toStartOf="parent"
                 app:srcCompat="@drawable/ic_thumb_up_black_24dp" />
 
-            <ImageButton
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/Fala"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:backgroundTint="@color/azulbonito"
+                app:backgroundTint="@color/azulbonito"
                 android:contentDescription="TODO"
                 android:tint="#ffffff"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -252,12 +253,12 @@
                 app:layout_constraintStart_toEndOf="@+id/like"
                 app:srcCompat="@drawable/ic_hearing_black_24dp" />
 
-            <ImageButton
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/deslike"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:backgroundTint="@color/azulbonito"
+                app:backgroundTint="@color/azulbonito"
                 android:tint="#ffffff"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
