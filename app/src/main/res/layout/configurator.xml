@@ -579,12 +579,12 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button39"
             android:layout_width="326dp"
-            android:textAllCaps="false"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:backgroundTint="@color/azulbonito"
+            android:text="+"
+            android:textAllCaps="false"
             android:textColor="#fff"
-            android:text="+" />
+            app:backgroundTint="@color/azulbonito" />
 
     </LinearLayout>
 

@@ -4,6 +4,7 @@ package com.example.myapplicationfalas2;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 
@@ -34,9 +35,12 @@ import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Locale;
+import java.util.Set;
 
-import static java.lang.Boolean.TRUE;
+
 import static java.lang.Thread.sleep;
 
 
@@ -58,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     AppCompatButton somapag2;//botão + Página 2
     AppCompatButton trespontos;
     Boolean saiu = true;
+
 
     int telatual;//SALVA EM QUAL tela ESTÁ!
     ArrayList<String> palavras;//SALVA AS PALAVRAS DO MOMENTO!
@@ -94,6 +99,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     //Botões de ir e voltar da tela 1:
    AppCompatButton vaipag1;
    AppCompatButton voltapag1;
+   SharedPreferences mPrefs;
+
 
 
     public ArrayList<String> getpage(int palporpag,int numerodapag,ArrayList<String>palavras){//Retorna página especificada
@@ -356,6 +363,13 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        mPrefs = getSharedPreferences("labela", 0);
+
+        String csvList = mPrefs.getString("perguntitas","");
+        String[] items = csvList.split(",");
+        for(int i=0; i < items.length; i++){
+            perguntas.add(items[i]);
+        }
 
         try{FileInputStream ler = openFileInput("palavras.txt");}
         catch (FileNotFoundException ex){
@@ -418,8 +432,27 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             public void onInit(int i) {
                 if(i!=TextToSpeech.ERROR){
                     Locale portugues = new Locale("PT", "BR");
+                    Bundle extras = getIntent().getExtras();
+
+                    if (extras != null){
+                        Boolean perg = extras.getBoolean("perg");
+                        Boolean fone = extras.getBoolean("fone");
+                        String tom = extras.getString("tom");
+                        if(Float.parseFloat(tom) < 0.1) tom = "0.1f";
+                        String vel = extras.getString("vel");
+                        if(Float.parseFloat(vel) < 0.1) vel = "0.1f";
+                        SharedPreferences.Editor mEditor = mPrefs.edit();
+                        mEditor.putBoolean("pergt",perg).commit();
+                        mEditor.putBoolean("foni",fone).commit();
+                        mEditor.putString("tag2", vel).commit();
+                        mEditor.putString("tag", tom).commit();
+                    }
+
+                    String stringTom = mPrefs.getString("tag", "1");
+                    String stringVel = mPrefs.getString("tag2", "1");
                     falador.setLanguage(portugues);
-                    falador.setSpeechRate(1f);
+                    falador.setSpeechRate(Float.parseFloat(stringVel));
+                    falador.setPitch(Float.parseFloat(stringTom));
                 }
             }
         });
@@ -432,17 +465,19 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             @Override
             public void onDone(String utteranceId) {
                 // Speaking stopped.
-                if (perguntas.size() > 0){
-                    try {
-                        sleep(1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
+                if(mPrefs.getBoolean("pergt", true)) {
+                    if (perguntas.size() > 0) {
+                        try {
+                            sleep(1000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        String strnPerg = new Integer(perguntas.size()).toString();
+                        String pRest = strnPerg + "perguntas";
+                        falador.speak(pRest, TextToSpeech.QUEUE_FLUSH, null);
                     }
-                    String strnPerg = new Integer(perguntas.size()).toString();
-                    String pRest = strnPerg + "perguntas";
-                    falador.speak(pRest,TextToSpeech.QUEUE_FLUSH,null);
                 }
-            }
+                }
 
             @Override
             public void onError(String utteranceId) {
@@ -465,23 +500,37 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     public boolean onMenuItemClick(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.cfg:
-                saiu = false;
+                trocapagina();
                 Intent intent = new Intent(this, config.class);
                 startActivity(intent);
                 return true;
             case R.id.help:
-                saiu = false;
+                trocapagina();
                 Intent intent2 = new Intent(this, AjudaActivity.class);
                 startActivity(intent2);
                 return true;
             case R.id.sobre:
-                saiu = false;
+                trocapagina();
                 Intent intent3 = new Intent(this, SobreActivity.class);
                 startActivity(intent3);
                 return true;
             default:
                 return false;
         }
+    }
+    public void trocapagina(){
+        saiu = false;
+        SharedPreferences.Editor mEditor = mPrefs.edit();
+        mEditor.putString("escrito",entrada.getText().toString()).commit();
+
+        StringBuilder csvList = new StringBuilder();
+        for(String s : perguntas){
+            csvList.append(s);
+            csvList.append(",");
+        }
+
+        mEditor.putString("perguntitas", csvList.toString()).commit();
+
     }
 
     @Override
@@ -581,6 +630,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         deslikebotao = findViewById(R.id.deslike);
         editar = findViewById(R.id.button10);
         entrada = findViewById(R.id.Entrada);
+        entrada.setText(mPrefs.getString("escrito",""));
 
 
         //Botões das palavras tela 1:
@@ -679,7 +729,12 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             @Override
             public void onClick(View view){
                 String oque = entrada.getText().toString();
-                if(oque.equals(""))Toast.makeText(getApplicationContext(),"Digite algo para enviar uma mensagem!", Toast.LENGTH_SHORT).show();
+                if(oque.equals("")){
+                    Toast.makeText(getApplicationContext(),"Digite algo para enviar uma mensagem!", Toast.LENGTH_SHORT).show();
+                }
+                else if(!mPrefs.getBoolean("foni",true)){
+                    falador.speak(oque,TextToSpeech.QUEUE_FLUSH,null);
+                }
                 else if(!perguntas.contains(oque)){
                     sperg.start();
                     perguntas.add(oque);
