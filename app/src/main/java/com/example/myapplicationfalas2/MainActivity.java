@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     AppCompatButton somapag2;//botão + Página 2
     AppCompatButton trespontos;
     Boolean saiu = true;
+    SharedPreferences.Editor mEditor;
 
 
     int telatual;//SALVA EM QUAL tela ESTÁ!
@@ -364,9 +365,9 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         mPrefs = getSharedPreferences("labela", 0);
-
+        mEditor = mPrefs.edit();
         String csvList = mPrefs.getString("perguntitas","");
-        String[] items = csvList.split(",");
+        String[] items = csvList.split("¨");
         for(int i=0; i < items.length; i++){
             perguntas.add(items[i]);
         }
@@ -441,7 +442,6 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                         if(Float.parseFloat(tom) < 0.1) tom = "0.1f";
                         String vel = extras.getString("vel");
                         if(Float.parseFloat(vel) < 0.1) vel = "0.1f";
-                        SharedPreferences.Editor mEditor = mPrefs.edit();
                         mEditor.putBoolean("pergt",perg).commit();
                         mEditor.putBoolean("foni",fone).commit();
                         mEditor.putString("tag2", vel).commit();
@@ -526,7 +526,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         StringBuilder csvList = new StringBuilder();
         for(String s : perguntas){
             csvList.append(s);
-            csvList.append(",");
+            csvList.append("¨");
         }
 
         mEditor.putString("perguntitas", csvList.toString()).commit();
@@ -813,6 +813,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             if(saiu){
                 somSaiu=MediaPlayer.create(this,R.raw.saiu_app);
                 somSaiu.start();
+                mEditor.putString("escrito","").commit();
             } else{
                 saiu = false;
             }
