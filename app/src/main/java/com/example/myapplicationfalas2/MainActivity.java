@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     AppCompatButton somapag2;//botão + Página 2
     AppCompatButton trespontos;
     Boolean saiu = true;
+    Boolean palavrasoufrases=true;
 
 
     int telatual;//SALVA EM QUAL tela ESTÁ!
@@ -105,7 +106,22 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     LinearLayout l13pp2;
     LinearLayout l14pp2;
     LinearLayout l15pp2;
-
+    //Boteõs de apagar da página 2:
+    AppCompatButton p1pp2;
+    AppCompatButton p2pp2;
+    AppCompatButton p3pp2;
+    AppCompatButton p4pp2;
+    AppCompatButton p5pp2;
+    AppCompatButton p6pp2;
+    AppCompatButton p7pp2;
+    AppCompatButton p8pp2;
+    AppCompatButton p9pp2;
+    AppCompatButton p10pp2;
+    AppCompatButton p11pp2;
+    AppCompatButton p12pp2;
+    AppCompatButton p13pp2;
+    AppCompatButton p14pp2;
+    AppCompatButton p15pp2;
     //Botões de ir e voltar página 2:
    AppCompatButton vaipag2;
    AppCompatButton voltapag2;
@@ -115,6 +131,17 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
    AppCompatButton b2pp1;
    AppCompatButton b3pp1;
    AppCompatButton b4pp1;
+    AppCompatButton b5pp1;
+    AppCompatButton b6pp1;
+    AppCompatButton b7pp1;
+    AppCompatButton b8pp1;
+    AppCompatButton b9pp1;
+    AppCompatButton b10pp1;
+    AppCompatButton b11pp1;
+    AppCompatButton b12pp1;
+    AppCompatButton b13pp1;
+    AppCompatButton b14pp1;
+    AppCompatButton b15pp1;
 
     //Botões de ir e voltar da tela 1:
    AppCompatButton vaipag1;
@@ -127,6 +154,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
    SharedPreferences.Editor mEditor;
 
    int maxpaltela2;
+   int maxpaltela1;
 
     public float getaltura(){
         Display display = getWindowManager().getDefaultDisplay();
@@ -146,16 +174,265 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     }
     public void updatepagef1(int numerodalista/*Pra fazer listas de matérias diferentes por exemplo*/,int paginadepalavras){//Atualiza palavras da página na tela 1
         try{
-            ArrayList<String> botoestexto=getpage(getsavedwords(numerodalista,true),4,paginadepalavras);
+            ArrayList<String> botoestexto=getpage(getsavedwords(numerodalista,true),maxpaltela1,paginadepalavras);
+            if (maxpaltela1==15) {
+                if (botoestexto.size() > 0) b1pp1.setText(botoestexto.get(0));
+                else b1pp1.setText("");
+                if (botoestexto.size() > 1) b2pp1.setText(botoestexto.get(1));
+                else b2pp1.setText("");
+                if (botoestexto.size() > 2) b3pp1.setText(botoestexto.get(2));
+                else b3pp1.setText("");
+                if (botoestexto.size() > 3) b4pp1.setText(botoestexto.get(3));
+                else b4pp1.setText("");
+                if (botoestexto.size() > 4) b5pp1.setText(botoestexto.get(4));
+                else b5pp1.setText("");
+                if (botoestexto.size() > 5) b6pp1.setText(botoestexto.get(5));
+                else b6pp1.setText("");
+                if (botoestexto.size() > 6) b7pp1.setText(botoestexto.get(6));
+                else b7pp1.setText("");
+                if (botoestexto.size() > 7) b8pp1.setText(botoestexto.get(7));
+                else b8pp1.setText("");
+                if (botoestexto.size() > 8) b9pp1.setText(botoestexto.get(8));
+                else b9pp1.setText("");
+                if (botoestexto.size() > 9) b10pp1.setText(botoestexto.get(9));
+                else b10pp1.setText("");
+                if (botoestexto.size() > 10) b11pp1.setText(botoestexto.get(10));
+                else b11pp1.setText("");
+                if (botoestexto.size() > 11) b12pp1.setText(botoestexto.get(11));
+                else b12pp1.setText("");
+                if (botoestexto.size() > 12) b13pp1.setText(botoestexto.get(12));
+                else b13pp1.setText("");
+                if (botoestexto.size() > 13) b14pp1.setText(botoestexto.get(13));
+                else b14pp1.setText("");
+                if (botoestexto.size() > 14) b15pp1.setText(botoestexto.get(14));
+                else b15pp1.setText("");
+            }else if(maxpaltela1==14){
+                if (botoestexto.size() > 0) b1pp1.setText(botoestexto.get(0));
+                else b1pp1.setText("");
+                if (botoestexto.size() > 1) b2pp1.setText(botoestexto.get(1));
+                else b2pp1.setText("");
+                if (botoestexto.size() > 2) b3pp1.setText(botoestexto.get(2));
+                else b3pp1.setText("");
+                if (botoestexto.size() > 3) b4pp1.setText(botoestexto.get(3));
+                else b4pp1.setText("");
+                if (botoestexto.size() > 4) b5pp1.setText(botoestexto.get(4));
+                else b5pp1.setText("");
+                if (botoestexto.size() > 5) b6pp1.setText(botoestexto.get(5));
+                else b6pp1.setText("");
+                if (botoestexto.size() > 6) b7pp1.setText(botoestexto.get(6));
+                else b7pp1.setText("");
+                if (botoestexto.size() > 7) b8pp1.setText(botoestexto.get(7));
+                else b8pp1.setText("");
+                if (botoestexto.size() > 8) b9pp1.setText(botoestexto.get(8));
+                else b9pp1.setText("");
+                if (botoestexto.size() > 9) b10pp1.setText(botoestexto.get(9));
+                else b10pp1.setText("");
+                if (botoestexto.size() > 10) b11pp1.setText(botoestexto.get(10));
+                else b11pp1.setText("");
+                if (botoestexto.size() > 11) b12pp1.setText(botoestexto.get(11));
+                else b12pp1.setText("");
+                if (botoestexto.size() > 12) b13pp1.setText(botoestexto.get(12));
+                else b13pp1.setText("");
+                if (botoestexto.size() > 13) b14pp1.setText(botoestexto.get(13));
+                else b14pp1.setText("");
+            }else if(maxpaltela1==13){
+                if (botoestexto.size() > 0) b1pp1.setText(botoestexto.get(0));
+                else b1pp1.setText("");
+                if (botoestexto.size() > 1) b2pp1.setText(botoestexto.get(1));
+                else b2pp1.setText("");
+                if (botoestexto.size() > 2) b3pp1.setText(botoestexto.get(2));
+                else b3pp1.setText("");
+                if (botoestexto.size() > 3) b4pp1.setText(botoestexto.get(3));
+                else b4pp1.setText("");
+                if (botoestexto.size() > 4) b5pp1.setText(botoestexto.get(4));
+                else b5pp1.setText("");
+                if (botoestexto.size() > 5) b6pp1.setText(botoestexto.get(5));
+                else b6pp1.setText("");
+                if (botoestexto.size() > 6) b7pp1.setText(botoestexto.get(6));
+                else b7pp1.setText("");
+                if (botoestexto.size() > 7) b8pp1.setText(botoestexto.get(7));
+                else b8pp1.setText("");
+                if (botoestexto.size() > 8) b9pp1.setText(botoestexto.get(8));
+                else b9pp1.setText("");
+                if (botoestexto.size() > 9) b10pp1.setText(botoestexto.get(9));
+                else b10pp1.setText("");
+                if (botoestexto.size() > 10) b11pp1.setText(botoestexto.get(10));
+                else b11pp1.setText("");
+                if (botoestexto.size() > 11) b12pp1.setText(botoestexto.get(11));
+                else b12pp1.setText("");
+                if (botoestexto.size() > 12) b13pp1.setText(botoestexto.get(12));
+                else b13pp1.setText("");
+            }else if(maxpaltela1==12){
+                if (botoestexto.size() > 0) b1pp1.setText(botoestexto.get(0));
+                else b1pp1.setText("");
+                if (botoestexto.size() > 1) b2pp1.setText(botoestexto.get(1));
+                else b2pp1.setText("");
+                if (botoestexto.size() > 2) b3pp1.setText(botoestexto.get(2));
+                else b3pp1.setText("");
+                if (botoestexto.size() > 3) b4pp1.setText(botoestexto.get(3));
+                else b4pp1.setText("");
+                if (botoestexto.size() > 4) b5pp1.setText(botoestexto.get(4));
+                else b5pp1.setText("");
+                if (botoestexto.size() > 5) b6pp1.setText(botoestexto.get(5));
+                else b6pp1.setText("");
+                if (botoestexto.size() > 6) b7pp1.setText(botoestexto.get(6));
+                else b7pp1.setText("");
+                if (botoestexto.size() > 7) b8pp1.setText(botoestexto.get(7));
+                else b8pp1.setText("");
+                if (botoestexto.size() > 8) b9pp1.setText(botoestexto.get(8));
+                else b9pp1.setText("");
+                if (botoestexto.size() > 9) b10pp1.setText(botoestexto.get(9));
+                else b10pp1.setText("");
+                if (botoestexto.size() > 10) b11pp1.setText(botoestexto.get(10));
+                else b11pp1.setText("");
+                if (botoestexto.size() > 11) b12pp1.setText(botoestexto.get(11));
+                else b12pp1.setText("");
+            }else if(maxpaltela1==11){
+                if (botoestexto.size() > 0) b1pp1.setText(botoestexto.get(0));
+                else b1pp1.setText("");
+                if (botoestexto.size() > 1) b2pp1.setText(botoestexto.get(1));
+                else b2pp1.setText("");
+                if (botoestexto.size() > 2) b3pp1.setText(botoestexto.get(2));
+                else b3pp1.setText("");
+                if (botoestexto.size() > 3) b4pp1.setText(botoestexto.get(3));
+                else b4pp1.setText("");
+                if (botoestexto.size() > 4) b5pp1.setText(botoestexto.get(4));
+                else b5pp1.setText("");
+                if (botoestexto.size() > 5) b6pp1.setText(botoestexto.get(5));
+                else b6pp1.setText("");
+                if (botoestexto.size() > 6) b7pp1.setText(botoestexto.get(6));
+                else b7pp1.setText("");
+                if (botoestexto.size() > 7) b8pp1.setText(botoestexto.get(7));
+                else b8pp1.setText("");
+                if (botoestexto.size() > 8) b9pp1.setText(botoestexto.get(8));
+                else b9pp1.setText("");
+                if (botoestexto.size() > 9) b10pp1.setText(botoestexto.get(9));
+                else b10pp1.setText("");
+                if (botoestexto.size() > 10) b11pp1.setText(botoestexto.get(10));
+                else b11pp1.setText("");
+            }else if(maxpaltela1==10){
+                if (botoestexto.size() > 0) b1pp1.setText(botoestexto.get(0));
+                else b1pp1.setText("");
+                if (botoestexto.size() > 1) b2pp1.setText(botoestexto.get(1));
+                else b2pp1.setText("");
+                if (botoestexto.size() > 2) b3pp1.setText(botoestexto.get(2));
+                else b3pp1.setText("");
+                if (botoestexto.size() > 3) b4pp1.setText(botoestexto.get(3));
+                else b4pp1.setText("");
+                if (botoestexto.size() > 4) b5pp1.setText(botoestexto.get(4));
+                else b5pp1.setText("");
+                if (botoestexto.size() > 5) b6pp1.setText(botoestexto.get(5));
+                else b6pp1.setText("");
+                if (botoestexto.size() > 6) b7pp1.setText(botoestexto.get(6));
+                else b7pp1.setText("");
+                if (botoestexto.size() > 7) b8pp1.setText(botoestexto.get(7));
+                else b8pp1.setText("");
+                if (botoestexto.size() > 8) b9pp1.setText(botoestexto.get(8));
+                else b9pp1.setText("");
+                if (botoestexto.size() > 9) b10pp1.setText(botoestexto.get(9));
+                else b10pp1.setText("");
+            }else if(maxpaltela1==9){
+                if (botoestexto.size() > 0) b1pp1.setText(botoestexto.get(0));
+                else b1pp1.setText("");
+                if (botoestexto.size() > 1) b2pp1.setText(botoestexto.get(1));
+                else b2pp1.setText("");
+                if (botoestexto.size() > 2) b3pp1.setText(botoestexto.get(2));
+                else b3pp1.setText("");
+                if (botoestexto.size() > 3) b4pp1.setText(botoestexto.get(3));
+                else b4pp1.setText("");
+                if (botoestexto.size() > 4) b5pp1.setText(botoestexto.get(4));
+                else b5pp1.setText("");
+                if (botoestexto.size() > 5) b6pp1.setText(botoestexto.get(5));
+                else b6pp1.setText("");
+                if (botoestexto.size() > 6) b7pp1.setText(botoestexto.get(6));
+                else b7pp1.setText("");
+                if (botoestexto.size() > 7) b8pp1.setText(botoestexto.get(7));
+                else b8pp1.setText("");
+                if (botoestexto.size() > 8) b9pp1.setText(botoestexto.get(8));
+                else b9pp1.setText("");
+            }else if(maxpaltela1==8){
+                if (botoestexto.size() > 0) b1pp1.setText(botoestexto.get(0));
+                else b1pp1.setText("");
+                if (botoestexto.size() > 1) b2pp1.setText(botoestexto.get(1));
+                else b2pp1.setText("");
+                if (botoestexto.size() > 2) b3pp1.setText(botoestexto.get(2));
+                else b3pp1.setText("");
+                if (botoestexto.size() > 3) b4pp1.setText(botoestexto.get(3));
+                else b4pp1.setText("");
+                if (botoestexto.size() > 4) b5pp1.setText(botoestexto.get(4));
+                else b5pp1.setText("");
+                if (botoestexto.size() > 5) b6pp1.setText(botoestexto.get(5));
+                else b6pp1.setText("");
+                if (botoestexto.size() > 6) b7pp1.setText(botoestexto.get(6));
+                else b7pp1.setText("");
+                if (botoestexto.size() > 7) b8pp1.setText(botoestexto.get(7));
+                else b8pp1.setText("");
+            }else if(maxpaltela1==7){
+                if (botoestexto.size() > 0) b1pp1.setText(botoestexto.get(0));
+                else b1pp1.setText("");
+                if (botoestexto.size() > 1) b2pp1.setText(botoestexto.get(1));
+                else b2pp1.setText("");
+                if (botoestexto.size() > 2) b3pp1.setText(botoestexto.get(2));
+                else b3pp1.setText("");
+                if (botoestexto.size() > 3) b4pp1.setText(botoestexto.get(3));
+                else b4pp1.setText("");
+                if (botoestexto.size() > 4) b5pp1.setText(botoestexto.get(4));
+                else b5pp1.setText("");
+                if (botoestexto.size() > 5) b6pp1.setText(botoestexto.get(5));
+                else b6pp1.setText("");
+                if (botoestexto.size() > 6) b7pp1.setText(botoestexto.get(6));
+                else b7pp1.setText("");
+            }else if(maxpaltela1==6){
+                if (botoestexto.size() > 0) b1pp1.setText(botoestexto.get(0));
+                else b1pp1.setText("");
+                if (botoestexto.size() > 1) b2pp1.setText(botoestexto.get(1));
+                else b2pp1.setText("");
+                if (botoestexto.size() > 2) b3pp1.setText(botoestexto.get(2));
+                else b3pp1.setText("");
+                if (botoestexto.size() > 3) b4pp1.setText(botoestexto.get(3));
+                else b4pp1.setText("");
+                if (botoestexto.size() > 4) b5pp1.setText(botoestexto.get(4));
+                else b5pp1.setText("");
+                if (botoestexto.size() > 5) b6pp1.setText(botoestexto.get(5));
+                else b6pp1.setText("");
+            }else if(maxpaltela1==5){
+                if (botoestexto.size() > 0) b1pp1.setText(botoestexto.get(0));
+                else b1pp1.setText("");
+                if (botoestexto.size() > 1) b2pp1.setText(botoestexto.get(1));
+                else b2pp1.setText("");
+                if (botoestexto.size() > 2) b3pp1.setText(botoestexto.get(2));
+                else b3pp1.setText("");
+                if (botoestexto.size() > 3) b4pp1.setText(botoestexto.get(3));
+                else b4pp1.setText("");
+                if (botoestexto.size() > 4) b5pp1.setText(botoestexto.get(4));
+                else b5pp1.setText("");
+                //entrada.setText(botoestexto.get(1)+"\n"+botoestexto.get(2)+"\n"+botoestexto.get(3)+"\n"+botoestexto.get(4));
+            }else if(maxpaltela1==4){
+                if (botoestexto.size() > 0) b1pp1.setText(botoestexto.get(0));
+                else b1pp1.setText("");
+                if (botoestexto.size() > 1) b2pp1.setText(botoestexto.get(1));
+                else b2pp1.setText("");
+                if (botoestexto.size() > 2) b3pp1.setText(botoestexto.get(2));
+                else b3pp1.setText("");
+                if (botoestexto.size() > 3) b4pp1.setText(botoestexto.get(3));
+                else b4pp1.setText("");
+            }else if(maxpaltela1==3){
+                if (botoestexto.size() > 0) b1pp1.setText(botoestexto.get(0));
+                else b1pp1.setText("");
+                if (botoestexto.size() > 1) b2pp1.setText(botoestexto.get(1));
+                else b2pp1.setText("");
+                if (botoestexto.size() > 2) b3pp1.setText(botoestexto.get(2));
+                else b3pp1.setText("");
+            }else if(maxpaltela1==2){
+                if (botoestexto.size() > 0) b1pp1.setText(botoestexto.get(0));
+                else b1pp1.setText("");
+                if (botoestexto.size() > 1) b2pp1.setText(botoestexto.get(1));
+                else b2pp1.setText("");
+            }else if(maxpaltela1==1){
+                if (botoestexto.size() > 0) b1pp1.setText(botoestexto.get(0));
+                else b1pp1.setText("");
+            }
 
-            if (botoestexto.size()>0)b1pp1.setText(botoestexto.get(0));
-            else b1pp1.setText("");
-            if (botoestexto.size()>1)b2pp1.setText(botoestexto.get(1));
-            else b2pp1.setText("");
-            if (botoestexto.size()>2)b3pp1.setText(botoestexto.get(2));
-            else b3pp1.setText("");
-            if (botoestexto.size()>3)b4pp1.setText(botoestexto.get(3));
-            else b4pp1.setText("");
             //b1pp1.setText("MaiúÚSculho");
         }
         catch (Exception e){
@@ -585,7 +862,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                     Toast.makeText(getApplicationContext(), "Digite algo para salvar!!", Toast.LENGTH_SHORT).show();
                     dialog.cancel();
                 } else {
-                    if (getsavedstring(true)!=null) savestring(getsavedstring(true) + "\n" + input.getText().toString(), true);//ISSO AQUI TA ERRaDO!!!
+                    if (getsavedstring(true)!=null&&!(getsavedstring(true).equals(""))) savestring(getsavedstring(true) + "\n" + input.getText().toString(), true);//ISSO AQUI TA ERRaDO!!!
                     else savestring(input.getText().toString(), true);
                     Toast.makeText(getApplicationContext(), "Palavra salva com sucesso!", Toast.LENGTH_SHORT).show();
                     updatepagef2(1, pagpaltel2);
@@ -610,24 +887,25 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
         return resposta;
     }
-    public String tirapalavra(String entrada){//ARRUNMAR
-        String resultado="";
-        if(entrada.equals(""))return entrada;
-        boolean atencao=false;
+    public void tirapalavraesalva(boolean palavrasfrases,int aremover){
+        ArrayList<String> palavras= getsavedwords(1,palavrasfrases);
+        if(palavras.size()>=1&&palavras.size()>aremover){
+            palavras.remove(aremover);
+            String saida="";
+            if(0<palavras.size()-1)
+            for (int i=0;i<palavras.size()-1;i++){
+                saida=saida+palavras.get(i)+"\n";
+            }
+            if(palavras.size()!=0)saida=saida+palavras.get(palavras.size()-1);
 
-        if(entrada.charAt(0)==" ".charAt(0)||entrada.charAt(0)=="\n".charAt(0))atencao=true;
-        for(int i=0;i<entrada.length();i++){
-            if((!atencao)&&(entrada.charAt(i)==" ".charAt(0)||entrada.charAt(i)=="\n".charAt(0)))break;
-            else if(atencao&&(entrada.charAt(i)==" ".charAt(0)||entrada.charAt(i)=="\n".charAt(0)))continue;
-            atencao=false;
-            resultado+=entrada.charAt(i);
-        }
-
-        return resultado;
+            savestring(saida,palavrasfrases);
+            //pag2.setText("a"+saida+"b");
+        }//else savestring("",palavrasfrases);
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         try {
+            maxpaltela1=4;
             maxpaltela2=15;
             super.onCreate(savedInstanceState);
 
@@ -711,19 +989,21 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         falador = new TextToSpeech(MainActivity.this, new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int i) {
-                if(i!=TextToSpeech.ERROR){
+                try{
+                if (i != TextToSpeech.ERROR) {
                     Locale portugues = new Locale("PT", "BR");
                     Bundle extras = getIntent().getExtras();
 
-                    if (extras != null){
+                    if (extras != null) {
+                        SharedPreferences.Editor mEditor = mPrefs.edit();
                         Boolean perg = extras.getBoolean("perg");
                         Boolean fone = extras.getBoolean("fone");
                         String tom = extras.getString("tom");
-                        if(Float.parseFloat(tom) < 0.1) tom = "0.1f";
+                        if (Float.parseFloat(tom) < 0.1) tom = "0.1f";
                         String vel = extras.getString("vel");
-                        if(Float.parseFloat(vel) < 0.1) vel = "0.1f";
-                        mEditor.putBoolean("pergt",perg).commit();
-                        mEditor.putBoolean("foni",fone).commit();
+                        if (Float.parseFloat(vel) < 0.1) vel = "0.1f";
+                        mEditor.putBoolean("pergt", perg).commit();
+                        mEditor.putBoolean("foni", fone).commit();
                         mEditor.putString("tag2", vel).commit();
                         mEditor.putString("tag", tom).commit();
                     }
@@ -734,6 +1014,9 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                     falador.setSpeechRate(Float.parseFloat(stringVel));
                     falador.setPitch(Float.parseFloat(stringTom));
                 }
+            }catch(Exception e){//Ignorando o erro abertamente aqui...
+                //entrada.setText("Erro no OnInit"+e.toString());
+            }
             }
         });
         falador.setOnUtteranceProgressListener(new UtteranceProgressListener() {
@@ -872,11 +1155,27 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         l13pp2=findViewById(R.id.lay13);
         l14pp2=findViewById(R.id.lay14);
         l15pp2=findViewById(R.id.lay15);
-
+        //Botões de apagar da tela 2:
+        p1pp2=findViewById(R.id.button22);
+        p2pp2=findViewById(R.id.button25);
+        p3pp2=findViewById(R.id.button19);
+        p4pp2=findViewById(R.id.button15);
+        p5pp2=findViewById(R.id.button28);
+        p6pp2=findViewById(R.id.button31);
+        p7pp2=findViewById(R.id.button34);
+        p8pp2=findViewById(R.id.button37);
+        p9pp2=findViewById(R.id.button61);
+        p10pp2=findViewById(R.id.button58);
+        p11pp2=findViewById(R.id.button55);
+        p12pp2=findViewById(R.id.button52);
+        p13pp2=findViewById(R.id.button49);
+        p14pp2=findViewById(R.id.button46);
+        p15pp2=findViewById(R.id.button43);
 
 
         //Botões de ir e voltar página 2:
         vaipag2=findViewById(R.id.button11);
+        vaipag2.setRotation(180);
         voltapag2=findViewById(R.id.button12);
 
 
@@ -918,6 +1217,127 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
 
         //Setando Botões:
+        p1pp2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tirapalavraesalva(palavrasoufrases,0+(pagpaltel2-1)*maxpaltela2);
+                if(getsavedwords(1,palavrasoufrases).size()!=0&&getsavedwords(1,palavrasoufrases).size()==(pagpaltel2-1)*maxpaltela2)pagpaltel2-=1;
+                updatepagef2(1,pagpaltel2);
+            }
+        });
+        p2pp2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tirapalavraesalva(palavrasoufrases,1+(pagpaltel2-1)*maxpaltela2);
+                if(getsavedwords(1,palavrasoufrases).size()!=0&&getsavedwords(1,palavrasoufrases).size()==(pagpaltel2-1)*maxpaltela2)pagpaltel2-=1;
+                updatepagef2(1,pagpaltel2);
+            }
+        });
+        p3pp2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tirapalavraesalva(palavrasoufrases,2+(pagpaltel2-1)*maxpaltela2);
+                if(getsavedwords(1,palavrasoufrases).size()!=0&&getsavedwords(1,palavrasoufrases).size()==pagpaltel2*maxpaltela2)pagpaltel2-=1;
+                updatepagef2(1,pagpaltel2);
+            }
+        });
+        p4pp2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tirapalavraesalva(palavrasoufrases,3+(pagpaltel2-1)*maxpaltela2);
+                if(getsavedwords(1,palavrasoufrases).size()==pagpaltel2*maxpaltela2)pagpaltel2-=1;
+                updatepagef2(1,pagpaltel2);
+            }
+        });
+        p5pp2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tirapalavraesalva(palavrasoufrases,4+(pagpaltel2-1)*maxpaltela2);
+                if(getsavedwords(1,palavrasoufrases).size()==pagpaltel2*maxpaltela2)pagpaltel2-=1;
+                updatepagef2(1,pagpaltel2);
+            }
+        });
+        p6pp2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tirapalavraesalva(palavrasoufrases,5+(pagpaltel2-1)*maxpaltela2);
+                if(getsavedwords(1,palavrasoufrases).size()==pagpaltel2*maxpaltela2)pagpaltel2-=1;
+                updatepagef2(1,pagpaltel2);
+            }
+        });
+        p7pp2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tirapalavraesalva(palavrasoufrases,6+(pagpaltel2-1)*maxpaltela2);
+                if(getsavedwords(1,palavrasoufrases).size()==pagpaltel2*maxpaltela2)pagpaltel2-=1;
+                updatepagef2(1,pagpaltel2);
+            }
+        });
+        p8pp2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tirapalavraesalva(palavrasoufrases,7+(pagpaltel2-1)*maxpaltela2);
+                if(getsavedwords(1,palavrasoufrases).size()==pagpaltel2*maxpaltela2)pagpaltel2-=1;
+                updatepagef2(1,pagpaltel2);
+            }
+        });
+        p9pp2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                tirapalavraesalva(palavrasoufrases,8+(pagpaltel2-1)*maxpaltela2);
+                if(getsavedwords(1,palavrasoufrases).size()==pagpaltel2*maxpaltela2)pagpaltel2-=1;
+                updatepagef2(1,pagpaltel2);
+            }
+        });
+        p10pp2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tirapalavraesalva(palavrasoufrases,9+(pagpaltel2-1)*maxpaltela2);
+                if(getsavedwords(1,palavrasoufrases).size()==pagpaltel2*maxpaltela2)pagpaltel2-=1;
+                updatepagef2(1,pagpaltel2);
+            }
+        });
+        p11pp2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tirapalavraesalva(palavrasoufrases,10+(pagpaltel2-1)*maxpaltela2);
+                if(getsavedwords(1,palavrasoufrases).size()==pagpaltel2*maxpaltela2)pagpaltel2-=1;
+                updatepagef2(1,pagpaltel2);
+            }
+        });
+        p12pp2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tirapalavraesalva(palavrasoufrases,11+(pagpaltel2-1)*maxpaltela2);
+                if(getsavedwords(1,palavrasoufrases).size()==pagpaltel2*maxpaltela2)pagpaltel2-=1;
+                updatepagef2(1,pagpaltel2);
+            }
+        });
+        p13pp2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tirapalavraesalva(palavrasoufrases,12+(pagpaltel2-1)*maxpaltela2);
+                if(getsavedwords(1,palavrasoufrases).size()==pagpaltel2*maxpaltela2)pagpaltel2-=1;
+                updatepagef2(1,pagpaltel2);
+            }
+        });
+        p14pp2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tirapalavraesalva(palavrasoufrases,13+(pagpaltel2-1)*maxpaltela2);
+                if(getsavedwords(1,palavrasoufrases).size()==pagpaltel2*maxpaltela2)pagpaltel2-=1;
+                updatepagef2(1,pagpaltel2);
+            }
+        });
+        p15pp2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tirapalavraesalva(palavrasoufrases,14+(pagpaltel2-1)*maxpaltela2);
+                if(getsavedwords(1,palavrasoufrases).size()==pagpaltel2*maxpaltela2)pagpaltel2-=1;
+                updatepagef2(1,pagpaltel2);
+            }
+        });
         somapag2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -958,6 +1378,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         updatepagef2(1,pagpaltel2);
     }
     public void totela1(final MediaPlayer sperg){
+        try{
         setContentView(R.layout.activity_main);
         falabotao = findViewById(R.id.Fala);
         likebotao = findViewById(R.id.like);
@@ -965,10 +1386,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         editar = findViewById(R.id.button10);
         entrada = findViewById(R.id.Entrada);
         mPrefs=getSharedPreferences("labela", 0);
-        try{
-        entrada.setText(mPrefs.getString("escrito",""));}catch (Exception e){
-            entrada.setText("erro no totela1"+e.toString());
-        }
+
+        entrada.setText(mPrefs.getString("escrito",""));
 
 
         //Botões das palavras tela 1:
@@ -977,10 +1396,42 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         b2pp1=findViewById(R.id.button2);
         b3pp1=findViewById(R.id.button3);
         b4pp1=findViewById(R.id.button4);
+        b5pp1=findViewById(R.id.button5);
+        b6pp1=findViewById(R.id.button6);
+        b7pp1=findViewById(R.id.button7);
+        b8pp1=findViewById(R.id.button14);
+        b9pp1=findViewById(R.id.button17);
+        b10pp1=findViewById(R.id.button20);
+        b11pp1=findViewById(R.id.button23);
+        b12pp1=findViewById(R.id.button26);
+        b13pp1=findViewById(R.id.button29);
+        b14pp1=findViewById(R.id.button32);
+        b15pp1=findViewById(R.id.button35);
         //Botões de ir e voltar tela 1:
         vaipag1=findViewById(R.id.button8);
         vaipag1.setRotation(180);
         voltapag1=findViewById(R.id.button9);
+
+
+
+
+        maxpaltela1=(int)(getaltura()-170)/42;//40 de cada um dos 3 botões e 50 da toolbar
+            //entrada.setText(Integer.toString(maxpaltela1));
+            if (maxpaltela1<1)b1pp1.setVisibility(View.GONE);
+            if (maxpaltela1<2)b2pp1.setVisibility(View.GONE);
+            if (maxpaltela1<3)b3pp1.setVisibility(View.GONE);
+            if (maxpaltela1<4)b4pp1.setVisibility(View.GONE);
+            if (maxpaltela1<5)b5pp1.setVisibility(View.GONE);
+            if (maxpaltela1<6)b6pp1.setVisibility(View.GONE);
+            if (maxpaltela1<7)b7pp1.setVisibility(View.GONE);
+            if (maxpaltela1<8)b8pp1.setVisibility(View.GONE);
+            if (maxpaltela1<9)b9pp1.setVisibility(View.GONE);
+            if (maxpaltela1<10)b10pp1.setVisibility(View.GONE);
+            if (maxpaltela1<11)b11pp1.setVisibility(View.GONE);
+            if (maxpaltela1<12)b12pp1.setVisibility(View.GONE);
+            if (maxpaltela1<13)b13pp1.setVisibility(View.GONE);
+            if (maxpaltela1<14)b14pp1.setVisibility(View.GONE);
+            if (maxpaltela1<15)b15pp1.setVisibility(View.GONE);
         //Botões de apagar:
         //apagatudo=findViewById(R.id.button56);
         //apagapalavra=findViewById(R.id.button76);
@@ -1037,12 +1488,12 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 }
             }
         });
-        /*
+
         b5pp1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 if(!b5pp1.getText().toString().equals("")){
-                    entrada.setText(entrada.getText().toString()+" "+b5pp1.getText().toString());
+                    entrada.setText(entrada.getText().toString()+b5pp1.getText().toString()+" ");
                 }
             }
         });
@@ -1050,7 +1501,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             @Override
             public void onClick(View view){
                 if(!b6pp1.getText().toString().equals("")){
-                    entrada.setText(entrada.getText().toString()+" "+b6pp1.getText().toString());
+                    entrada.setText(entrada.getText().toString()+b6pp1.getText().toString()+" ");
                 }
             }
         });
@@ -1058,10 +1509,74 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             @Override
             public void onClick(View view){
                 if(!b7pp1.getText().toString().equals("")){
-                    entrada.setText(entrada.getText().toString()+" "+b7pp1.getText().toString());
+                    entrada.setText(entrada.getText().toString()+b7pp1.getText().toString()+" ");
                 }
             }
-        });*/
+        });
+            b8pp1.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View view){
+                    if(!b8pp1.getText().toString().equals("")){
+                        entrada.setText(entrada.getText().toString()+b8pp1.getText().toString()+" ");
+                    }
+                }
+            });
+            b9pp1.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View view){
+                    if(!b9pp1.getText().toString().equals("")){
+                        entrada.setText(entrada.getText().toString()+b9pp1.getText().toString()+" ");
+                    }
+                }
+            });
+            b10pp1.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View view){
+                    if(!b10pp1.getText().toString().equals("")){
+                        entrada.setText(entrada.getText().toString()+b10pp1.getText().toString()+" ");
+                    }
+                }
+            });
+            b11pp1.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View view){
+                    if(!b11pp1.getText().toString().equals("")){
+                        entrada.setText(entrada.getText().toString()+b11pp1.getText().toString()+" ");
+                    }
+                }
+            });
+            b12pp1.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View view){
+                    if(!b12pp1.getText().toString().equals("")){
+                        entrada.setText(entrada.getText().toString()+b12pp1.getText().toString()+" ");
+                    }
+                }
+            });
+            b13pp1.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View view){
+                    if(!b13pp1.getText().toString().equals("")){
+                        entrada.setText(entrada.getText().toString()+b13pp1.getText().toString()+" ");
+                    }
+                }
+            });
+            b14pp1.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View view){
+                    if(!b14pp1.getText().toString().equals("")){
+                        entrada.setText(entrada.getText().toString()+b14pp1.getText().toString()+" ");
+                    }
+                }
+            });
+            b15pp1.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View view){
+                    if(!b15pp1.getText().toString().equals("")){
+                        entrada.setText(entrada.getText().toString()+b15pp1.getText().toString()+" ");
+                    }
+                }
+            });
         //setando botões
         falabotao.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -1114,7 +1629,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             public void onClick(View view){
                 //pag2.setText(Integer.toString(getnumpag(maxpaltela2,getsavedwords(1,true).size())));
                 //pag2.setText(Integer.toString(pagpaltel2));
-                if(getnumpag(4,getsavedwords(1,true).size())>pagpaltel1) {
+                if(getnumpag(maxpaltela1,getsavedwords(1,true).size())>pagpaltel1) {
                     pagpaltel1 += 1;
                     updatepagef1(1, pagpaltel1);
                 }
@@ -1141,6 +1656,9 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 popup.show();
             }
         });
+        }catch (Exception e){
+            entrada.setText("erro no totela1"+e.toString());
+        }
     }
 
 

@@ -60,7 +60,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button10"
                 android:layout_width="wrap_content"
-                android:layout_height="45dp"
+                android:layout_height="40dp"
                 android:layout_weight="1"
                 android:capitalize="none"
                 android:text="Edit"
@@ -117,12 +117,122 @@
             android:textAllCaps="false"
             android:textColor="#ffffff"
             app:backgroundTint="@color/azulbonito" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button5"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:capitalize="none"
+            android:text="Button"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            app:backgroundTint="@color/azulbonito" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button6"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:capitalize="none"
+            android:text="Button"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            app:backgroundTint="@color/azulbonito" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button7"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:capitalize="none"
+            android:text="Button"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            app:backgroundTint="@color/azulbonito" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button14"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:capitalize="none"
+            android:text="Button"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            app:backgroundTint="@color/azulbonito" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button17"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:capitalize="none"
+            android:text="Button"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            app:backgroundTint="@color/azulbonito" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button20"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:capitalize="none"
+            android:text="Button"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            app:backgroundTint="@color/azulbonito" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button23"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:capitalize="none"
+            android:text="Button"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            app:backgroundTint="@color/azulbonito" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button26"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:capitalize="none"
+            android:text="Button"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            app:backgroundTint="@color/azulbonito" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button29"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:capitalize="none"
+            android:text="Button"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            app:backgroundTint="@color/azulbonito" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button32"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:capitalize="none"
+            android:text="Button"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            app:backgroundTint="@color/azulbonito" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button35"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:capitalize="none"
+            android:text="Button"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            app:backgroundTint="@color/azulbonito" />
     </LinearLayout>
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:background="@color/azulbonito"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
@@ -231,10 +341,10 @@
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/like"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_weight="1"
-                app:backgroundTint="@color/azulbonito"
                 android:tint="#ffffff"
+                app:backgroundTint="@color/azulbonito"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/Fala"
                 app:layout_constraintStart_toStartOf="parent"
@@ -243,11 +353,11 @@
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/Fala"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_weight="1"
-                app:backgroundTint="@color/azulbonito"
                 android:contentDescription="TODO"
                 android:tint="#ffffff"
+                app:backgroundTint="@color/azulbonito"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/deslike"
                 app:layout_constraintStart_toEndOf="@+id/like"
@@ -256,10 +366,10 @@
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/deslike"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="40dp"
                 android:layout_weight="1"
-                app:backgroundTint="@color/azulbonito"
                 android:tint="#ffffff"
+                app:backgroundTint="@color/azulbonito"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:srcCompat="@drawable/ic_thumb_down_black_24dp" />
