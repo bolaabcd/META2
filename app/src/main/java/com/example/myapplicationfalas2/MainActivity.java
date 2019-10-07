@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Point;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 
@@ -13,16 +14,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.appcompat.widget.PopupMenu;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.UtteranceProgressListener;
 import android.text.InputType;
+import android.view.Display;
 import android.view.KeyEvent;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import android.view.View;
@@ -62,7 +66,6 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     AppCompatButton somapag2;//botão + Página 2
     AppCompatButton trespontos;
     Boolean saiu = true;
-    SharedPreferences.Editor mEditor;
 
 
     int telatual;//SALVA EM QUAL tela ESTÁ!
@@ -86,6 +89,22 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
    AppCompatButton b13pp2;
    AppCompatButton b14pp2;
    AppCompatButton b15pp2;
+    //Linearlayouts da página 2:
+    LinearLayout l1pp2;
+    LinearLayout l2pp2;
+    LinearLayout l3pp2;
+    LinearLayout l4pp2;
+    LinearLayout l5pp2;
+    LinearLayout l6pp2;
+    LinearLayout l7pp2;
+    LinearLayout l8pp2;
+    LinearLayout l9pp2;
+    LinearLayout l10pp2;
+    LinearLayout l11pp2;
+    LinearLayout l12pp2;
+    LinearLayout l13pp2;
+    LinearLayout l14pp2;
+    LinearLayout l15pp2;
 
     //Botões de ir e voltar página 2:
    AppCompatButton vaipag2;
@@ -100,10 +119,28 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     //Botões de ir e voltar da tela 1:
    AppCompatButton vaipag1;
    AppCompatButton voltapag1;
+
+
+   //final SharedPreferences mPrefs=getSharedPreferences("labela", 0);
+   //final SharedPreferences.Editor mEditor= mPrefs.edit();
    SharedPreferences mPrefs;
+   SharedPreferences.Editor mEditor;
 
+   int maxpaltela2;
 
+    public float getaltura(){
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        return size.y / getResources().getDisplayMetrics().density;
+    }
+    public float getlargura(){
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        return size.x / getResources().getDisplayMetrics().density;
 
+    }
     public ArrayList<String> getpage(int palporpag,int numerodapag,ArrayList<String>palavras){//Retorna página especificada
         return null;
     }
@@ -122,42 +159,268 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             //b1pp1.setText("MaiúÚSculho");
         }
         catch (Exception e){
-            entrada.setText(e.toString());
+            entrada.setText("erronoupdatepagef1"+e.toString());
         }
     }
     public void updatepagef2(int numerodalista/*Pra fazer listas de matérias diferentes por exemplo*/,int paginadepalavras){//Atualiza as palavras da página na tela 2
         //pag2.setText("OILA");
-        ArrayList<String> botoestexto=getpage(getsavedwords(numerodalista,true),15,paginadepalavras);
-        if (botoestexto.size()>0)b1pp2.setText(botoestexto.get(0));
-        else b1pp2.setText("");
-        if (botoestexto.size()>1)b2pp2.setText(botoestexto.get(1));
-        else b2pp2.setText("");
-        if (botoestexto.size()>2)b3pp2.setText(botoestexto.get(2));
-        else b3pp2.setText("");
-        if (botoestexto.size()>3)b4pp2.setText(botoestexto.get(3));
-        else b4pp2.setText("");
-        if (botoestexto.size()>4)b5pp2.setText(botoestexto.get(4));
-        else b5pp2.setText("");
-        if (botoestexto.size()>5)b6pp2.setText(botoestexto.get(5));
-        else b6pp2.setText("");
-        if (botoestexto.size()>6)b7pp2.setText(botoestexto.get(6));
-        else b7pp2.setText("");
-        if (botoestexto.size()>7)b8pp2.setText(botoestexto.get(7));
-        else b8pp2.setText("");
-        if (botoestexto.size()>8)b9pp2.setText(botoestexto.get(8));
-        else b9pp2.setText("");
-        if (botoestexto.size()>9)b10pp2.setText(botoestexto.get(9));
-        else b10pp2.setText("");
-        if (botoestexto.size()>10)b11pp2.setText(botoestexto.get(10));
-        else b11pp2.setText("");
-        if (botoestexto.size()>11)b12pp2.setText(botoestexto.get(11));
-        else b12pp2.setText("");
-        if (botoestexto.size()>12)b13pp2.setText(botoestexto.get(12));
-        else b13pp2.setText("");
-        if (botoestexto.size()>13)b14pp2.setText(botoestexto.get(13));
-        else b14pp2.setText("");
-        if (botoestexto.size()>14)b15pp2.setText(botoestexto.get(14));
-        else b15pp2.setText("");
+        ArrayList<String> botoestexto=getpage(getsavedwords(numerodalista,true),maxpaltela2,paginadepalavras);
+        if (maxpaltela2==15){
+            if (botoestexto.size()>0)b1pp2.setText(botoestexto.get(0));
+            else b1pp2.setText("");
+            if (botoestexto.size()>1)b2pp2.setText(botoestexto.get(1));
+            else b2pp2.setText("");
+            if (botoestexto.size()>2)b3pp2.setText(botoestexto.get(2));
+            else b3pp2.setText("");
+            if (botoestexto.size()>3)b4pp2.setText(botoestexto.get(3));
+            else b4pp2.setText("");
+            if (botoestexto.size()>4)b5pp2.setText(botoestexto.get(4));
+            else b5pp2.setText("");
+            if (botoestexto.size()>5)b6pp2.setText(botoestexto.get(5));
+            else b6pp2.setText("");
+            if (botoestexto.size()>6)b7pp2.setText(botoestexto.get(6));
+            else b7pp2.setText("");
+            if (botoestexto.size()>7)b8pp2.setText(botoestexto.get(7));
+            else b8pp2.setText("");
+            if (botoestexto.size()>8)b9pp2.setText(botoestexto.get(8));
+            else b9pp2.setText("");
+            if (botoestexto.size()>9)b10pp2.setText(botoestexto.get(9));
+            else b10pp2.setText("");
+            if (botoestexto.size()>10)b11pp2.setText(botoestexto.get(10));
+            else b11pp2.setText("");
+            if (botoestexto.size()>11)b12pp2.setText(botoestexto.get(11));
+            else b12pp2.setText("");
+            if (botoestexto.size()>12)b13pp2.setText(botoestexto.get(12));
+            else b13pp2.setText("");
+            if (botoestexto.size()>13)b14pp2.setText(botoestexto.get(13));
+            else b14pp2.setText("");
+            if (botoestexto.size()>14)b15pp2.setText(botoestexto.get(14));
+            else b15pp2.setText("");}
+        else if(maxpaltela2==14){
+            if (botoestexto.size()>0)b1pp2.setText(botoestexto.get(0));
+            else b1pp2.setText("");
+            if (botoestexto.size()>1)b2pp2.setText(botoestexto.get(1));
+            else b2pp2.setText("");
+            if (botoestexto.size()>2)b3pp2.setText(botoestexto.get(2));
+            else b3pp2.setText("");
+            if (botoestexto.size()>3)b4pp2.setText(botoestexto.get(3));
+            else b4pp2.setText("");
+            if (botoestexto.size()>4)b5pp2.setText(botoestexto.get(4));
+            else b5pp2.setText("");
+            if (botoestexto.size()>5)b6pp2.setText(botoestexto.get(5));
+            else b6pp2.setText("");
+            if (botoestexto.size()>6)b7pp2.setText(botoestexto.get(6));
+            else b7pp2.setText("");
+            if (botoestexto.size()>7)b8pp2.setText(botoestexto.get(7));
+            else b8pp2.setText("");
+            if (botoestexto.size()>8)b9pp2.setText(botoestexto.get(8));
+            else b9pp2.setText("");
+            if (botoestexto.size()>9)b10pp2.setText(botoestexto.get(9));
+            else b10pp2.setText("");
+            if (botoestexto.size()>10)b11pp2.setText(botoestexto.get(10));
+            else b11pp2.setText("");
+            if (botoestexto.size()>11)b12pp2.setText(botoestexto.get(11));
+            else b12pp2.setText("");
+            if (botoestexto.size()>12)b13pp2.setText(botoestexto.get(12));
+            else b13pp2.setText("");
+            if (botoestexto.size()>13)b14pp2.setText(botoestexto.get(13));
+            else b14pp2.setText("");
+        }else if(maxpaltela2==13){
+            if (botoestexto.size()>0)b1pp2.setText(botoestexto.get(0));
+            else b1pp2.setText("");
+            if (botoestexto.size()>1)b2pp2.setText(botoestexto.get(1));
+            else b2pp2.setText("");
+            if (botoestexto.size()>2)b3pp2.setText(botoestexto.get(2));
+            else b3pp2.setText("");
+            if (botoestexto.size()>3)b4pp2.setText(botoestexto.get(3));
+            else b4pp2.setText("");
+            if (botoestexto.size()>4)b5pp2.setText(botoestexto.get(4));
+            else b5pp2.setText("");
+            if (botoestexto.size()>5)b6pp2.setText(botoestexto.get(5));
+            else b6pp2.setText("");
+            if (botoestexto.size()>6)b7pp2.setText(botoestexto.get(6));
+            else b7pp2.setText("");
+            if (botoestexto.size()>7)b8pp2.setText(botoestexto.get(7));
+            else b8pp2.setText("");
+            if (botoestexto.size()>8)b9pp2.setText(botoestexto.get(8));
+            else b9pp2.setText("");
+            if (botoestexto.size()>9)b10pp2.setText(botoestexto.get(9));
+            else b10pp2.setText("");
+            if (botoestexto.size()>10)b11pp2.setText(botoestexto.get(10));
+            else b11pp2.setText("");
+            if (botoestexto.size()>11)b12pp2.setText(botoestexto.get(11));
+            else b12pp2.setText("");
+            if (botoestexto.size()>12)b13pp2.setText(botoestexto.get(12));
+            else b13pp2.setText("");
+        }else if(maxpaltela2==12){
+            if (botoestexto.size()>0)b1pp2.setText(botoestexto.get(0));
+            else b1pp2.setText("");
+            if (botoestexto.size()>1)b2pp2.setText(botoestexto.get(1));
+            else b2pp2.setText("");
+            if (botoestexto.size()>2)b3pp2.setText(botoestexto.get(2));
+            else b3pp2.setText("");
+            if (botoestexto.size()>3)b4pp2.setText(botoestexto.get(3));
+            else b4pp2.setText("");
+            if (botoestexto.size()>4)b5pp2.setText(botoestexto.get(4));
+            else b5pp2.setText("");
+            if (botoestexto.size()>5)b6pp2.setText(botoestexto.get(5));
+            else b6pp2.setText("");
+            if (botoestexto.size()>6)b7pp2.setText(botoestexto.get(6));
+            else b7pp2.setText("");
+            if (botoestexto.size()>7)b8pp2.setText(botoestexto.get(7));
+            else b8pp2.setText("");
+            if (botoestexto.size()>8)b9pp2.setText(botoestexto.get(8));
+            else b9pp2.setText("");
+            if (botoestexto.size()>9)b10pp2.setText(botoestexto.get(9));
+            else b10pp2.setText("");
+            if (botoestexto.size()>10)b11pp2.setText(botoestexto.get(10));
+            else b11pp2.setText("");
+            if (botoestexto.size()>11)b12pp2.setText(botoestexto.get(11));
+            else b12pp2.setText("");
+        }else if(maxpaltela2==11){
+            if (botoestexto.size()>0)b1pp2.setText(botoestexto.get(0));
+            else b1pp2.setText("");
+            if (botoestexto.size()>1)b2pp2.setText(botoestexto.get(1));
+            else b2pp2.setText("");
+            if (botoestexto.size()>2)b3pp2.setText(botoestexto.get(2));
+            else b3pp2.setText("");
+            if (botoestexto.size()>3)b4pp2.setText(botoestexto.get(3));
+            else b4pp2.setText("");
+            if (botoestexto.size()>4)b5pp2.setText(botoestexto.get(4));
+            else b5pp2.setText("");
+            if (botoestexto.size()>5)b6pp2.setText(botoestexto.get(5));
+            else b6pp2.setText("");
+            if (botoestexto.size()>6)b7pp2.setText(botoestexto.get(6));
+            else b7pp2.setText("");
+            if (botoestexto.size()>7)b8pp2.setText(botoestexto.get(7));
+            else b8pp2.setText("");
+            if (botoestexto.size()>8)b9pp2.setText(botoestexto.get(8));
+            else b9pp2.setText("");
+            if (botoestexto.size()>9)b10pp2.setText(botoestexto.get(9));
+            else b10pp2.setText("");
+            if (botoestexto.size()>10)b11pp2.setText(botoestexto.get(10));
+            else b11pp2.setText("");
+        }else if(maxpaltela2==10){
+            if (botoestexto.size()>0)b1pp2.setText(botoestexto.get(0));
+            else b1pp2.setText("");
+            if (botoestexto.size()>1)b2pp2.setText(botoestexto.get(1));
+            else b2pp2.setText("");
+            if (botoestexto.size()>2)b3pp2.setText(botoestexto.get(2));
+            else b3pp2.setText("");
+            if (botoestexto.size()>3)b4pp2.setText(botoestexto.get(3));
+            else b4pp2.setText("");
+            if (botoestexto.size()>4)b5pp2.setText(botoestexto.get(4));
+            else b5pp2.setText("");
+            if (botoestexto.size()>5)b6pp2.setText(botoestexto.get(5));
+            else b6pp2.setText("");
+            if (botoestexto.size()>6)b7pp2.setText(botoestexto.get(6));
+            else b7pp2.setText("");
+            if (botoestexto.size()>7)b8pp2.setText(botoestexto.get(7));
+            else b8pp2.setText("");
+            if (botoestexto.size()>8)b9pp2.setText(botoestexto.get(8));
+            else b9pp2.setText("");
+            if (botoestexto.size()>9)b10pp2.setText(botoestexto.get(9));
+            else b10pp2.setText("");
+        }else if(maxpaltela2==9){
+            if (botoestexto.size()>0)b1pp2.setText(botoestexto.get(0));
+            else b1pp2.setText("");
+            if (botoestexto.size()>1)b2pp2.setText(botoestexto.get(1));
+            else b2pp2.setText("");
+            if (botoestexto.size()>2)b3pp2.setText(botoestexto.get(2));
+            else b3pp2.setText("");
+            if (botoestexto.size()>3)b4pp2.setText(botoestexto.get(3));
+            else b4pp2.setText("");
+            if (botoestexto.size()>4)b5pp2.setText(botoestexto.get(4));
+            else b5pp2.setText("");
+            if (botoestexto.size()>5)b6pp2.setText(botoestexto.get(5));
+            else b6pp2.setText("");
+            if (botoestexto.size()>6)b7pp2.setText(botoestexto.get(6));
+            else b7pp2.setText("");
+            if (botoestexto.size()>7)b8pp2.setText(botoestexto.get(7));
+            else b8pp2.setText("");
+            if (botoestexto.size()>8)b9pp2.setText(botoestexto.get(8));
+            else b9pp2.setText("");
+        }else if(maxpaltela2==8){
+            if (botoestexto.size()>0)b1pp2.setText(botoestexto.get(0));
+            else b1pp2.setText("");
+            if (botoestexto.size()>1)b2pp2.setText(botoestexto.get(1));
+            else b2pp2.setText("");
+            if (botoestexto.size()>2)b3pp2.setText(botoestexto.get(2));
+            else b3pp2.setText("");
+            if (botoestexto.size()>3)b4pp2.setText(botoestexto.get(3));
+            else b4pp2.setText("");
+            if (botoestexto.size()>4)b5pp2.setText(botoestexto.get(4));
+            else b5pp2.setText("");
+            if (botoestexto.size()>5)b6pp2.setText(botoestexto.get(5));
+            else b6pp2.setText("");
+            if (botoestexto.size()>6)b7pp2.setText(botoestexto.get(6));
+            else b7pp2.setText("");
+            if (botoestexto.size()>7)b8pp2.setText(botoestexto.get(7));
+            else b8pp2.setText("");
+        }else if(maxpaltela2==7){
+            if (botoestexto.size()>0)b1pp2.setText(botoestexto.get(0));
+            else b1pp2.setText("");
+            if (botoestexto.size()>1)b2pp2.setText(botoestexto.get(1));
+            else b2pp2.setText("");
+            if (botoestexto.size()>2)b3pp2.setText(botoestexto.get(2));
+            else b3pp2.setText("");
+            if (botoestexto.size()>3)b4pp2.setText(botoestexto.get(3));
+            else b4pp2.setText("");
+            if (botoestexto.size()>4)b5pp2.setText(botoestexto.get(4));
+            else b5pp2.setText("");
+            if (botoestexto.size()>5)b6pp2.setText(botoestexto.get(5));
+            else b6pp2.setText("");
+            if (botoestexto.size()>6)b7pp2.setText(botoestexto.get(6));
+            else b7pp2.setText("");
+        }else if(maxpaltela2==6){
+            if (botoestexto.size()>0)b1pp2.setText(botoestexto.get(0));
+            else b1pp2.setText("");
+            if (botoestexto.size()>1)b2pp2.setText(botoestexto.get(1));
+            else b2pp2.setText("");
+            if (botoestexto.size()>2)b3pp2.setText(botoestexto.get(2));
+            else b3pp2.setText("");
+            if (botoestexto.size()>3)b4pp2.setText(botoestexto.get(3));
+            else b4pp2.setText("");
+            if (botoestexto.size()>4)b5pp2.setText(botoestexto.get(4));
+            else b5pp2.setText("");
+            if (botoestexto.size()>5)b6pp2.setText(botoestexto.get(5));
+            else b6pp2.setText("");
+        }else if(maxpaltela2==5){
+            if (botoestexto.size()>0)b1pp2.setText(botoestexto.get(0));
+            else b1pp2.setText("");
+            if (botoestexto.size()>1)b2pp2.setText(botoestexto.get(1));
+            else b2pp2.setText("");
+            if (botoestexto.size()>2)b3pp2.setText(botoestexto.get(2));
+            else b3pp2.setText("");
+            if (botoestexto.size()>3)b4pp2.setText(botoestexto.get(3));
+            else b4pp2.setText("");
+            if (botoestexto.size()>4)b5pp2.setText(botoestexto.get(4));
+            else b5pp2.setText("");
+        }else if(maxpaltela2==4){
+            if (botoestexto.size()>0)b1pp2.setText(botoestexto.get(0));
+            else b1pp2.setText("");
+            if (botoestexto.size()>1)b2pp2.setText(botoestexto.get(1));
+            else b2pp2.setText("");
+            if (botoestexto.size()>2)b3pp2.setText(botoestexto.get(2));
+            else b3pp2.setText("");
+            if (botoestexto.size()>3)b4pp2.setText(botoestexto.get(3));
+            else b4pp2.setText("");
+        }else if(maxpaltela2==3){
+            if (botoestexto.size()>0)b1pp2.setText(botoestexto.get(0));
+            else b1pp2.setText("");
+            if (botoestexto.size()>1)b2pp2.setText(botoestexto.get(1));
+            else b2pp2.setText("");
+            if (botoestexto.size()>2)b3pp2.setText(botoestexto.get(2));
+            else b3pp2.setText("");
+        }else if(maxpaltela2==2){
+            if (botoestexto.size()>0)b1pp2.setText(botoestexto.get(0));
+            else b1pp2.setText("");
+            if (botoestexto.size()>1)b2pp2.setText(botoestexto.get(1));
+            else b2pp2.setText("");
+        }else if(maxpaltela2==1){
+            if (botoestexto.size()>0)b1pp2.setText(botoestexto.get(0));
+            else b1pp2.setText("");
+        }
     }
     public ArrayList<String> getpage(ArrayList<String> palavras,int palporpag,int paginadesejada){
         String palavratual;
@@ -364,13 +627,10 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        mPrefs = getSharedPreferences("labela", 0);
-        mEditor = mPrefs.edit();
-        String csvList = mPrefs.getString("perguntitas","");
-        String[] items = csvList.split("¨");
-        for(int i=0; i < items.length; i++){
-            perguntas.add(items[i]);
-        }
+        try {
+            maxpaltela2=15;
+            super.onCreate(savedInstanceState);
+
 
         try{FileInputStream ler = openFileInput("palavras.txt");}
         catch (FileNotFoundException ex){
@@ -381,10 +641,30 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         }
 
         final MediaPlayer somPerg = MediaPlayer.create(this, R.raw.notification);
-        super.onCreate(savedInstanceState);
+        //super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         totela1(somPerg);
 
+        mPrefs = getSharedPreferences("labela", 0);
+        mEditor = mPrefs.edit();
+
+
+        String csvList = mPrefs.getString("perguntitas", "");
+        String[] items = csvList.split("¨");
+        for (int i = 0; i < items.length; i++) {
+            perguntas.add(items[i]);
+        }
+
+
+        }catch(Exception e) {
+            entrada.setText("Erro no onCreate"+e.toString());
+            Toast.makeText(getApplicationContext(),e.toString(), Toast.LENGTH_LONG).show();
+            //while(true){
+            //Toast.makeText(getApplicationContext(),e.toString(), Toast.LENGTH_LONG).show();
+            //try{sleep(1000);}catch (Exception err){err.printStackTrace();}
+            //}
+        }
+        //entrada.setText("X= "+getlargura()+" Y="+getaltura());
 
 
 
@@ -555,6 +835,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     }
 
     public void totela2(final MediaPlayer sperg){
+
+
         setContentView(R.layout.configurator);
         voltar=findViewById(R.id.button13);
         pag2=findViewById(R.id.textView);
@@ -574,6 +856,23 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         b13pp2=findViewById(R.id.button48);
         b14pp2=findViewById(R.id.button45);
         b15pp2=findViewById(R.id.button42);
+        //Linearlayouts da tela 2:
+        l1pp2=findViewById(R.id.lay1);
+        l2pp2=findViewById(R.id.lay2);
+        l3pp2=findViewById(R.id.lay3);
+        l4pp2=findViewById(R.id.lay4);
+        l5pp2=findViewById(R.id.lay5);
+        l6pp2=findViewById(R.id.lay6);
+        l7pp2=findViewById(R.id.lay7);
+        l8pp2=findViewById(R.id.lay8);
+        l9pp2=findViewById(R.id.lay9);
+        l10pp2=findViewById(R.id.lay10);
+        l11pp2=findViewById(R.id.lay11);
+        l12pp2=findViewById(R.id.lay12);
+        l13pp2=findViewById(R.id.lay13);
+        l14pp2=findViewById(R.id.lay14);
+        l15pp2=findViewById(R.id.lay15);
+
 
 
         //Botões de ir e voltar página 2:
@@ -582,6 +881,41 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
 
         somapag2=findViewById(R.id.button39);
+
+        //Sem Solução:
+        /*
+        findViewById(R.id.constai).post(new Runnable() {
+            @Override
+            public void run() {
+                pag2.setText(Float.toString(findViewById(R.id.constai).getMeasuredHeight()));
+            }
+        });
+        try{
+        float altconstr=new Float(pag2.getText().toString());
+        pag2.setText("Editar palavras"+Float.toString(altconstr));
+        }catch(Exception erroqorqkw){
+            pag2.setText("Q"+erroqorqkw.toString());
+        }*/
+        float alturapadraotot=90;//50 da constraint e 40 do botão back
+        maxpaltela2=(int)((getaltura()-130)/40);//-1 do botão + pra dar exato se quiser...
+
+        //Tirando botões excessivos
+        if (maxpaltela2<1)l1pp2.setVisibility(View.GONE);
+        if (maxpaltela2<2)l2pp2.setVisibility(View.GONE);
+        if (maxpaltela2<3)l3pp2.setVisibility(View.GONE);
+        if (maxpaltela2<4)l4pp2.setVisibility(View.GONE);
+        if (maxpaltela2<5)l5pp2.setVisibility(View.GONE);
+        if (maxpaltela2<6)l6pp2.setVisibility(View.GONE);
+        if (maxpaltela2<7)l7pp2.setVisibility(View.GONE);
+        if (maxpaltela2<8)l8pp2.setVisibility(View.GONE);
+        if (maxpaltela2<9)l9pp2.setVisibility(View.GONE);
+        if (maxpaltela2<10)l10pp2.setVisibility(View.GONE);
+        if (maxpaltela2<11)l11pp2.setVisibility(View.GONE);
+        if (maxpaltela2<12)l12pp2.setVisibility(View.GONE);
+        if (maxpaltela2<13)l13pp2.setVisibility(View.GONE);
+        if (maxpaltela2<14)l14pp2.setVisibility(View.GONE);
+        if (maxpaltela2<15)l15pp2.setVisibility(View.GONE);
+
 
         //Setando Botões:
         somapag2.setOnClickListener(new View.OnClickListener(){
@@ -603,9 +937,9 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         vaipag2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                //pag2.setText(Integer.toString(getnumpag(15,getsavedwords(1,true).size())));
+                //pag2.setText(Integer.toString(getnumpag(maxpaltela2,getsavedwords(1,true).size())));
                 //pag2.setText(Integer.toString(pagpaltel2));
-                if(getnumpag(15,getsavedwords(1,true).size())>pagpaltel2) {
+                if(getnumpag(maxpaltela2,getsavedwords(1,true).size())>pagpaltel2) {
                     pagpaltel2 += 1;
                     updatepagef2(1, pagpaltel2);
                 }
@@ -630,7 +964,11 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         deslikebotao = findViewById(R.id.deslike);
         editar = findViewById(R.id.button10);
         entrada = findViewById(R.id.Entrada);
-        entrada.setText(mPrefs.getString("escrito",""));
+        mPrefs=getSharedPreferences("labela", 0);
+        try{
+        entrada.setText(mPrefs.getString("escrito",""));}catch (Exception e){
+            entrada.setText("erro no totela1"+e.toString());
+        }
 
 
         //Botões das palavras tela 1:
@@ -774,7 +1112,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         vaipag1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                //pag2.setText(Integer.toString(getnumpag(15,getsavedwords(1,true).size())));
+                //pag2.setText(Integer.toString(getnumpag(maxpaltela2,getsavedwords(1,true).size())));
                 //pag2.setText(Integer.toString(pagpaltel2));
                 if(getnumpag(4,getsavedwords(1,true).size())>pagpaltel1) {
                     pagpaltel1 += 1;
@@ -832,6 +1170,13 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         tempo=0;
         saiu = true;
         super.onResume();
+    }
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        getSharedPreferences("labela", 0).edit().clear().commit();
+        perguntas.clear();
     }
 
 }

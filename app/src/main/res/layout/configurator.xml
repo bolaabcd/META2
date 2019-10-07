@@ -7,15 +7,38 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Editar palavras"
-        android:gravity='center'
-        android:textColor='#fff'
-        android:background="@color/azulbonito"
-        android:textSize="36sp" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_margin="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/azulbonito"
+            android:gravity='center'
+            android:text="Editar palavras"
+            android:textColor='#fff'
+            android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/switch2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Switch
+            android:id="@+id/switch2"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:background="@color/azulbonito"
+            app:layout_constraintBottom_toBottomOf="@+id/textView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,36 +48,37 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button12"
             android:layout_width="wrap_content"
-            app:backgroundTint="@color/azulbonito"
-            android:textColor="#fff"
-            android:layout_height="wrap_content"
-            android:textAllCaps="false"
+            android:layout_height="40dp"
             android:layout_weight="1"
-            android:text="((((" />
+            android:text="(((("
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            app:backgroundTint="@color/azulbonito" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button13"
             android:layout_width="wrap_content"
-            app:backgroundTint="@color/azulbonito"
-            android:layout_height="wrap_content"
-            android:textColor="#fff"
-            android:textAllCaps="false"
+            android:layout_height="40dp"
             android:layout_weight="1"
-            android:text="BACK" />
+            android:text="BACK"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            app:backgroundTint="@color/azulbonito" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button11"
-            app:backgroundTint="@color/azulbonito"
             android:layout_width="wrap_content"
-            android:textAllCaps="false"
-            android:layout_height="wrap_content"
-            android:textColor="#fff"
+            android:layout_height="40dp"
             android:layout_weight="1"
-            android:text="))))" />
+            android:text="))))"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            app:backgroundTint="@color/azulbonito" />
 
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/lay1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -63,31 +87,33 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"/>
+            android:orientation="vertical" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button21"
             style="@android:style/Widget.DeviceDefault.Light.Button"
-            android:layout_width="326dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
             android:layout_weight="1"
+            android:text="Nem aqui"
             android:textAllCaps="false"
             android:textColor="#fff"
             app:backgroundTint="@color/azulbonito"
-            android:text="Palavra" />
+            tools:visibility="visible" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button22"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_weight="1"
+            android:foreground="@android:drawable/ic_menu_delete"
             android:textAllCaps="false"
-            app:backgroundTint="@color/azulbonito"
             android:textColor="#fff"
-            android:text="DEL" />
+            app:backgroundTint="@color/azulbonito" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/lay2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -96,33 +122,35 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"/>
+            android:orientation="vertical" />
 
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button24"
             style="@android:style/Widget.DeviceDefault.Light.Button"
-            android:layout_width="326dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
             android:layout_weight="1"
             android:text="Nem aqui"
-            android:textColor="#fff"
             android:textAllCaps="false"
+            android:textColor="#fff"
             app:backgroundTint="@color/azulbonito" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button25"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_weight="1"
-            android:textAllCaps="false"
-            app:backgroundTint="@color/azulbonito"
 
-            />
+            android:foreground="@android:drawable/ic_menu_delete"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            app:backgroundTint="@color/azulbonito" />
 
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/lay3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -131,33 +159,34 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"/>
+            android:orientation="vertical" />
 
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button18"
-            android:textAllCaps="false"
             style="@android:style/Widget.DeviceDefault.Light.Button"
-            android:layout_width="326dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
             android:layout_weight="1"
-            app:backgroundTint="@color/azulbonito"
+            android:text="Palavra"
+            android:textAllCaps="false"
             android:textColor="#fff"
-            android:text="Palavra" />
+            app:backgroundTint="@color/azulbonito" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button19"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_weight="1"
-            app:backgroundTint="@color/azulbonito"
+            android:foreground="@android:drawable/ic_menu_delete"
             android:textAllCaps="false"
             android:textColor="#fff"
-            />
+            app:backgroundTint="@color/azulbonito" />
 
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/lay4"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -166,32 +195,33 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"/>
+            android:orientation="vertical" />
 
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button16"
             style="@android:style/Widget.DeviceDefault.Light.Button"
-            android:layout_width="326dp"
-            android:textAllCaps="false"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
             android:layout_weight="1"
-            app:backgroundTint="@color/azulbonito"
+            android:text="Palavra"
+            android:textAllCaps="false"
             android:textColor="#fff"
-            android:text="Palavra" />
+            app:backgroundTint="@color/azulbonito" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button15"
-            android:textAllCaps="false"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_weight="1"
-            app:backgroundTint="@color/azulbonito"
+            android:foreground="@android:drawable/ic_menu_delete"
+            android:textAllCaps="false"
             android:textColor="#fff"
-            />
+            app:backgroundTint="@color/azulbonito" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/lay5"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -200,33 +230,34 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"/>
+            android:orientation="vertical" />
 
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button27"
             style="@android:style/Widget.DeviceDefault.Light.Button"
-            android:layout_width="326dp"
-            android:layout_height="wrap_content"
-            android:textColor="#fff"
-            android:textAllCaps="false"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
             android:layout_weight="1"
-            app:backgroundTint="@color/azulbonito"
-            android:text="Palavra" />
+            android:text="Palavra"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            app:backgroundTint="@color/azulbonito" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button28"
-            android:textAllCaps="false"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_weight="1"
-            app:backgroundTint="@color/azulbonito"
+            android:foreground="@android:drawable/ic_menu_delete"
+            android:textAllCaps="false"
             android:textColor="#fff"
-            />
+            app:backgroundTint="@color/azulbonito" />
 
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/lay6"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -235,32 +266,33 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"/>
+            android:orientation="vertical" />
 
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button30"
             style="@android:style/Widget.DeviceDefault.Light.Button"
-            android:layout_width="326dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
             android:layout_weight="1"
+            android:text="Palavra"
             android:textAllCaps="false"
-            app:backgroundTint="@color/azulbonito"
             android:textColor="#fff"
-            android:text="Palavra" />
+            app:backgroundTint="@color/azulbonito" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button31"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_weight="1"
+            android:foreground="@android:drawable/ic_menu_delete"
             android:textAllCaps="false"
-            app:backgroundTint="@color/azulbonito"
             android:textColor="#fff"
-            />
+            app:backgroundTint="@color/azulbonito" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/lay7"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -269,32 +301,33 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"/>
+            android:orientation="vertical" />
 
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button33"
-            android:layout_width="326dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
             android:layout_weight="1"
-            app:backgroundTint="@color/azulbonito"
-            android:textColor="#fff"
             android:text="Natan é legal"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            app:backgroundTint="@color/azulbonito" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button34"
             android:layout_width="wrap_content"
-            android:textAllCaps="false"
-            android:layout_height="wrap_content"
-            app:backgroundTint="@color/azulbonito"
-            android:textColor="#fff"
+            android:layout_height="40dp"
             android:layout_weight="1"
-            />
+            android:foreground="@android:drawable/ic_menu_delete"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            app:backgroundTint="@color/azulbonito" />
 
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/lay8"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -303,32 +336,33 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"/>
+            android:orientation="vertical" />
 
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button36"
             style="@android:style/Widget.DeviceDefault.Light.Button"
-            android:layout_width="326dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
             android:layout_weight="1"
+            android:text="Palavra"
             android:textAllCaps="false"
-            app:backgroundTint="@color/azulbonito"
             android:textColor="#fff"
-            android:text="Palavra" />
+            app:backgroundTint="@color/azulbonito" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button37"
             android:layout_width="wrap_content"
-            android:textAllCaps="false"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_weight="1"
-            app:backgroundTint="@color/azulbonito"
+            android:foreground="@android:drawable/ic_menu_delete"
+            android:textAllCaps="false"
             android:textColor="#fff"
-            />
+            app:backgroundTint="@color/azulbonito" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/lay9"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -337,32 +371,33 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"/>
+            android:orientation="vertical" />
 
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button60"
             style="@android:style/Widget.DeviceDefault.Light.Button"
-            android:layout_width="326dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
             android:layout_weight="1"
+            android:text="Palavra"
             android:textAllCaps="false"
-            app:backgroundTint="@color/azulbonito"
             android:textColor="#fff"
-            android:text="Palavra" />
+            app:backgroundTint="@color/azulbonito" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button61"
             android:layout_width="wrap_content"
-            android:textAllCaps="false"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_weight="1"
-            app:backgroundTint="@color/azulbonito"
+            android:foreground="@android:drawable/ic_menu_delete"
+            android:textAllCaps="false"
             android:textColor="#fff"
-            />
+            app:backgroundTint="@color/azulbonito" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/lay10"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -371,33 +406,34 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"/>
+            android:orientation="vertical" />
 
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button57"
             style="@android:style/Widget.DeviceDefault.Light.Button"
-            android:layout_width="326dp"
-            android:textAllCaps="false"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
             android:layout_weight="1"
-            app:backgroundTint="@color/azulbonito"
+            android:text="Palavra"
+            android:textAllCaps="false"
             android:textColor="#fff"
-            android:text="Palavra" />
+            app:backgroundTint="@color/azulbonito" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button58"
             android:layout_width="wrap_content"
-            android:textAllCaps="false"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_weight="1"
-            app:backgroundTint="@color/azulbonito"
+            android:foreground="@android:drawable/ic_menu_delete"
+            android:textAllCaps="false"
             android:textColor="#fff"
-            />
+            app:backgroundTint="@color/azulbonito" />
 
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/lay11"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -406,33 +442,34 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"/>
+            android:orientation="vertical" />
 
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button54"
             style="@android:style/Widget.DeviceDefault.Light.Button"
-            android:layout_width="326dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
             android:layout_weight="1"
-            app:backgroundTint="@color/azulbonito"
-            android:textColor="#fff"
+            android:text="Palavra"
             android:textAllCaps="false"
-            android:text="Palavra" />
+            android:textColor="#fff"
+            app:backgroundTint="@color/azulbonito" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button55"
             android:layout_width="wrap_content"
-            android:textAllCaps="false"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_weight="1"
+            android:foreground="@android:drawable/ic_menu_delete"
+            android:textAllCaps="false"
             android:textColor="#fff"
-            app:backgroundTint="@color/azulbonito"
-            />
+            app:backgroundTint="@color/azulbonito" />
 
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/lay12"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -441,32 +478,33 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"/>
+            android:orientation="vertical" />
 
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button51"
             style="@android:style/Widget.DeviceDefault.Light.Button"
-            android:layout_width="326dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
             android:layout_weight="1"
             android:text="aqui nao"
-            android:textColor="#fff"
             android:textAllCaps="false"
+            android:textColor="#fff"
             app:backgroundTint="@color/azulbonito" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button52"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_weight="1"
-            android:textColor="#fff"
-            app:backgroundTint="@color/azulbonito"
+            android:foreground="@android:drawable/ic_menu_delete"
             android:textAllCaps="false"
-            />
+            android:textColor="#fff"
+            app:backgroundTint="@color/azulbonito" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/lay13"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -475,32 +513,33 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"/>
+            android:orientation="vertical" />
 
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button48"
             style="@android:style/Widget.DeviceDefault.Light.Button"
-            android:layout_width="326dp"
-            android:textAllCaps="false"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
             android:layout_weight="1"
+            android:text="Palavra"
+            android:textAllCaps="false"
             android:textColor="#fff"
-            app:backgroundTint="@color/azulbonito"
-            android:text="Palavra" />
+            app:backgroundTint="@color/azulbonito" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button49"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_weight="1"
-            app:backgroundTint="@color/azulbonito"
-            android:textColor="#fff"
+            android:foreground="@android:drawable/ic_menu_delete"
             android:textAllCaps="false"
-            />
+            android:textColor="#fff"
+            app:backgroundTint="@color/azulbonito" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/lay14"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -509,33 +548,34 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"/>
+            android:orientation="vertical" />
 
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button45"
             style="@android:style/Widget.DeviceDefault.Light.Button"
-            android:layout_width="326dp"
-            android:layout_height="wrap_content"
-            android:textAllCaps="false"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
             android:layout_weight="1"
+            android:text="Palavra"
+            android:textAllCaps="false"
             android:textColor="#fff"
-            app:backgroundTint="@color/azulbonito"
-            android:text="Palavra" />
+            app:backgroundTint="@color/azulbonito" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button46"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#fff"
-            android:textAllCaps="false"
+            android:layout_height="40dp"
             android:layout_weight="1"
-            app:backgroundTint="@color/azulbonito"
-            />
+            android:foreground="@android:drawable/ic_menu_delete"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            app:backgroundTint="@color/azulbonito" />
 
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/lay15"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -544,29 +584,29 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"/>
+            android:orientation="vertical" />
 
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button42"
             style="@android:style/Widget.DeviceDefault.Light.Button"
-            android:layout_width="326dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
             android:layout_weight="1"
-            app:backgroundTint="@color/azulbonito"
-            android:textColor="#fff"
+            android:text="Palavra"
             android:textAllCaps="false"
-            android:text="Palavra" />
+            android:textColor="#fff"
+            app:backgroundTint="@color/azulbonito" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button43"
-            android:textAllCaps="false"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#fff"
+            android:layout_height="40dp"
             android:layout_weight="1"
-            app:backgroundTint="@color/azulbonito"
-            />
+            android:foreground="@android:drawable/ic_menu_delete"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            app:backgroundTint="@color/azulbonito" />
 
     </LinearLayout>
 
@@ -579,7 +619,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button39"
             android:layout_width="326dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_weight="1"
             android:text="+"
             android:textAllCaps="false"

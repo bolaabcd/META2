@@ -51,72 +51,72 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button9"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:background="@drawable/setinha"
-                app:backgroundTint="@color/azulbonito"
                 android:textAllCaps="false"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                app:backgroundTint="@color/azulbonito" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button10"
                 android:layout_width="wrap_content"
-                app:backgroundTint="@color/azulbonito"
-                android:layout_height="wrap_content"
+                android:layout_height="45dp"
                 android:layout_weight="1"
                 android:capitalize="none"
                 android:text="Edit"
                 android:textAllCaps="false"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                app:backgroundTint="@color/azulbonito" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button8"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="40dp"
                 android:background="@drawable/setinha"
-                app:backgroundTint="@color/azulbonito"
                 android:textAllCaps="false"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                app:backgroundTint="@color/azulbonito" />
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:backgroundTint="@color/azulbonito"
+            android:layout_height="42dp"
             android:capitalize="none"
             android:text="Button"
             android:textAllCaps="false"
-            android:textColor="#ffffff" />
+            android:textColor="#ffffff"
+            app:backgroundTint="@color/azulbonito" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:backgroundTint="@color/azulbonito"
+            android:layout_height="42dp"
             android:capitalize="none"
             android:text="Button"
             android:textAllCaps="false"
-            android:textColor="#ffffff" />
+            android:textColor="#ffffff"
+            app:backgroundTint="@color/azulbonito" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:backgroundTint="@color/azulbonito"
+            android:layout_height="42dp"
             android:capitalize="none"
             android:text="Button"
             android:textAllCaps="false"
-            android:textColor="#ffffff" />
+            android:textColor="#ffffff"
+            app:backgroundTint="@color/azulbonito" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button4"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:backgroundTint="@color/azulbonito"
+            android:layout_height="42dp"
             android:capitalize="none"
             android:text="Button"
             android:textAllCaps="false"
-            android:textColor="#ffffff" />
+            android:textColor="#ffffff"
+            app:backgroundTint="@color/azulbonito" />
     </LinearLayout>
 
     <androidx.appcompat.widget.Toolbar
@@ -174,33 +174,33 @@
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/imageButton7"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                app:backgroundTint="@color/azulbonito"
+                android:layout_height="40dp"
                 android:layout_weight="1"
+                app:backgroundTint="@color/azulbonito"
                 app:srcCompat="@android:drawable/ic_menu_help" />
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/imageButton10"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                app:backgroundTint="@color/azulbonito"
+                android:layout_height="40dp"
                 android:layout_weight="1"
+                app:backgroundTint="@color/azulbonito"
                 app:srcCompat="@android:drawable/ic_menu_help" />
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/imageButton9"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                app:backgroundTint="@color/azulbonito"
+                android:layout_height="40dp"
                 android:layout_weight="1"
+                app:backgroundTint="@color/azulbonito"
                 app:srcCompat="@android:drawable/ic_menu_help" />
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/imageButton8"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                app:backgroundTint="@color/azulbonito"
+                android:layout_height="40dp"
                 android:layout_weight="1"
+                app:backgroundTint="@color/azulbonito"
                 app:srcCompat="@android:drawable/ic_menu_help" />
 
         </LinearLayout>
