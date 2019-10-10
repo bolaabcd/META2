@@ -18,25 +18,27 @@
             android:layout_height="50dp"
             android:layout_margin="0dp"
             android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
             android:background="@color/azulbonito"
             android:gravity='center'
             android:text="Editar palavras"
             android:textColor='#fff'
             android:textSize="36sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/switch2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Switch
-            android:id="@+id/switch2"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:background="@color/azulbonito"
-            app:layout_constraintBottom_toBottomOf="@+id/textView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/button13"
+            android:layout_width="64dp"
+            android:layout_height="50dp"
+            app:backgroundTint="@color/azulbonito"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/setinha"
+            tools:layout_editor_absoluteY="0dp" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -56,11 +58,11 @@
             app:backgroundTint="@color/azulbonito" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button13"
+            android:id="@+id/button39"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_weight="1"
-            android:text="BACK"
+            android:text="+"
             android:textAllCaps="false"
             android:textColor="#fff"
             app:backgroundTint="@color/azulbonito" />
@@ -100,15 +102,15 @@
             app:backgroundTint="@color/azulbonito"
             tools:visibility="visible" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/button22"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:foreground="@android:drawable/ic_menu_delete"
             android:textAllCaps="false"
             android:textColor="#fff"
-            app:backgroundTint="@color/azulbonito" />
+            app:backgroundTint="#e61919"
+            app:srcCompat="@drawable/ic_close_black_24dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -134,16 +136,15 @@
             android:textColor="#fff"
             app:backgroundTint="@color/azulbonito" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/button25"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-
-            android:foreground="@android:drawable/ic_menu_delete"
             android:textAllCaps="false"
-            android:textColor="@android:color/white"
-            app:backgroundTint="@color/azulbonito" />
+            android:textColor="#fff"
+            app:backgroundTint="#e61919"
+            app:srcCompat="@drawable/ic_close_black_24dp" />
 
     </LinearLayout>
 
@@ -170,15 +171,15 @@
             android:textColor="#fff"
             app:backgroundTint="@color/azulbonito" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/button19"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:foreground="@android:drawable/ic_menu_delete"
             android:textAllCaps="false"
             android:textColor="#fff"
-            app:backgroundTint="@color/azulbonito" />
+            app:backgroundTint="#e61919"
+            app:srcCompat="@drawable/ic_close_black_24dp"  />
 
     </LinearLayout>
 
@@ -205,15 +206,15 @@
             android:textColor="#fff"
             app:backgroundTint="@color/azulbonito" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/button15"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:foreground="@android:drawable/ic_menu_delete"
             android:textAllCaps="false"
             android:textColor="#fff"
-            app:backgroundTint="@color/azulbonito" />
+            app:backgroundTint="#e61919"
+            app:srcCompat="@drawable/ic_close_black_24dp"  />
     </LinearLayout>
 
     <LinearLayout
@@ -239,15 +240,15 @@
             android:textColor="#fff"
             app:backgroundTint="@color/azulbonito" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/button28"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:foreground="@android:drawable/ic_menu_delete"
             android:textAllCaps="false"
             android:textColor="#fff"
-            app:backgroundTint="@color/azulbonito" />
+            app:backgroundTint="#e61919"
+            app:srcCompat="@drawable/ic_close_black_24dp"  />
 
     </LinearLayout>
 
@@ -274,15 +275,15 @@
             android:textColor="#fff"
             app:backgroundTint="@color/azulbonito" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/button31"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:foreground="@android:drawable/ic_menu_delete"
             android:textAllCaps="false"
             android:textColor="#fff"
-            app:backgroundTint="@color/azulbonito" />
+            app:backgroundTint="#e61919"
+            app:srcCompat="@drawable/ic_close_black_24dp"  />
     </LinearLayout>
 
     <LinearLayout
@@ -308,15 +309,15 @@
             android:textColor="#fff"
             app:backgroundTint="@color/azulbonito" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/button34"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:foreground="@android:drawable/ic_menu_delete"
             android:textAllCaps="false"
             android:textColor="#fff"
-            app:backgroundTint="@color/azulbonito" />
+            app:backgroundTint="#e61919"
+            app:srcCompat="@drawable/ic_close_black_24dp"  />
 
     </LinearLayout>
 
@@ -343,15 +344,15 @@
             android:textColor="#fff"
             app:backgroundTint="@color/azulbonito" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/button37"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:foreground="@android:drawable/ic_menu_delete"
             android:textAllCaps="false"
             android:textColor="#fff"
-            app:backgroundTint="@color/azulbonito" />
+            app:backgroundTint="#e61919"
+            app:srcCompat="@drawable/ic_close_black_24dp"  />
     </LinearLayout>
 
     <LinearLayout
@@ -377,15 +378,15 @@
             android:textColor="#fff"
             app:backgroundTint="@color/azulbonito" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/button61"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:foreground="@android:drawable/ic_menu_delete"
             android:textAllCaps="false"
             android:textColor="#fff"
-            app:backgroundTint="@color/azulbonito" />
+            app:backgroundTint="#e61919"
+            app:srcCompat="@drawable/ic_close_black_24dp"  />
     </LinearLayout>
 
     <LinearLayout
@@ -411,15 +412,15 @@
             android:textColor="#fff"
             app:backgroundTint="@color/azulbonito" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/button58"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:foreground="@android:drawable/ic_menu_delete"
             android:textAllCaps="false"
             android:textColor="#fff"
-            app:backgroundTint="@color/azulbonito" />
+            app:backgroundTint="#e61919"
+            app:srcCompat="@drawable/ic_close_black_24dp"  />
 
     </LinearLayout>
 
@@ -446,15 +447,15 @@
             android:textColor="#fff"
             app:backgroundTint="@color/azulbonito" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/button55"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:foreground="@android:drawable/ic_menu_delete"
             android:textAllCaps="false"
             android:textColor="#fff"
-            app:backgroundTint="@color/azulbonito" />
+            app:backgroundTint="#e61919"
+            app:srcCompat="@drawable/ic_close_black_24dp"  />
 
     </LinearLayout>
 
@@ -481,15 +482,15 @@
             android:textColor="#fff"
             app:backgroundTint="@color/azulbonito" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/button52"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:foreground="@android:drawable/ic_menu_delete"
             android:textAllCaps="false"
             android:textColor="#fff"
-            app:backgroundTint="@color/azulbonito" />
+            app:backgroundTint="#e61919"
+            app:srcCompat="@drawable/ic_close_black_24dp"  />
     </LinearLayout>
 
     <LinearLayout
@@ -515,15 +516,15 @@
             android:textColor="#fff"
             app:backgroundTint="@color/azulbonito" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/button49"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:foreground="@android:drawable/ic_menu_delete"
             android:textAllCaps="false"
             android:textColor="#fff"
-            app:backgroundTint="@color/azulbonito" />
+            app:backgroundTint="#e61919"
+            app:srcCompat="@drawable/ic_close_black_24dp"  />
     </LinearLayout>
 
     <LinearLayout
@@ -549,15 +550,15 @@
             android:textColor="#fff"
             app:backgroundTint="@color/azulbonito" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/button46"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:foreground="@android:drawable/ic_menu_delete"
             android:textAllCaps="false"
             android:textColor="#fff"
-            app:backgroundTint="@color/azulbonito" />
+            app:backgroundTint="#e61919"
+            app:srcCompat="@drawable/ic_close_black_24dp"  />
 
     </LinearLayout>
 
@@ -584,15 +585,15 @@
             android:textColor="#fff"
             app:backgroundTint="@color/azulbonito" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/button43"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:foreground="@android:drawable/ic_menu_delete"
             android:textAllCaps="false"
             android:textColor="#fff"
-            app:backgroundTint="@color/azulbonito" />
+            app:backgroundTint="#e61919"
+            app:srcCompat="@drawable/ic_close_black_24dp"  />
 
     </LinearLayout>
 
@@ -602,15 +603,6 @@
         android:layout_weight="1"
         android:orientation="horizontal">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button39"
-            android:layout_width="326dp"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:text="+"
-            android:textAllCaps="false"
-            android:textColor="#fff"
-            app:backgroundTint="@color/azulbonito" />
 
     </LinearLayout>
 

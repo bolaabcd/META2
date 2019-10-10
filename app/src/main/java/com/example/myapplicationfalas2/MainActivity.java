@@ -23,6 +23,7 @@ import android.view.Display;
 import android.view.KeyEvent;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -40,6 +41,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Set;
@@ -56,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     int tempo;
     MediaPlayer somSaiu;
     TextView mensagens;
-    AppCompatButton voltar;
+    AppCompatImageButton voltar;
     AppCompatImageButton falabotao;
     AppCompatImageButton deslikebotao;
     AppCompatImageButton likebotao;
@@ -78,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     AppCompatButton b1pp2;
     AppCompatButton b2pp2;
     AppCompatButton b3pp2;
-   AppCompatButton b4pp2;
+    AppCompatButton b4pp2;
    AppCompatButton b5pp2;
    AppCompatButton b6pp2;
    AppCompatButton b7pp2;
@@ -107,21 +109,21 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     LinearLayout l14pp2;
     LinearLayout l15pp2;
     //Boteõs de apagar da página 2:
-    AppCompatButton p1pp2;
-    AppCompatButton p2pp2;
-    AppCompatButton p3pp2;
-    AppCompatButton p4pp2;
-    AppCompatButton p5pp2;
-    AppCompatButton p6pp2;
-    AppCompatButton p7pp2;
-    AppCompatButton p8pp2;
-    AppCompatButton p9pp2;
-    AppCompatButton p10pp2;
-    AppCompatButton p11pp2;
-    AppCompatButton p12pp2;
-    AppCompatButton p13pp2;
-    AppCompatButton p14pp2;
-    AppCompatButton p15pp2;
+    AppCompatImageButton p1pp2;
+    AppCompatImageButton p2pp2;
+    AppCompatImageButton p3pp2;
+    AppCompatImageButton p4pp2;
+    AppCompatImageButton p5pp2;
+    AppCompatImageButton p6pp2;
+    AppCompatImageButton p7pp2;
+    AppCompatImageButton p8pp2;
+    AppCompatImageButton p9pp2;
+    AppCompatImageButton p10pp2;
+    AppCompatImageButton p11pp2;
+    AppCompatImageButton p12pp2;
+    AppCompatImageButton p13pp2;
+    AppCompatImageButton p14pp2;
+    AppCompatImageButton p15pp2;
     //Botões de ir e voltar página 2:
    AppCompatButton vaipag2;
    AppCompatButton voltapag2;
@@ -147,6 +149,11 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
    AppCompatButton vaipag1;
    AppCompatButton voltapag1;
 
+   // Botões de pergunta
+    AppCompatImageButton perg1;
+    AppCompatImageButton perg2;
+    AppCompatImageButton perg3;
+    AppCompatImageButton perg4;
 
    //final SharedPreferences mPrefs=getSharedPreferences("labela", 0);
    //final SharedPreferences.Editor mEditor= mPrefs.edit();
@@ -168,6 +175,35 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         display.getSize(size);
         return size.x / getResources().getDisplayMetrics().density;
 
+    }
+    public void SalvaPerguntas(final int i){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        final String key = "ps" + Integer.toString(i);
+        builder.setTitle("Digite sua pergunta:");
+        final EditText input = new EditText(this);
+        input.setText(mPrefs.getString(key,""),TextView.BufferType.EDITABLE);
+        input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_NORMAL);
+        builder.setView(input);
+        builder.setPositiveButton("Salvar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if(input.getText().toString().length()==0){
+                    Toast.makeText(getApplicationContext(),"Digite algo para salvar!", Toast.LENGTH_SHORT).show();
+                } else {
+                    mEditor.putString(key,input.getText().toString()).commit();
+                    dialog.cancel();
+                }
+            }
+        });
+        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+
+        });
+
+        builder.show();
     }
     public ArrayList<String> getpage(int palporpag,int numerodapag,ArrayList<String>palavras){//Retorna página especificada
         return null;
@@ -934,6 +970,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         }
 
 
+
         }catch(Exception e) {
             entrada.setText("Erro no onCreate"+e.toString());
             Toast.makeText(getApplicationContext(),e.toString(), Toast.LENGTH_LONG).show();
@@ -1177,6 +1214,9 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         vaipag2=findViewById(R.id.button11);
         vaipag2.setRotation(180);
         voltapag2=findViewById(R.id.button12);
+
+
+
 
 
         somapag2=findViewById(R.id.button39);
@@ -1455,6 +1495,70 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 }
             }
         });*/
+            //Botões de pergunta
+            perg1=findViewById(R.id.p1);
+            perg2=findViewById(R.id.p2);
+            perg3=findViewById(R.id.p3);
+            perg4=findViewById(R.id.p4);
+
+            perg1.setOnLongClickListener(new View.OnLongClickListener(){
+                @Override
+                public boolean onLongClick(View view){
+                    SalvaPerguntas(1);
+                    return true;
+                }
+            });
+            perg1.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View view){
+                    entrada.setText(mPrefs.getString("ps1",""));
+                }
+            });
+
+            perg2.setOnLongClickListener(new View.OnLongClickListener(){
+                @Override
+                public boolean onLongClick(View view){
+                    SalvaPerguntas(2);
+                    return true;
+                }
+            });
+            perg2.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View view){
+                    entrada.setText(mPrefs.getString("ps2",""));
+                }
+            });
+
+            perg3.setOnLongClickListener(new View.OnLongClickListener(){
+                @Override
+                public boolean onLongClick(View view){
+                    SalvaPerguntas(3);
+                    return true;
+                }
+            });
+            perg3.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View view){
+                    entrada.setText(mPrefs.getString("ps3",""));
+                }
+            });
+
+            perg4.setOnLongClickListener(new View.OnLongClickListener(){
+                @Override
+                public boolean onLongClick(View view){
+                    SalvaPerguntas(4);
+                    return true;
+                }
+            });
+            perg4.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View view){
+                    entrada.setText(mPrefs.getString("ps4",""));
+                }
+            });
+
+
+
         //BOTOES DAS PALAVRAS TELA 1:
         b1pp1.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -1693,7 +1797,9 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     @Override
     protected void onDestroy(){
         super.onDestroy();
-        getSharedPreferences("labela", 0).edit().clear().commit();
+        SharedPreferences.Editor excluidor = getSharedPreferences("labela", 0).edit();
+        excluidor.putString("escrito",null).commit();
+        excluidor.putString("perguntitas",null).commit();
         perguntas.clear();
     }
 
