@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
     ArrayList<String> perguntas = new ArrayList<>();
     TextToSpeech falador;
-    TextView entrada;
+    EditText entrada;
     int tempo;
     MediaPlayer somSaiu;
     TextView mensagens;
@@ -1428,6 +1428,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         deslikebotao = findViewById(R.id.deslike);
         editar = findViewById(R.id.button10);
         entrada = findViewById(R.id.Entrada);
+
         mPrefs=getSharedPreferences("labela", 0);
 
         entrada.setText(mPrefs.getString("escrito",""));
@@ -1568,6 +1569,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             public void onClick(View view){
                 if(!b1pp1.getText().toString().equals("")){
                     entrada.setText(entrada.getText().toString()+b1pp1.getText().toString()+" ");
+                    entrada.setSelection(entrada.getText().length());
                 }
             }
         });
@@ -1576,6 +1578,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             public void onClick(View view){
                 if(!b2pp1.getText().toString().equals("")){
                     entrada.setText(entrada.getText().toString()+b2pp1.getText().toString()+" ");
+                    entrada.setSelection(entrada.getText().length());
                 }
             }
         });
@@ -1584,6 +1587,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             public void onClick(View view){
                 if(!b3pp1.getText().toString().equals("")){
                     entrada.setText(entrada.getText().toString()+b3pp1.getText().toString()+" ");
+                    entrada.setSelection(entrada.getText().length());
                 }
             }
         });
@@ -1592,6 +1596,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             public void onClick(View view){
                 if(!b4pp1.getText().toString().equals("")){
                     entrada.setText(entrada.getText().toString()+b4pp1.getText().toString()+" ");
+                    entrada.setSelection(entrada.getText().length());
                 }
             }
         });
@@ -1601,6 +1606,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             public void onClick(View view){
                 if(!b5pp1.getText().toString().equals("")){
                     entrada.setText(entrada.getText().toString()+b5pp1.getText().toString()+" ");
+                    entrada.setSelection(entrada.getText().length());
                 }
             }
         });
@@ -1609,6 +1615,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             public void onClick(View view){
                 if(!b6pp1.getText().toString().equals("")){
                     entrada.setText(entrada.getText().toString()+b6pp1.getText().toString()+" ");
+                    entrada.setSelection(entrada.getText().length());
                 }
             }
         });
@@ -1617,6 +1624,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             public void onClick(View view){
                 if(!b7pp1.getText().toString().equals("")){
                     entrada.setText(entrada.getText().toString()+b7pp1.getText().toString()+" ");
+                    entrada.setSelection(entrada.getText().length());
                 }
             }
         });
@@ -1625,6 +1633,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 public void onClick(View view){
                     if(!b8pp1.getText().toString().equals("")){
                         entrada.setText(entrada.getText().toString()+b8pp1.getText().toString()+" ");
+                        entrada.setSelection(entrada.getText().length());
                     }
                 }
             });
@@ -1633,6 +1642,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 public void onClick(View view){
                     if(!b9pp1.getText().toString().equals("")){
                         entrada.setText(entrada.getText().toString()+b9pp1.getText().toString()+" ");
+                        entrada.setSelection(entrada.getText().length());
                     }
                 }
             });
@@ -1641,6 +1651,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 public void onClick(View view){
                     if(!b10pp1.getText().toString().equals("")){
                         entrada.setText(entrada.getText().toString()+b10pp1.getText().toString()+" ");
+                        entrada.setSelection(entrada.getText().length());
                     }
                 }
             });
@@ -1649,6 +1660,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 public void onClick(View view){
                     if(!b11pp1.getText().toString().equals("")){
                         entrada.setText(entrada.getText().toString()+b11pp1.getText().toString()+" ");
+                        entrada.setSelection(entrada.getText().length());
                     }
                 }
             });
@@ -1657,6 +1669,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 public void onClick(View view){
                     if(!b12pp1.getText().toString().equals("")){
                         entrada.setText(entrada.getText().toString()+b12pp1.getText().toString()+" ");
+                        entrada.setSelection(entrada.getText().length());
                     }
                 }
             });
@@ -1665,6 +1678,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 public void onClick(View view){
                     if(!b13pp1.getText().toString().equals("")){
                         entrada.setText(entrada.getText().toString()+b13pp1.getText().toString()+" ");
+                        entrada.setSelection(entrada.getText().length());
                     }
                 }
             });
@@ -1673,6 +1687,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 public void onClick(View view){
                     if(!b14pp1.getText().toString().equals("")){
                         entrada.setText(entrada.getText().toString()+b14pp1.getText().toString()+" ");
+                        entrada.setSelection(entrada.getText().length());
                     }
                 }
             });
@@ -1681,6 +1696,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 public void onClick(View view){
                     if(!b15pp1.getText().toString().equals("")){
                         entrada.setText(entrada.getText().toString()+b15pp1.getText().toString()+" ");
+                        entrada.setSelection(entrada.getText().length());
                     }
                 }
             });
