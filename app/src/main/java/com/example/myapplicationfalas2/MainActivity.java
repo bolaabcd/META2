@@ -24,6 +24,8 @@ import android.view.KeyEvent;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputConnection;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -953,6 +955,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         catch (Exception e){
             e.printStackTrace();
         }
+
 
         final MediaPlayer somPerg = MediaPlayer.create(this, R.raw.notification);
         //super.onCreate(savedInstanceState);

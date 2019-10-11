@@ -21,6 +21,7 @@
         android:ems="10"
         android:gravity="start|top"
         android:hint="Digite aqui..."
+        android:imeOptions="flagNoExtractUi"
         android:inputType="textMultiLine"
         android:scrollbarSize="4dp"
         android:textSize="30sp"
