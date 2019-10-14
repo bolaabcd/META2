@@ -1572,8 +1572,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                     String sub1 = entrada.getText().toString().substring(0,onde);
                     String sub2 = entrada.getText().toString().substring(onde,entrada.getText().toString().length());
                     String palavrita = b1pp1.getText().toString();
-                    if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
-                    if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
+                    if(sub1.length()>0) if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
+                    if(sub2.length()>0) if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
                     entrada.setText(sub1+palavrita+sub2);
                     entrada.setSelection(onde + palavrita.length());
                 }
@@ -1587,8 +1587,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                     String sub1 = entrada.getText().toString().substring(0,onde);
                     String sub2 = entrada.getText().toString().substring(onde,entrada.getText().toString().length());
                     String palavrita = b2pp1.getText().toString();
-                    if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
-                    if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
+                    if(sub1.length()>0) if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
+                    if(sub2.length()>0) if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
                     entrada.setText(sub1+palavrita+sub2);
                     entrada.setSelection(onde + palavrita.length());
                 }
@@ -1602,8 +1602,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                     String sub1 = entrada.getText().toString().substring(0,onde);
                     String sub2 = entrada.getText().toString().substring(onde,entrada.getText().toString().length());
                     String palavrita = b3pp1.getText().toString();
-                    if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
-                    if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
+                    if(sub1.length()>0) if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
+                    if(sub2.length()>0) if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
                     entrada.setText(sub1+palavrita+sub2);
                     entrada.setSelection(onde + palavrita.length());
                 }
@@ -1617,8 +1617,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                     String sub1 = entrada.getText().toString().substring(0,onde);
                     String sub2 = entrada.getText().toString().substring(onde,entrada.getText().toString().length());
                     String palavrita = b4pp1.getText().toString();
-                    if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
-                    if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
+                    if(sub1.length()>0) if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
+                    if(sub2.length()>0) if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
                     entrada.setText(sub1+palavrita+sub2);
                     entrada.setSelection(onde + palavrita.length());
                 }
@@ -1633,8 +1633,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                     String sub1 = entrada.getText().toString().substring(0,onde);
                     String sub2 = entrada.getText().toString().substring(onde,entrada.getText().toString().length());
                     String palavrita = b5pp1.getText().toString();
-                    if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
-                    if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
+                    if(sub1.length()>0) if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
+                    if(sub2.length()>0) if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
                     entrada.setText(sub1+palavrita+sub2);
                     entrada.setSelection(onde + palavrita.length());
                 }
@@ -1648,8 +1648,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                     String sub1 = entrada.getText().toString().substring(0,onde);
                     String sub2 = entrada.getText().toString().substring(onde,entrada.getText().toString().length());
                     String palavrita = b6pp1.getText().toString();
-                    if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
-                    if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
+                    if(sub1.length()>0) if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
+                    if(sub2.length()>0) if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
                     entrada.setText(sub1+palavrita+sub2);
                     entrada.setSelection(onde + palavrita.length());
                 }
@@ -1663,8 +1663,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                     String sub1 = entrada.getText().toString().substring(0,onde);
                     String sub2 = entrada.getText().toString().substring(onde,entrada.getText().toString().length());
                     String palavrita = b7pp1.getText().toString();
-                    if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
-                    if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
+                    if(sub1.length()>0) if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
+                    if(sub2.length()>0) if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
                     entrada.setText(sub1+palavrita+sub2);
                     entrada.setSelection(onde + palavrita.length());
                 }
@@ -1678,8 +1678,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                         String sub1 = entrada.getText().toString().substring(0,onde);
                         String sub2 = entrada.getText().toString().substring(onde,entrada.getText().toString().length());
                         String palavrita = b8pp1.getText().toString();
-                        if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
-                        if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
+                        if(sub1.length()>0) if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
+                        if(sub2.length()>0) if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
                         entrada.setText(sub1+palavrita+sub2);
                         entrada.setSelection(onde + palavrita.length());
                     }
@@ -1693,8 +1693,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                         String sub1 = entrada.getText().toString().substring(0,onde);
                         String sub2 = entrada.getText().toString().substring(onde,entrada.getText().toString().length());
                         String palavrita = b9pp1.getText().toString();
-                        if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
-                        if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
+                        if(sub1.length()>0) if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
+                        if(sub2.length()>0) if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
                         entrada.setText(sub1+palavrita+sub2);
                         entrada.setSelection(onde + palavrita.length());
                     }
@@ -1708,8 +1708,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                         String sub1 = entrada.getText().toString().substring(0,onde);
                         String sub2 = entrada.getText().toString().substring(onde,entrada.getText().toString().length());
                         String palavrita = b10pp1.getText().toString();
-                        if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
-                        if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
+                        if(sub1.length()>0) if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
+                        if(sub2.length()>0) if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
                         entrada.setText(sub1+palavrita+sub2);
                         entrada.setSelection(onde + palavrita.length());
                     }
@@ -1723,8 +1723,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                         String sub1 = entrada.getText().toString().substring(0,onde);
                         String sub2 = entrada.getText().toString().substring(onde,entrada.getText().toString().length());
                         String palavrita = b11pp1.getText().toString();
-                        if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
-                        if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
+                        if(sub1.length()>0) if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
+                        if(sub2.length()>0) if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
                         entrada.setText(sub1+palavrita+sub2);
                         entrada.setSelection(onde + palavrita.length());
                     }
@@ -1738,8 +1738,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                         String sub1 = entrada.getText().toString().substring(0,onde);
                         String sub2 = entrada.getText().toString().substring(onde,entrada.getText().toString().length());
                         String palavrita = b12pp1.getText().toString();
-                        if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
-                        if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
+                        if(sub1.length()>0) if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
+                        if(sub2.length()>0) if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
                         entrada.setText(sub1+palavrita+sub2);
                         entrada.setSelection(onde + palavrita.length());
                     }
@@ -1753,8 +1753,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                         String sub1 = entrada.getText().toString().substring(0,onde);
                         String sub2 = entrada.getText().toString().substring(onde,entrada.getText().toString().length());
                         String palavrita = b13pp1.getText().toString();
-                        if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
-                        if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
+                        if(sub1.length()>0) if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
+                        if(sub2.length()>0) if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
                         entrada.setText(sub1+palavrita+sub2);
                         entrada.setSelection(onde + palavrita.length());
                     }
@@ -1768,8 +1768,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                         String sub1 = entrada.getText().toString().substring(0,onde);
                         String sub2 = entrada.getText().toString().substring(onde,entrada.getText().toString().length());
                         String palavrita = b14pp1.getText().toString();
-                        if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
-                        if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
+                        if(sub1.length()>0) if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
+                        if(sub2.length()>0) if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
                         entrada.setText(sub1+palavrita+sub2);
                         entrada.setSelection(onde + palavrita.length());
                     }
@@ -1783,8 +1783,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                         String sub1 = entrada.getText().toString().substring(0,onde);
                         String sub2 = entrada.getText().toString().substring(onde,entrada.getText().toString().length());
                         String palavrita = b15pp1.getText().toString();
-                        if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
-                        if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
+                        if(sub1.length()>0) if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
+                        if(sub2.length()>0) if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
                         entrada.setText(sub1+palavrita+sub2);
                         entrada.setSelection(onde + palavrita.length());
                     }
@@ -1800,10 +1800,12 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 }
                 else if(!mPrefs.getBoolean("foni",true)){
                     falador.speak(oque,TextToSpeech.QUEUE_FLUSH,null);
+                    entrada.setText("");
                 }
                 else if(!perguntas.contains(oque)){
                     sperg.start();
                     perguntas.add(oque);
+                    entrada.setText("");
                 } else {
                     Toast.makeText(getApplicationContext(),"Essa mensagem já foi enviada", Toast.LENGTH_SHORT).show();
 
