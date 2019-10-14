@@ -1568,8 +1568,14 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             @Override
             public void onClick(View view){
                 if(!b1pp1.getText().toString().equals("")){
-                    entrada.setText(entrada.getText().toString()+b1pp1.getText().toString()+" ");
-                    entrada.setSelection(entrada.getText().length());
+                    int onde = entrada.getSelectionStart();
+                    String sub1 = entrada.getText().toString().substring(0,onde);
+                    String sub2 = entrada.getText().toString().substring(onde,entrada.getText().toString().length());
+                    String palavrita = b1pp1.getText().toString();
+                    if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
+                    if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
+                    entrada.setText(sub1+palavrita+sub2);
+                    entrada.setSelection(onde + palavrita.length());
                 }
             }
         });
@@ -1577,8 +1583,14 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             @Override
             public void onClick(View view){
                 if(!b2pp1.getText().toString().equals("")){
-                    entrada.setText(entrada.getText().toString()+b2pp1.getText().toString()+" ");
-                    entrada.setSelection(entrada.getText().length());
+                    int onde = entrada.getSelectionStart();
+                    String sub1 = entrada.getText().toString().substring(0,onde);
+                    String sub2 = entrada.getText().toString().substring(onde,entrada.getText().toString().length());
+                    String palavrita = b2pp1.getText().toString();
+                    if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
+                    if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
+                    entrada.setText(sub1+palavrita+sub2);
+                    entrada.setSelection(onde + palavrita.length());
                 }
             }
         });
@@ -1586,8 +1598,14 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             @Override
             public void onClick(View view){
                 if(!b3pp1.getText().toString().equals("")){
-                    entrada.setText(entrada.getText().toString()+b3pp1.getText().toString()+" ");
-                    entrada.setSelection(entrada.getText().length());
+                    int onde = entrada.getSelectionStart();
+                    String sub1 = entrada.getText().toString().substring(0,onde);
+                    String sub2 = entrada.getText().toString().substring(onde,entrada.getText().toString().length());
+                    String palavrita = b3pp1.getText().toString();
+                    if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
+                    if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
+                    entrada.setText(sub1+palavrita+sub2);
+                    entrada.setSelection(onde + palavrita.length());
                 }
             }
         });
@@ -1595,8 +1613,14 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             @Override
             public void onClick(View view){
                 if(!b4pp1.getText().toString().equals("")){
-                    entrada.setText(entrada.getText().toString()+b4pp1.getText().toString()+" ");
-                    entrada.setSelection(entrada.getText().length());
+                    int onde = entrada.getSelectionStart();
+                    String sub1 = entrada.getText().toString().substring(0,onde);
+                    String sub2 = entrada.getText().toString().substring(onde,entrada.getText().toString().length());
+                    String palavrita = b4pp1.getText().toString();
+                    if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
+                    if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
+                    entrada.setText(sub1+palavrita+sub2);
+                    entrada.setSelection(onde + palavrita.length());
                 }
             }
         });
@@ -1605,8 +1629,14 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             @Override
             public void onClick(View view){
                 if(!b5pp1.getText().toString().equals("")){
-                    entrada.setText(entrada.getText().toString()+b5pp1.getText().toString()+" ");
-                    entrada.setSelection(entrada.getText().length());
+                    int onde = entrada.getSelectionStart();
+                    String sub1 = entrada.getText().toString().substring(0,onde);
+                    String sub2 = entrada.getText().toString().substring(onde,entrada.getText().toString().length());
+                    String palavrita = b5pp1.getText().toString();
+                    if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
+                    if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
+                    entrada.setText(sub1+palavrita+sub2);
+                    entrada.setSelection(onde + palavrita.length());
                 }
             }
         });
@@ -1614,8 +1644,14 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             @Override
             public void onClick(View view){
                 if(!b6pp1.getText().toString().equals("")){
-                    entrada.setText(entrada.getText().toString()+b6pp1.getText().toString()+" ");
-                    entrada.setSelection(entrada.getText().length());
+                    int onde = entrada.getSelectionStart();
+                    String sub1 = entrada.getText().toString().substring(0,onde);
+                    String sub2 = entrada.getText().toString().substring(onde,entrada.getText().toString().length());
+                    String palavrita = b6pp1.getText().toString();
+                    if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
+                    if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
+                    entrada.setText(sub1+palavrita+sub2);
+                    entrada.setSelection(onde + palavrita.length());
                 }
             }
         });
@@ -1623,8 +1659,14 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             @Override
             public void onClick(View view){
                 if(!b7pp1.getText().toString().equals("")){
-                    entrada.setText(entrada.getText().toString()+b7pp1.getText().toString()+" ");
-                    entrada.setSelection(entrada.getText().length());
+                    int onde = entrada.getSelectionStart();
+                    String sub1 = entrada.getText().toString().substring(0,onde);
+                    String sub2 = entrada.getText().toString().substring(onde,entrada.getText().toString().length());
+                    String palavrita = b7pp1.getText().toString();
+                    if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
+                    if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
+                    entrada.setText(sub1+palavrita+sub2);
+                    entrada.setSelection(onde + palavrita.length());
                 }
             }
         });
@@ -1632,8 +1674,14 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 @Override
                 public void onClick(View view){
                     if(!b8pp1.getText().toString().equals("")){
-                        entrada.setText(entrada.getText().toString()+b8pp1.getText().toString()+" ");
-                        entrada.setSelection(entrada.getText().length());
+                        int onde = entrada.getSelectionStart();
+                        String sub1 = entrada.getText().toString().substring(0,onde);
+                        String sub2 = entrada.getText().toString().substring(onde,entrada.getText().toString().length());
+                        String palavrita = b8pp1.getText().toString();
+                        if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
+                        if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
+                        entrada.setText(sub1+palavrita+sub2);
+                        entrada.setSelection(onde + palavrita.length());
                     }
                 }
             });
@@ -1641,8 +1689,14 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 @Override
                 public void onClick(View view){
                     if(!b9pp1.getText().toString().equals("")){
-                        entrada.setText(entrada.getText().toString()+b9pp1.getText().toString()+" ");
-                        entrada.setSelection(entrada.getText().length());
+                        int onde = entrada.getSelectionStart();
+                        String sub1 = entrada.getText().toString().substring(0,onde);
+                        String sub2 = entrada.getText().toString().substring(onde,entrada.getText().toString().length());
+                        String palavrita = b9pp1.getText().toString();
+                        if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
+                        if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
+                        entrada.setText(sub1+palavrita+sub2);
+                        entrada.setSelection(onde + palavrita.length());
                     }
                 }
             });
@@ -1650,8 +1704,14 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 @Override
                 public void onClick(View view){
                     if(!b10pp1.getText().toString().equals("")){
-                        entrada.setText(entrada.getText().toString()+b10pp1.getText().toString()+" ");
-                        entrada.setSelection(entrada.getText().length());
+                        int onde = entrada.getSelectionStart();
+                        String sub1 = entrada.getText().toString().substring(0,onde);
+                        String sub2 = entrada.getText().toString().substring(onde,entrada.getText().toString().length());
+                        String palavrita = b10pp1.getText().toString();
+                        if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
+                        if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
+                        entrada.setText(sub1+palavrita+sub2);
+                        entrada.setSelection(onde + palavrita.length());
                     }
                 }
             });
@@ -1659,8 +1719,14 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 @Override
                 public void onClick(View view){
                     if(!b11pp1.getText().toString().equals("")){
-                        entrada.setText(entrada.getText().toString()+b11pp1.getText().toString()+" ");
-                        entrada.setSelection(entrada.getText().length());
+                        int onde = entrada.getSelectionStart();
+                        String sub1 = entrada.getText().toString().substring(0,onde);
+                        String sub2 = entrada.getText().toString().substring(onde,entrada.getText().toString().length());
+                        String palavrita = b11pp1.getText().toString();
+                        if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
+                        if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
+                        entrada.setText(sub1+palavrita+sub2);
+                        entrada.setSelection(onde + palavrita.length());
                     }
                 }
             });
@@ -1668,8 +1734,14 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 @Override
                 public void onClick(View view){
                     if(!b12pp1.getText().toString().equals("")){
-                        entrada.setText(entrada.getText().toString()+b12pp1.getText().toString()+" ");
-                        entrada.setSelection(entrada.getText().length());
+                        int onde = entrada.getSelectionStart();
+                        String sub1 = entrada.getText().toString().substring(0,onde);
+                        String sub2 = entrada.getText().toString().substring(onde,entrada.getText().toString().length());
+                        String palavrita = b12pp1.getText().toString();
+                        if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
+                        if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
+                        entrada.setText(sub1+palavrita+sub2);
+                        entrada.setSelection(onde + palavrita.length());
                     }
                 }
             });
@@ -1677,8 +1749,14 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 @Override
                 public void onClick(View view){
                     if(!b13pp1.getText().toString().equals("")){
-                        entrada.setText(entrada.getText().toString()+b13pp1.getText().toString()+" ");
-                        entrada.setSelection(entrada.getText().length());
+                        int onde = entrada.getSelectionStart();
+                        String sub1 = entrada.getText().toString().substring(0,onde);
+                        String sub2 = entrada.getText().toString().substring(onde,entrada.getText().toString().length());
+                        String palavrita = b13pp1.getText().toString();
+                        if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
+                        if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
+                        entrada.setText(sub1+palavrita+sub2);
+                        entrada.setSelection(onde + palavrita.length());
                     }
                 }
             });
@@ -1686,8 +1764,14 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 @Override
                 public void onClick(View view){
                     if(!b14pp1.getText().toString().equals("")){
-                        entrada.setText(entrada.getText().toString()+b14pp1.getText().toString()+" ");
-                        entrada.setSelection(entrada.getText().length());
+                        int onde = entrada.getSelectionStart();
+                        String sub1 = entrada.getText().toString().substring(0,onde);
+                        String sub2 = entrada.getText().toString().substring(onde,entrada.getText().toString().length());
+                        String palavrita = b14pp1.getText().toString();
+                        if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
+                        if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
+                        entrada.setText(sub1+palavrita+sub2);
+                        entrada.setSelection(onde + palavrita.length());
                     }
                 }
             });
@@ -1695,8 +1779,14 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 @Override
                 public void onClick(View view){
                     if(!b15pp1.getText().toString().equals("")){
-                        entrada.setText(entrada.getText().toString()+b15pp1.getText().toString()+" ");
-                        entrada.setSelection(entrada.getText().length());
+                        int onde = entrada.getSelectionStart();
+                        String sub1 = entrada.getText().toString().substring(0,onde);
+                        String sub2 = entrada.getText().toString().substring(onde,entrada.getText().toString().length());
+                        String palavrita = b15pp1.getText().toString();
+                        if(sub1.charAt(sub1.length()-1)!=' ') palavrita = ' ' + palavrita;
+                        if(sub2.charAt(0)!=' ') palavrita = palavrita + ' ';
+                        entrada.setText(sub1+palavrita+sub2);
+                        entrada.setSelection(onde + palavrita.length());
                     }
                 }
             });
