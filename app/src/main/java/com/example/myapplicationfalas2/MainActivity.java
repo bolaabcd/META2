@@ -890,13 +890,30 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_NORMAL);
         builder.setView(input);
 
+
         builder.setPositiveButton("Salvar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 if (hasespaco(input.getText().toString())) {
+                    while (true){
+                        if (input.getText().toString().charAt(0)==" ".charAt(0)){
+                            input.setText(input.getText().toString().substring(1));
+                        } else break;
+                    }
+
+                }
+                if (hasespaco(input.getText().toString())){
+                    while (true){
+                        if(input.getText().toString().charAt(input.getText().length()-1)==" ".charAt(0)){
+                            input.setText(input.getText().toString().substring(0,input.getText().length()-1));
+                        } else break;
+                    }
+                }
+                if (hasespaco(input.getText().toString())){
                     Toast.makeText(getApplicationContext(), "Frases não são salvas por aqui!", Toast.LENGTH_SHORT).show();
                     dialog.cancel();
-                } else if (input.getText().toString().length() == 0) {
+                }
+                else if (input.getText().toString().length() == 0) {
                     Toast.makeText(getApplicationContext(), "Digite algo para salvar!!", Toast.LENGTH_SHORT).show();
                     dialog.cancel();
                 } else {
@@ -1239,7 +1256,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             pag2.setText("Q"+erroqorqkw.toString());
         }*/
         float alturapadraotot=90;//50 da constraint e 40 do botão back
-        maxpaltela2=(int)((getaltura()-130)/40);//-1 do botão + pra dar exato se quiser...
+        maxpaltela2=(int)((getaltura()-130)/40)+1;//-1 do botão + pra dar exato se quiser...
 
         //Tirando botões excessivos
         if (maxpaltela2<1)l1pp2.setVisibility(View.GONE);
@@ -1459,7 +1476,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
 
 
-        maxpaltela1=(int)(getaltura()-170)/42;//40 de cada um dos 3 botões e 50 da toolbar
+        maxpaltela1=(int)(getaltura()-170)/42-1;//40 de cada um dos 3 botões e 50 da toolbar
             //entrada.setText(Integer.toString(maxpaltela1));
             if (maxpaltela1<1)b1pp1.setVisibility(View.GONE);
             if (maxpaltela1<2)b2pp1.setVisibility(View.GONE);
