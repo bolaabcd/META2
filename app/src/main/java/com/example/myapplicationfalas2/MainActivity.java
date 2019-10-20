@@ -1057,9 +1057,9 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                     SharedPreferences.Editor mEditor = mPrefs.edit();
                     Boolean perg = extras.getBoolean("perg",mPrefs.getBoolean("pergt",true));
                     Boolean fone = extras.getBoolean("fone",mPrefs.getBoolean("foni",true));
-                    String tom = extras.getString("tom",mPrefs.getString("tag","1"));
+                    String tom = extras.getString("tom",mPrefs.getString("tag", "1"));
                     if (Float.parseFloat(tom) < 0.1) tom = "0.1f";
-                    String vel = extras.getString("vel",mPrefs.getString("tag2","1"));
+                    String vel = extras.getString("vel",mPrefs.getString("tag2", "1"));
                     if (Float.parseFloat(vel) < 0.1) vel = "0.1f";
                     mEditor.putBoolean("pergt", perg).commit();
                     mEditor.putBoolean("foni", fone).commit();

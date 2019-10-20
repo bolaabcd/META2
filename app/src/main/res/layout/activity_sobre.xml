@@ -35,5 +35,14 @@
 
     </androidx.appcompat.widget.Toolbar>
 
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Os desenvolvedores do APAA são alunos do Centro Federal de Educação Tecnológica de Minas Gerais, estando todos a cursar o curso técnico em mecatrônica na unidade Campus 1 , situada em Belo Horizonte. Com o apoio do professor orientador e com fundos próprios o aplicativo foi criado e planejamos aprimorá-lo continuamente para que seja possível se adequar às necessidades dos alunos afonicos de todo o Brasil. Para mais informações contatoapaa@googlegroups.com."
+        android:textColor="#000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,7 +8,7 @@
 
     <TextView
         android:id="@+id/ajudinha"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Bem vindo à aba de ajuda do APAA. \n\nClique no botão(curti) para enviar o som de “Entendi”. \n \nClique no botão(Negativo) para enviar o som não entendi. \n\nDigite o texto na caixa de texto. \n \nClique no botão(Orelha) para enviar a pergunta da caixa de texto. \n \nClique num dos botões com palavras para inserir tal palavra na caixa de texto. \n \nClique na interrogação para inserir uma frase pré-definida. \n\nNa caixa de texto, clique em Edit para adicionar uma nova palavra/frase pré-definida. \n\nClique nos (3 pontos) para acessar as telas de configuração, ajuda e sobre."
         android:textColor="#000"
