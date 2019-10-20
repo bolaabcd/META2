@@ -985,9 +985,12 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
         String csvList = mPrefs.getString("perguntitas", "");
         String[] items = csvList.split("¨");
-        for (int i = 0; i < items.length; i++) {
-            perguntas.add(items[i]);
+        if(csvList.length() > 0){
+            for (int i = 0; i < items.length; i++) {
+                perguntas.add(items[i]);
+            }
         }
+
 
 
 
@@ -1051,19 +1054,17 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                     Locale portugues = new Locale("PT", "BR");
                     Bundle extras = getIntent().getExtras();
 
-                    if (extras != null) {
-                        SharedPreferences.Editor mEditor = mPrefs.edit();
-                        Boolean perg = extras.getBoolean("perg");
-                        Boolean fone = extras.getBoolean("fone");
-                        String tom = extras.getString("tom");
-                        if (Float.parseFloat(tom) < 0.1) tom = "0.1f";
-                        String vel = extras.getString("vel");
-                        if (Float.parseFloat(vel) < 0.1) vel = "0.1f";
-                        mEditor.putBoolean("pergt", perg).commit();
-                        mEditor.putBoolean("foni", fone).commit();
-                        mEditor.putString("tag2", vel).commit();
-                        mEditor.putString("tag", tom).commit();
-                    }
+                    SharedPreferences.Editor mEditor = mPrefs.edit();
+                    Boolean perg = extras.getBoolean("perg",mPrefs.getBoolean("pergt",true));
+                    Boolean fone = extras.getBoolean("fone",mPrefs.getBoolean("foni",true));
+                    String tom = extras.getString("tom",mPrefs.getString("tag","1"));
+                    if (Float.parseFloat(tom) < 0.1) tom = "0.1f";
+                    String vel = extras.getString("vel",mPrefs.getString("tag2","1"));
+                    if (Float.parseFloat(vel) < 0.1) vel = "0.1f";
+                    mEditor.putBoolean("pergt", perg).commit();
+                    mEditor.putBoolean("foni", fone).commit();
+                    mEditor.putString("tag2", vel).commit();
+                    mEditor.putString("tag", tom).commit();
 
                     String stringTom = mPrefs.getString("tag", "1");
                     String stringVel = mPrefs.getString("tag2", "1");
@@ -1926,8 +1927,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     protected void onDestroy(){
         super.onDestroy();
         SharedPreferences.Editor excluidor = getSharedPreferences("labela", 0).edit();
-        excluidor.putString("escrito",null).commit();
-        excluidor.putString("perguntitas",null).commit();
+        excluidor.putString("escrito","").commit();
+        excluidor.putString("perguntitas","").commit();
         perguntas.clear();
     }
 
