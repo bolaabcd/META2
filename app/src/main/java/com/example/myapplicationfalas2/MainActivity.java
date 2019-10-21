@@ -1,9 +1,11 @@
 
 package com.example.myapplicationfalas2;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.graphics.Point;
 import android.media.MediaPlayer;
@@ -164,6 +166,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
    int maxpaltela2;
    int maxpaltela1;
+
+   String qisso;
 
     public float getaltura(){
         Display display = getWindowManager().getDefaultDisplay();
@@ -963,6 +967,23 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             maxpaltela1=4;
             maxpaltela2=15;
             super.onCreate(savedInstanceState);
+            /*teste=new TextToSpeech(MainActivity.this, new TextToSpeech.OnInitListener() {
+                @Override
+                public void onInit(int status) {
+                    teste.setSpeechRate(0);
+                }
+            });
+            MediaPlayer vazio = MediaPlayer.create(this,R.raw.notification);
+            vazio.setVolume(0,0);*/
+            //MediaButtonReceiver();
+            //android.intent.action.MEDIA_BUTTON;
+            BroadcastReceiver teste = new BroadcastReceiver() {
+                @Override
+                public void onReceive(Context context, Intent intent) {
+                Toast.makeText(getApplicationContext(),"WOWOWOOWOWOWOWOOWOW", Toast.LENGTH_LONG);
+                }
+            };
+            getApplicationContext().registerReceiver(teste,new IntentFilter("android.intent.action.MEDIA_BUTTON"));
 
 
         try{FileInputStream ler = openFileInput("palavras.txt");}
@@ -1157,7 +1178,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {//sucodeuvaa
         if(keyCode == KeyEvent.KEYCODE_HEADSETHOOK||keyCode == 126||keyCode == 127){
-            falar();
+            falar();//ONSTOP AQUI TAMBÉM!!!!!
             return true;
         }
         return super.onKeyDown(keyCode, event);
