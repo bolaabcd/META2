@@ -12,7 +12,11 @@
         <activity android:name=".SobreActivity"></activity>
         <activity android:name=".config" />
         <activity android:name=".AjudaActivity" />
-
+        <service android:name="recebedor" >
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+        </service>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"

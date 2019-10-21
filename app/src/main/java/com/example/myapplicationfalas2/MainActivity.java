@@ -2,6 +2,7 @@
 package com.example.myapplicationfalas2;
 
 import android.content.BroadcastReceiver;
+
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -16,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.appcompat.widget.PopupMenu;
+
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.speech.tts.TextToSpeech;
@@ -54,7 +56,15 @@ import java.util.Set;
 import static java.lang.Thread.sleep;
 
 
+class recebedor extends BroadcastReceiver{
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Toast.makeText(MainActivity.getAppContexto(),"WOWOWOOWOWOWOWOOWOW", Toast.LENGTH_LONG);
+        }
+        }
+
 public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener{
+    static Context contexto;
 
     ArrayList<String> perguntas = new ArrayList<>();
     TextToSpeech falador;
@@ -167,7 +177,10 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
    int maxpaltela2;
    int maxpaltela1;
 
-   String qisso;
+
+    public static Context getAppContexto() {
+        return contexto;
+    }
 
     public float getaltura(){
         Display display = getWindowManager().getDefaultDisplay();
@@ -967,6 +980,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             maxpaltela1=4;
             maxpaltela2=15;
             super.onCreate(savedInstanceState);
+            this.contexto = getApplicationContext();
             /*teste=new TextToSpeech(MainActivity.this, new TextToSpeech.OnInitListener() {
                 @Override
                 public void onInit(int status) {
@@ -977,13 +991,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             vazio.setVolume(0,0);*/
             //MediaButtonReceiver();
             //android.intent.action.MEDIA_BUTTON;
-            BroadcastReceiver teste = new BroadcastReceiver() {
-                @Override
-                public void onReceive(Context context, Intent intent) {
-                Toast.makeText(getApplicationContext(),"WOWOWOOWOWOWOWOOWOW", Toast.LENGTH_LONG);
-                }
-            };
-            getApplicationContext().registerReceiver(teste,new IntentFilter("android.intent.action.MEDIA_BUTTON"));
+
 
 
         try{FileInputStream ler = openFileInput("palavras.txt");}
@@ -1135,6 +1143,15 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
 
 
+        BroadcastReceiver teste = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                Toast.makeText(getApplicationContext(),"WOWOWOOWOWOWOWOOWOW", Toast.LENGTH_LONG);
+                entrada.setText("HHMMMM");
+            }
+        };
+        getApplicationContext().registerReceiver(teste,new IntentFilter("android.intent.action.MEDIA_BUTTON" ));
+        //Intent mediaButtonIntent = new Intent(Intent.ACTION_MEDIA_BUTTON, null, getApplicationContext(), MediaButtonReceiver.class);
 
 
     }
