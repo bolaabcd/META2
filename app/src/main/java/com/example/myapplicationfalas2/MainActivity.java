@@ -3,18 +3,21 @@ package com.example.myapplicationfalas2;
 
 import android.content.BroadcastReceiver;
 
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.graphics.Point;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
+//import androidx.media.session.MediaButtonReceiver;
 import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.appcompat.widget.PopupMenu;
 
@@ -23,6 +26,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.UtteranceProgressListener;
 import android.text.InputType;
+import android.util.Log;
 import android.view.Display;
 import android.view.KeyEvent;
 import android.view.MenuInflater;
@@ -56,17 +60,26 @@ import java.util.Set;
 import static java.lang.Thread.sleep;
 
 
-class recebedor extends BroadcastReceiver{
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            Toast.makeText(MainActivity.getAppContexto(),"WOWOWOOWOWOWOWOOWOW", Toast.LENGTH_LONG);
-        }
-        }
+
 
 public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener{
     static Context contexto;
+    public static class recebedor extends BroadcastReceiver {
+        public recebedor ()
+        {
+            super ();
+        }
 
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Log.d("EVENT","A coisa nao funciona mesmo!");
+            Toast.makeText(MainActivity.getAppContexto(),"WOWOWOOWOWOWOWOOWOW", Toast.LENGTH_LONG);
+        }
+    }
     ArrayList<String> perguntas = new ArrayList<>();
+    AudioManager mAudioManager;
+    ComponentName estranhomesmo;
+
     TextToSpeech falador;
     EditText entrada;
     int tempo;
@@ -981,6 +994,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             maxpaltela2=15;
             super.onCreate(savedInstanceState);
             this.contexto = getApplicationContext();
+
             /*teste=new TextToSpeech(MainActivity.this, new TextToSpeech.OnInitListener() {
                 @Override
                 public void onInit(int status) {
@@ -1143,17 +1157,34 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
 
 
-        BroadcastReceiver teste = new BroadcastReceiver() {
+        /*BroadcastReceiver teste = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
                 Toast.makeText(getApplicationContext(),"WOWOWOOWOWOWOWOOWOW", Toast.LENGTH_LONG);
                 entrada.setText("HHMMMM");
             }
         };
-        getApplicationContext().registerReceiver(teste,new IntentFilter("android.intent.action.MEDIA_BUTTON" ));
+        getApplicationContext().registerReceiver(teste,new IntentFilter(Intent.ACTION_MEDIA_BUTTON ));
         //Intent mediaButtonIntent = new Intent(Intent.ACTION_MEDIA_BUTTON, null, getApplicationContext(), MediaButtonReceiver.class);
+        */
+        IntentFilter mediaButtonFilter = new IntentFilter(Intent.ACTION_MEDIA_BUTTON);
+        mediaButtonFilter.setPriority(IntentFilter.SYSTEM_HIGH_PRIORITY);
+        Log.d("Event","SERASERASERA");
+        BroadcastReceiver brMediaButton=new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                Toast.makeText(getApplicationContext(),"HQBDWIUHQBWDiuQBWIDQBWIDQBWIODBQWIDUOBQwuifbqihfbqwbf", Toast.LENGTH_LONG).show();
+                Log.d("Event","Media button!");
+                this.abortBroadcast();
+            }
+        };
+        registerReceiver(brMediaButton,mediaButtonFilter);
+        getApplicationContext().registerReceiver(brMediaButton,mediaButtonFilter);
+        mAudioManager =  (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+        estranhomesmo = new ComponentName(this,recebedor.class);
 
-
+        mAudioManager.registerMediaButtonEventReceiver(estranhomesmo);
+        //mAudioManager.unregisterMediaButtonEventReceiver(estranhomesmo);
     }
     @Override
     public boolean onMenuItemClick(MenuItem item) {
